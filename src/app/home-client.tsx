@@ -303,6 +303,12 @@ export function HomeClient({ DATA }: { DATA: any }) {
           <p className="text-sm text-muted-foreground leading-relaxed">
             I am a software engineer focused on building robust, scalable systems and developer tooling. With 79 external PRs merged into open-source repositories I don&apos;t own, I take pride in end-to-end craftsmanship — from low-level API design and fault-tolerant cloud backends to razor-sharp, accessible frontends. Currently building <strong className="text-foreground font-semibold">CampusLoop</strong> (the verified campus network for 1,350+ Indian colleges), architecting MCP server infrastructure, and contributing to open source.
           </p>
+          <Link
+            href="/story"
+            className="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+          >
+            Read the story behind the work <ArrowRightIcon className="size-3.5" />
+          </Link>
         </div>
       </section>
 
