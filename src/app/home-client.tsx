@@ -276,12 +276,40 @@ export function HomeClient({ DATA }: { DATA: any }) {
                 key={project.title + project.dates}
                 className="flex items-start gap-3 py-2"
               >
-                {project.image && (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="size-8 rounded object-contain shrink-0 mt-0.5"
-                  />
+                {project.image ? (
+                  <div className="relative size-8 shrink-0 mt-0.5">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="size-8 rounded object-contain"
+                      onError={(event) => {
+                        event.currentTarget.style.display = "none";
+                        event.currentTarget.nextElementSibling?.removeAttribute("hidden");
+                      }}
+                    />
+                    <div
+                      hidden
+                      className="absolute inset-0 flex items-center justify-center rounded bg-accent text-[10px] font-bold text-muted-foreground"
+                    >
+                      {project.title
+                        .split(/\s+/)
+                        .filter(Boolean)
+                        .slice(0, 2)
+                        .map((word: string) => word[0])
+                        .join("")
+                        .toUpperCase()}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded bg-accent text-[10px] font-bold text-muted-foreground">
+                    {project.title
+                      .split(/\s+/)
+                      .filter(Boolean)
+                      .slice(0, 2)
+                      .map((word: string) => word[0])
+                      .join("")
+                      .toUpperCase()}
+                  </div>
                 )}
                 <div className="min-w-0">
                   <p className="text-sm font-medium">{project.title}</p>
