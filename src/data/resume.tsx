@@ -223,7 +223,7 @@ export const DATA = {
           icon: "github",
         },
       ],
-      image: "",
+      image: "/projects/gemini-cli.svg",
       video: "",
     },
     {
@@ -246,7 +246,7 @@ export const DATA = {
           icon: "globe",
         },
       ],
-      image: "",
+      image: "/projects/bitotsav-2026.svg",
       video: "",
     },
     {
@@ -1003,7 +1003,7 @@ export const DATA = {
       location: "India",
       description:
         "Active builder across university hackathons and open-source challenges, shipping rapid prototypes in AI developer tooling, automation pipelines, and modern web applications.",
-      image: "https://avatars.githubusercontent.com/u/53382877?v=4",
+      image: "/projects/hackathon.svg",
       links: [
         {
           type: "Profile",
@@ -1018,7 +1018,7 @@ export const DATA = {
       location: "Ranchi, Jharkhand",
       description:
         "Shortlisted in Round 1 (Top 500 across India). Developed Kishan AI, an AI-powered Telegram Assistant for farmers with crop disease diagnosis, weather insights, and mandi prices.",
-      image: "https://pbs.twimg.com/profile_images/1633400336214302720/0p534a6e_400x400.jpg",
+      image: "/projects/apf-2025.svg",
       links: [],
     },
     {
