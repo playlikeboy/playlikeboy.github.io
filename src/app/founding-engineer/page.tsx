@@ -38,7 +38,7 @@ export default function FoundingEngineerPage() {
       process={foundingEngineerConfig.process}
       faq={foundingEngineerConfig.faq}
       relatedProjects={foundingEngineerConfig.relatedProjects}
-      testimonials={foundingEngineerConfig.testimonials}
+
     >
       <div className="space-y-6">
         <div>
