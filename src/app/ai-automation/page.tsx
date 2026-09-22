@@ -64,7 +64,7 @@ export default function AiAutomationPage() {
       process={aiAutomationConfig.process}
       faq={aiAutomationConfig.faq}
       relatedProjects={aiAutomationConfig.relatedProjects}
-      testimonials={aiAutomationConfig.testimonials}
+
     >
       <div className="space-y-6">
         <div>
