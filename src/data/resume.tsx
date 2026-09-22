@@ -153,7 +153,7 @@ export const DATA = {
       dates: "2024 – Present",
       active: true,
       description:
-        "Privacy-first suite of 605+ free online developer, image, PDF, and productivity tools running 100% client-side via WebAssembly. Scaled to 4.3M+ requests and 213K+ monthly active users with zero server compute bills. Switched from 30tools.com to sopkit.github.io for sustainable, permanent open-source hosting.",
+        "Privacy-first suite of 605+ free online developer, image, PDF, and productivity tools running 100% client-side via WebAssembly. Scaled to 4.3M+ requests and 213K+ visits with zero server compute bills. Switched from 30tools.com to sopkit.github.io for sustainable, permanent open-source hosting.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "WebAssembly", "Web APIs", "Programmatic SEO"],
       links: [
         {
