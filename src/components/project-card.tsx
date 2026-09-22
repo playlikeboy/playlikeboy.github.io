@@ -35,18 +35,8 @@ export function ProjectCard({
     <div className="group rounded-lg border border-border overflow-hidden bg-background hover:border-foreground/20 hover:shadow-sm transition-all">
       <Link
         href={href || "#"}
-        className={cn("block overflow-hidden aspect-[16/10] bg-accent/30", className)}
+        className={cn("relative block overflow-hidden aspect-[16/10] bg-accent/30", className)}
       >
-        {video && (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="h-full w-full object-cover"
-          />
-        )}
         {video ? (
           <video src={video} autoPlay loop muted playsInline preload="metadata" className="h-full w-full object-cover" />
         ) : image ? (
