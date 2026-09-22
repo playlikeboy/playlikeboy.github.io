@@ -38,7 +38,7 @@ export default function MentorshipPage() {
       process={mentorshipConfig.process}
       faq={mentorshipConfig.faq}
       relatedProjects={mentorshipConfig.relatedProjects}
-      testimonials={mentorshipConfig.testimonials}
+
     >
       <div className="space-y-6">
         <div>
