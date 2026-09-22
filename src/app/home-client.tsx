@@ -16,40 +16,28 @@ import {
 
 const proofPosts = [
   {
-    title: "SopKit (formerly 30tools) — 605+ Tools & 4.3M+ Requests",
-    text: "High-performance privacy-first utility platform with 605+ tools running 100% client-side via WebAssembly. Scaled to 4.3M+ requests and 213K+ MAU via programmatic SEO. Migrated to https://sopkit.github.io/ for permanent, sustainable open-source hosting.",
-    tech: ["Next.js", "TypeScript", "WebAssembly", "Programmatic SEO"],
+    title: "SopKit — 605+ tools, 4.3M+ requests",
+    text: "A privacy-first browser utility platform where processing happens client-side. Reported 4.3M+ requests and 213K+ visits, driven by product execution and programmatic SEO.",
+    tech: ["Next.js", "TypeScript", "WebAssembly", "SEO"],
     href: "/projects/sopkit",
   },
   {
-    title: "CampusLoop — Verified College Social Network",
-    text: "Building the verified student-only campus network for 1,350+ Indian colleges. Gatekept by institutional college emails to enable anonymous campus feeds, real-time canteen polls, student marketplace, and encrypted batch time capsules.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Cloudflare Workers", "PWA"],
-    href: "https://campusloop.space/",
-  },
-  {
-    title: "Merged fix into Google's gemini-cli",
-    text: "Traced and fixed a cancellation bug in a 107k-star TypeScript codebase (#20405): the active turn's AbortSignal wasn't reaching chat compression, so Ctrl+C left in-flight LLM calls running on a detached controller. Threaded the signal through LocalAgentExecutor and GeminiClient into the compression service. Reviewed and merged by a Google maintainer.",
-    tech: ["TypeScript", "Node.js", "Gemini API", "Open Source"],
+    title: "Google Gemini CLI — merged upstream contribution",
+    text: "Traced a cancellation bug where AbortSignal propagation stopped before chat compression, then threaded cancellation through the execution and compression layers. The fix was reviewed and merged upstream.",
+    tech: ["TypeScript", "Node.js", "Gemini", "Open Source"],
     href: "https://github.com/google-gemini/gemini-cli/pull/20778",
   },
   {
-    title: "Bitotsav 2026 — Tech Lead & Cloud Infrastructure",
-    text: "Architected high-concurrency event infrastructure serving ~5,000 live participants. Built offline-resilient QR access verification, low-latency Redis state caches, real-time leaderboard telemetry, and AI participant services.",
-    tech: ["Next.js", "PostgreSQL", "Redis", "OpenAI", "Cloudflare"],
-    href: "https://www.linkedin.com/posts/sh20raj_bitotsav-2026-what-a-journey-what-a-responsibility-activity-7442608760193216512-Y_nn",
+    title: "Bitotsav '26 — production event infrastructure",
+    text: "Architected the technology platform for 5,000+ participants, including QR access verification, Redis-backed state, real-time leaderboard systems, admin tooling, and AI features.",
+    tech: ["Next.js", "PostgreSQL", "Redis", "Cloudflare"],
+    href: "/projects/bitotsav-2026",
   },
   {
-    title: "Kishan AI — AICTE APF Round 1 Shortlist (Top 500 across India)",
-    text: "Selected in Round 1 Top 500 nationally across India. Engineered multimodal AI for rural agriculture: offline-tolerant crop pathology vision models, regional voice synthesis, and real-time mandi pricing analytics.",
-    tech: ["AI / Computer Vision", "Voice Synthesis", "Telegram Bot API", "Python"],
-    href: "https://www.linkedin.com/posts/sh20raj_apf2025-yukti2025-aicte-activity-7396536427284447233-9KYM",
-  },
-  {
-    title: "IndexFast & MCP Pure — Agent Infrastructure",
-    text: "Engineered Model Context Protocol (MCP) servers on Cloudflare Workers and a multi-engine indexing pipeline for Google, Bing, and IndexNow protocols with sub-second propagation.",
-    tech: ["TypeScript", "Cloudflare Workers", "MCP Protocol", "API Design"],
-    href: "https://indexfast.co",
+    title: "CampusLoop — campus network",
+    text: "Building a verified student network for 1,350+ Indian colleges with institutional email verification, campus feeds, marketplace workflows, polls, and time capsules.",
+    tech: ["Next.js", "PostgreSQL", "Workers", "PWA"],
+    href: "https://campusloop.space/",
   },
 ];
 
@@ -66,20 +54,29 @@ export function HomeClient({ DATA }: { DATA: any }) {
             </Avatar>
             <div className="flex-1 min-w-0">
               <h1 className="text-xl font-bold tracking-tight">Shaswat Raj</h1>
-              <p className="text-sm text-muted-foreground mt-0.5">
-                Software Engineer · CS @ BIT Mesra (2022–2026) · Open-Source Contributor
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                Software Engineer · Open-Source Builder
               </p>
-              <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                79 PRs merged into repos I don&apos;t own — including a merged fix into <strong className="text-foreground font-semibold">Google&apos;s gemini-cli</strong>. Specializing in high-performance web systems, distributed tools, Model Context Protocol (MCP) infrastructure, and scalable AI agent architectures.
+              <h1 className="mt-1 text-2xl sm:text-3xl font-bold tracking-tight">
+                I build software that survives real users.
+              </h1>
+              <p className="text-sm text-muted-foreground mt-3 leading-relaxed max-w-xl">
+                I build high-performance web systems, developer infrastructure, and AI tooling end-to-end — from architecture and APIs to production and iteration.
               </p>
               <div className="flex flex-wrap items-center gap-3 mt-4">
                 <a
                   href="/resume.pdf"
                   download
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+                  className="inline-flex items-center gap-1.5 rounded-md bg-foreground px-3 py-1.5 text-sm font-medium text-background hover:opacity-90 transition-opacity"
                 >
                   <FileDown className="size-4" /> Resume
                 </a>
+                <Link
+                  href="#projects"
+                  className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1.5 text-sm font-medium hover:bg-accent transition-colors"
+                >
+                  View work <ArrowRightIcon className="size-3.5" />
+                </Link>
                 <Link
                   href="https://github.com/SH20RAJ"
                   target="_blank"
@@ -105,13 +102,27 @@ export function HomeClient({ DATA }: { DATA: any }) {
               </div>
             </div>
           </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-px overflow-hidden rounded-lg border border-border bg-border mt-8">
+            {[
+              ["79", "external PRs merged"],
+              ["4.3M+", "SopKit requests"],
+              ["213K+", "SopKit visits"],
+              ["5K+", "event participants"],
+            ].map(([value, label]) => (
+              <div key={label} className="bg-background px-3 py-3 text-center">
+                <p className="text-base sm:text-lg font-bold tracking-tight">{value}</p>
+                <p className="mt-0.5 text-[10px] sm:text-xs text-muted-foreground">{label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Proof / Key Engineering Highlights */}
       <section id="proof" className="py-10 border-b border-border">
         <div className="mx-auto w-full max-w-2xl px-6">
-          <h2 className="text-lg font-bold tracking-tight mb-5">Engineering Highlights</h2>
+          <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Proof</p>
+          <h2 className="text-lg font-bold tracking-tight mt-1 mb-5">Engineering highlights</h2>
           <div className="space-y-4">
             {proofPosts.map((post) => {
               const isInternal = post.href.startsWith("/");
@@ -220,7 +231,8 @@ export function HomeClient({ DATA }: { DATA: any }) {
       {/* Technical Depth / Skills */}
       <section id="skills" className="py-10 border-b border-border">
         <div className="mx-auto w-full max-w-2xl px-6">
-          <h2 className="text-lg font-bold tracking-tight mb-5">Technical Depth</h2>
+          <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Capabilities</p>
+          <h2 className="text-lg font-bold tracking-tight mt-1 mb-5">What I work with</h2>
           <div className="space-y-4">
             {[
               {
@@ -329,7 +341,7 @@ export function HomeClient({ DATA }: { DATA: any }) {
         <div className="mx-auto w-full max-w-2xl px-6">
           <h2 className="text-lg font-bold tracking-tight mb-3">About</h2>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            I am a software engineer focused on building robust, scalable systems and developer tooling. With 79 external PRs merged into open-source repositories I don&apos;t own, I take pride in end-to-end craftsmanship — from low-level API design and fault-tolerant cloud backends to razor-sharp, accessible frontends. Currently building <strong className="text-foreground font-semibold">CampusLoop</strong> (the verified campus network for 1,350+ Indian colleges), architecting MCP server infrastructure, and contributing to open source.
+            I like owning the whole path: understanding the problem, choosing the architecture, writing the product, deploying it, measuring what happens, and iterating. My open-source work includes 79 external PRs, including a merged contribution to Google&apos;s gemini-cli.
           </p>
           <Link
             href="/story"
@@ -345,7 +357,7 @@ export function HomeClient({ DATA }: { DATA: any }) {
         <div className="mx-auto w-full max-w-2xl px-6 text-center space-y-3">
           <h2 className="text-lg font-bold tracking-tight">Get in touch</h2>
           <p className="text-sm text-muted-foreground">
-            Open to Software Engineering &amp; Founding Engineer roles, distributed systems, and AI infrastructure.{" "}
+            Open to software engineering and founding-engineer opportunities, especially around systems, developer tooling, and AI infrastructure.{" "}
             <Link href="/hire" className="text-foreground underline underline-offset-4 hover:text-muted-foreground">
               Contact me
             </Link>
@@ -354,9 +366,7 @@ export function HomeClient({ DATA }: { DATA: any }) {
           {/* Availability Status */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/60 border border-border text-xs text-muted-foreground">
             <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>
-              Available for Full-time Software Engineering &amp; Founding Roles · Immediate Start · Remote / Relocation
-            </span>
+            <span>Available for full-time roles · Remote / relocation</span>
           </div>
 
           <div className="flex justify-center gap-4 pt-2">
