@@ -59,7 +59,7 @@ export default function GrowthSystemsPage() {
       process={growthSystemsConfig.process}
       faq={growthSystemsConfig.faq}
       relatedProjects={growthSystemsConfig.relatedProjects}
-      testimonials={growthSystemsConfig.testimonials}
+
     >
       <div className="space-y-6">
         <div>
