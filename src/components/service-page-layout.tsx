@@ -18,7 +18,6 @@ interface ServicePageLayoutProps {
   process: { step: string; title: string; description: string }[];
   faq: { question: string; answer: string }[];
   relatedProjects: string[];
-  testimonials?: { quote: string; name: string; role: string }[];
   children?: React.ReactNode;
 }
 
@@ -31,7 +30,6 @@ export default function ServicePageLayout({
   process,
   faq,
   relatedProjects,
-  testimonials,
   children,
 }: ServicePageLayoutProps) {
   const allProjects = [...DATA.projects, ...(DATA.projectsDump || [])];
@@ -131,31 +129,6 @@ export default function ServicePageLayout({
                   video={project.video}
                   links={project.links}
                 />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Testimonials */}
-      {testimonials && testimonials.length > 0 && (
-        <section className="py-10 border-b border-border">
-          <div className="mx-auto w-full max-w-2xl px-6">
-            <h2 className="text-lg font-bold tracking-tight mb-4">What clients say</h2>
-            <div className="space-y-4">
-              {testimonials.map((t, id) => (
-                <div key={id} className="rounded-lg border border-border p-4">
-                  <p className="text-sm text-muted-foreground italic">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="mt-3 flex items-center gap-2">
-                    <span className="size-6 rounded-full bg-accent text-xs font-medium flex items-center justify-center">
-                      {t.name[0]}
-                    </span>
-                    <div>
-                      <p className="text-xs font-medium">{t.name}</p>
-                      <p className="text-xs text-muted-foreground">{t.role}</p>
-                    </div>
-                  </div>
-                </div>
               ))}
             </div>
           </div>
