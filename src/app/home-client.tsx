@@ -174,30 +174,6 @@ export function HomeClient({ DATA }: { DATA: any }) {
         </div>
       </section>
 
-      {/* Performance & Quality */}
-      <section id="performance" className="py-10 border-b border-border">
-        <div className="mx-auto w-full max-w-2xl px-6">
-          <h2 className="text-lg font-bold tracking-tight">Site Architecture &amp; Performance</h2>
-          <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-            Fully static export deployed to GitHub Pages and edge CDN. Zero tracking scripts, minimal client runtime, and ultra-low latency static asset delivery.
-          </p>
-          <div className="grid grid-cols-3 gap-3 mt-4 text-center">
-            <div className="p-3 bg-accent/40 rounded-lg border border-border">
-              <p className="text-base font-semibold text-foreground">&lt; 100ms</p>
-              <p className="text-xs text-muted-foreground mt-0.5">TTFB Globally</p>
-            </div>
-            <div className="p-3 bg-accent/40 rounded-lg border border-border">
-              <p className="text-base font-semibold text-foreground">100%</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Static Edge SSG</p>
-            </div>
-            <div className="p-3 bg-accent/40 rounded-lg border border-border">
-              <p className="text-base font-semibold text-foreground">0</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Tracking Scripts</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Featured Projects */}
       <section id="projects" className="py-10 border-b border-border">
         <div className="mx-auto w-full max-w-2xl px-6">
