@@ -73,7 +73,7 @@ export default function SaasMvpPage() {
       process={saasMvpConfig.process}
       faq={saasMvpConfig.faq}
       relatedProjects={saasMvpConfig.relatedProjects}
-      testimonials={saasMvpConfig.testimonials}
+
     >
       <div className="space-y-6">
         <div>
