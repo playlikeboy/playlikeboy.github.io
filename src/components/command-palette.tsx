@@ -16,6 +16,7 @@ import {
   Zap,
   ExternalLink,
   Laptop,
+  type LucideIcon,
 } from "lucide-react";
 
 interface ActionItem {
@@ -23,7 +24,7 @@ interface ActionItem {
   title: string;
   subtitle?: string;
   category: "Navigation" | "Projects & Work" | "Actions" | "Theme";
-  icon: any;
+  icon: LucideIcon;
   action: () => void;
 }
 
@@ -32,17 +33,34 @@ export function CommandPalette() {
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState(false);
   const router = useRouter();
   const { setTheme, theme } = useTheme();
 
-  const handleCopyEmail = useCallback(() => {
-    navigator.clipboard.writeText("sh20raj@gmail.com");
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-      setOpen(false);
-    }, 800);
+  const closePalette = useCallback(() => {
+    setOpen(false);
+    setQuery("");
+    setSelectedIndex(0);
+    setCopyError(false);
   }, []);
+
+  const handleCopyEmail = useCallback(async () => {
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText("sh20raj@gmail.com");
+      setCopyError(false);
+      setCopied(true);
+      setTimeout(() => {
+        setCopied(false);
+        closePalette();
+      }, 800);
+    } catch (error) {
+      console.error("Failed to copy email:", error);
+      setCopied(false);
+      setCopyError(true);
+      setTimeout(() => setCopyError(false), 1600);
+    }
+  }, [closePalette]);
 
   const actions: ActionItem[] = [
     {
@@ -53,7 +71,7 @@ export function CommandPalette() {
       icon: Globe,
       action: () => {
         router.push("/");
-        setOpen(false);
+        closePalette();
       },
     },
     {
@@ -64,7 +82,7 @@ export function CommandPalette() {
       icon: Code,
       action: () => {
         router.push("/projects");
-        setOpen(false);
+        closePalette();
       },
     },
     {
@@ -75,7 +93,7 @@ export function CommandPalette() {
       icon: Zap,
       action: () => {
         router.push("/startups");
-        setOpen(false);
+        closePalette();
       },
     },
     {
@@ -86,7 +104,7 @@ export function CommandPalette() {
       icon: Laptop,
       action: () => {
         router.push("/services");
-        setOpen(false);
+        closePalette();
       },
     },
     {
@@ -97,7 +115,7 @@ export function CommandPalette() {
       icon: FileText,
       action: () => {
         router.push("/blog");
-        setOpen(false);
+        closePalette();
       },
     },
     {
@@ -108,7 +126,7 @@ export function CommandPalette() {
       icon: ExternalLink,
       action: () => {
         window.open("https://campusloop.space/", "_blank");
-        setOpen(false);
+        closePalette();
       },
     },
     {
@@ -119,7 +137,7 @@ export function CommandPalette() {
       icon: ExternalLink,
       action: () => {
         window.open("https://github.com/google-gemini/gemini-cli/pull/20778", "_blank");
-        setOpen(false);
+        closePalette();
       },
     },
     {
@@ -130,12 +148,12 @@ export function CommandPalette() {
       icon: ExternalLink,
       action: () => {
         window.open("https://github.com/SH20RAJ", "_blank");
-        setOpen(false);
+        closePalette();
       },
     },
     {
       id: "copy-email",
-      title: copied ? "Copied to Clipboard!" : "Copy Email Address",
+      title: copied ? "Copied to Clipboard!" : copyError ? "Copy failed" : "Copy Email Address",
       subtitle: "sh20raj@gmail.com",
       category: "Actions",
       icon: copied ? Check : Copy,
@@ -149,7 +167,7 @@ export function CommandPalette() {
       icon: FileText,
       action: () => {
         window.open("/resume.pdf", "_blank");
-        setOpen(false);
+        closePalette();
       },
     },
     {
@@ -160,7 +178,7 @@ export function CommandPalette() {
       icon: theme === "dark" ? Sun : Moon,
       action: () => {
         setTheme(theme === "dark" ? "light" : "dark");
-        setOpen(false);
+        closePalette();
       },
     },
   ];
@@ -176,17 +194,24 @@ export function CommandPalette() {
   });
 
   useEffect(() => {
-    setSelectedIndex(0);
-  }, [query]);
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [open]);
 
   // Keyboard shortcut listener
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        setOpen((prev) => !prev);
+        if (open) closePalette();
+        else setOpen(true);
       } else if (e.key === "Escape" && open) {
-        setOpen(false);
+        closePalette();
       } else if (open) {
         if (e.key === "ArrowDown") {
           e.preventDefault();
@@ -203,14 +228,14 @@ export function CommandPalette() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [open, filtered, selectedIndex]);
+  }, [open, filtered, selectedIndex, closePalette]);
 
   if (!open) return null;
 
   return (
     <div
       className="fixed inset-0 z-[100] flex items-start justify-center pt-20 px-4 bg-background/80 backdrop-blur-sm animate-in fade-in duration-150"
-      onClick={() => setOpen(false)}
+      onClick={closePalette}
     >
       <div
         className="w-full max-w-lg rounded-xl border border-border bg-card shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150"

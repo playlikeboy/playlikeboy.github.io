@@ -313,7 +313,7 @@ export function GitHubStats() {
 
   const stats_row = [
     { label: "Contributions", value: formatCount(stats.totalContributionsAllTime) },
-    { label: "Public Repos", value: `${formatCount(stats.publicRepos)}+` },
+    { label: "Public Repos", value: formatCount(stats.publicRepos) },
     { label: "External PRs merged", value: formatCount(stats.externalPrsMerged) },
     { label: "Followers", value: formatCount(stats.followers) },
   ];

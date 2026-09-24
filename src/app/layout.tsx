@@ -96,9 +96,6 @@ export const metadata: Metadata = {
     creator: "@SH20RAJ",
     images: ["/og.png"],
   },
-  verification: {
-    google: "",
-  },
   alternates: {
     canonical: DATA.url,
   },
