@@ -435,7 +435,7 @@ export const DATA = {
     },
     {
       title: "CodeVisualizer",
-      href: "https://gitlab.com/SH20RAJ/codevisualizer",
+      href: "https://gitlab.com/SH20RAJ/codevisualiser",
       dates: "2025",
       active: true,
       description:
@@ -444,7 +444,7 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "https://gitlab.com/SH20RAJ/codevisualizer",
+          href: "https://gitlab.com/SH20RAJ/codevisualiser",
           icon: "gitlab",
         },
       ],
