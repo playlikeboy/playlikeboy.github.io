@@ -171,6 +171,11 @@ export const DATA = {
           href: "https://github.com/SopKit/sopkit.github.io",
           icon: "github",
         },
+        {
+          type: "GitLab",
+          href: "https://gitlab.com/SH20RAJ/30tools",
+          icon: "gitlab",
+        },
       ],
       image: "https://sopkit.github.io/og-image.jpg",
       video: "",
@@ -201,6 +206,65 @@ export const DATA = {
         },
       ],
       image: "https://campusloop.space/og-image.png",
+      video: "",
+    },
+    {
+      title: "NetScopeX",
+      href: "https://gitlab.com/SH20RAJ/netscopex",
+      dates: "2026 – Present",
+      active: true,
+      description:
+        "Distributed observability & reliability engineering platform — metrics, traces and reliability intelligence for modern infrastructure, built with strict TypeScript and PostgreSQL.",
+      technologies: ["TypeScript", "PostgreSQL", "Observability", "Distributed Systems", "Reliability Engineering"],
+      links: [
+        {
+          type: "Source",
+          href: "https://gitlab.com/SH20RAJ/netscopex",
+          icon: "gitlab",
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "OmniAudit-GEO",
+      href: "https://omniaudit-geo.onrender.com/",
+      dates: "2026 – Present",
+      active: true,
+      description:
+        "Enterprise brand AI-readiness marketplace — audits how discoverable a brand is to AI search engines and agents (GEO), and turns the findings into an actionable readiness score.",
+      technologies: ["Python", "FastAPI", "Streamlit", "AI Search", "GEO"],
+      links: [
+        {
+          type: "Website",
+          href: "https://omniaudit-geo.onrender.com/",
+          icon: "globe",
+        },
+        {
+          type: "Source",
+          href: "https://gitlab.com/SH20RAJ/omniaudit",
+          icon: "gitlab",
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "RUXs",
+      href: "https://gitlab.com/SH20RAJ/ruxs",
+      dates: "2026 – Present",
+      active: true,
+      description:
+        "Everyday essentials, from your neighbourhood — a local-commerce app for daily-needs shopping from nearby stores, built on Next.js with Drizzle/PostgreSQL and deployed on Cloudflare.",
+      technologies: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Cloudflare"],
+      links: [
+        {
+          type: "Source",
+          href: "https://gitlab.com/SH20RAJ/ruxs",
+          icon: "gitlab",
+        },
+      ],
+      image: "",
       video: "",
     },
     {
