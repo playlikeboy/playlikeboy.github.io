@@ -1,6 +1,6 @@
 # SHASWAT RAJ
 **Software Engineer | Systems Builder | Open-Source Contributor**  
-[sh20raj@gmail.com](mailto:sh20raj@gmail.com) • [github.com/SH20RAJ](https://github.com/SH20RAJ) • [sh20raj.github.io](https://sh20raj.github.io) • [linkedin.com/in/sh20raj](https://linkedin.com/in/sh20raj) • India
+[sh20raj@gmail.com](mailto:sh20raj@gmail.com) • [gitlab.com/SH20RAJ](https://gitlab.com/SH20RAJ) • [sh20raj.gitlab.io](https://sh20raj.gitlab.io) • [linkedin.com/in/sh20raj](https://linkedin.com/in/sh20raj) • India
 
 ---
 
@@ -50,12 +50,12 @@ Expected Graduation: 2028
 * Migrated to `sopkit.github.io` for permanent, sustainable open-source hosting.
 
 #### **SopPlayer — Open-Source HTML5 Video Player Library**
-*JavaScript · HTML5 Media API · jsDelivr CDN* ([github.com/sh20raj/sopplayer](https://github.com/sh20raj/sopplayer))
+*JavaScript · HTML5 Media API · jsDelivr CDN* ([gitlab.com/SH20RAJ/sopplayer](https://gitlab.com/SH20RAJ/sopplayer))
 * Engineered an ultra-lightweight (< 15KB), zero-dependency HTML5 media player with custom CSS skins and Picture-in-Picture support.
 * Scaled to **1.18M+ CDN requests** and **38GB+ bandwidth** served globally via jsDelivr.
 
 #### **AudiPlay — Lightweight Web Component & HTML5 Audio Player**
-*JavaScript · Web Components · HTML5 Audio API · jsDelivr CDN* ([github.com/SH20RAJ/AudiPlay](https://github.com/SH20RAJ/AudiPlay))
+*JavaScript · Web Components · HTML5 Audio API · jsDelivr CDN* ([gitlab.com/SH20RAJ/AudiPlay](https://gitlab.com/SH20RAJ/AudiPlay))
 * Engineered an embeddable, zero-dependency HTML5 audio player and custom `<audio-player>` web component with plug-and-play CSS skinning and audio scrub/volume controls.
 * Distributed globally via jsDelivr CDN for instant integration across web apps and blogs.
 

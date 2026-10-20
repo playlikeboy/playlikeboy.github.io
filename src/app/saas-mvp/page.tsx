@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   description:
     "Engineering production-ready SaaS MVPs with Next.js, TypeScript, PostgreSQL, Auth, Stripe billing, and AI features. Built by Shaswat Raj.",
   alternates: {
-    canonical: "https://sh20raj.github.io/saas-mvp",
+    canonical: "https://sh20raj.gitlab.io/saas-mvp",
   },
   openGraph: {
     type: "website",
     title: "SaaS MVP Development & Full-Stack Engineering | Shaswat Raj",
     description:
       "Engineering production-ready SaaS MVPs with Next.js, TypeScript, PostgreSQL, Auth, Stripe billing, and AI features.",
-    url: "https://sh20raj.github.io/saas-mvp",
+    url: "https://sh20raj.gitlab.io/saas-mvp",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     images: [{ url: "/og.png", width: 1200, height: 630 }],

@@ -196,7 +196,7 @@ export default function StoryPage() {
 
           <div className="mt-7 flex flex-wrap gap-4">
             <Link
-              href="https://github.com/SH20RAJ"
+              href="https://gitlab.com/SH20RAJ"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium hover:text-muted-foreground transition-colors"

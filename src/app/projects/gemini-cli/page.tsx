@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Engineering case study on fixing stream cancellation race conditions and memory leaks in Google's official gemini-cli repository (PR #20778).",
   alternates: {
-    canonical: "https://sh20raj.github.io/projects/gemini-cli",
+    canonical: "https://sh20raj.gitlab.io/projects/gemini-cli",
   },
   openGraph: {
     title: "Google Gemini CLI Case Study — PR #20778 Stream Cancellation Architecture | Shaswat Raj",
     description:
       "Engineering case study on fixing stream cancellation race conditions and memory leaks in Google's official gemini-cli repository (PR #20778).",
-    url: "https://sh20raj.github.io/projects/gemini-cli",
+    url: "https://sh20raj.gitlab.io/projects/gemini-cli",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "article",

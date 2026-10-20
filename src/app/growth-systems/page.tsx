@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: "Programmatic SEO, Growth Architecture & Indexing | Shaswat Raj",
   description:
     "Programmatic SEO pipelines, instant indexing engines, technical marketing infrastructure, and organic growth systems engineered by Shaswat Raj.",
-  alternates: { canonical: "https://sh20raj.github.io/growth-systems" },
+  alternates: { canonical: "https://sh20raj.gitlab.io/growth-systems" },
   openGraph: {
     title: "Programmatic SEO, Growth Architecture & Indexing | Shaswat Raj",
     description:
       "Programmatic SEO pipelines, instant indexing engines, technical marketing infrastructure, and organic growth systems.",
-    url: "https://sh20raj.github.io/growth-systems",
+    url: "https://sh20raj.gitlab.io/growth-systems",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "website",

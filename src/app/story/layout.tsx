@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "The story behind Shaswat Raj's journey from learning to code in Class 7 to building products, contributing to open source, and engineering real-world systems.",
   alternates: {
-    canonical: "https://sh20raj.github.io/story",
+    canonical: "https://sh20raj.gitlab.io/story",
   },
   openGraph: {
     title: "My Story — Shaswat Raj",
     description:
       "From curiosity in Class 7 to open source, products, AI systems, and real-world engineering.",
-    url: "https://sh20raj.github.io/story",
+    url: "https://sh20raj.gitlab.io/story",
     siteName: "Shaswat Raj",
     locale: "en_US",
     type: "profile",
@@ -37,14 +37,14 @@ export default function StoryLayout({
             "@context": "https://schema.org",
             "@type": "ProfilePage",
             name: "My Story — Shaswat Raj",
-            url: "https://sh20raj.github.io/story",
+            url: "https://sh20raj.gitlab.io/story",
             mainEntity: {
               "@type": "Person",
               name: "Shaswat Raj",
-              url: "https://sh20raj.github.io",
+              url: "https://sh20raj.gitlab.io",
               jobTitle: "Software Engineer",
               sameAs: [
-                "https://github.com/SH20RAJ",
+                "https://gitlab.com/SH20RAJ",
                 "https://linkedin.com/in/sh20raj",
               ],
             },

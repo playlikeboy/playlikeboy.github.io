@@ -24,14 +24,14 @@ export interface Education {
 export const DATA = {
   name: "Shaswat Raj",
   initials: "SH",
-  url: "https://sh20raj.github.io",
+  url: "https://sh20raj.gitlab.io",
   location: "India",
   locationLink: "https://www.google.com/maps/place/India",
   description:
     "Software engineer and open-source builder.",
   summary:
     "I'm Shaswat Raj, a software engineer and open-source contributor. I build full products end-to-end: AI agents, dev tools, MCP servers, and large-scale web systems. My strength is taking a rough idea to a working system quickly — backend, frontend, deployment, and iteration.\n\n79 merged pull requests across open-source repositories I don't own (including a merged fix into Google's gemini-cli), and 50+ npm packages. I've shipped systems that handled real load at scale, from 5,000-participant cultural fests to million-request browser tool platforms.",
-  avatarUrl: "https://avatars.githubusercontent.com/u/66713844",
+  avatarUrl: "https://gitlab.com/uploads/-/system/user/avatar/7770239/avatar.png",
   skills: [
     "UI/UX Design",
     "Landing Pages",
@@ -62,7 +62,7 @@ export const DATA = {
     { href: "/", icon: "home", label: "Home" },
     { href: "/projects", icon: "briefcase", label: "Projects" },
     { href: "/story", icon: "notebook", label: "Story" },
-    { href: "https://github.com/SH20RAJ", icon: "github", label: "GitHub" },
+    { href: "https://gitlab.com/SH20RAJ", icon: "gitlab", label: "GitLab" },
     { href: "/resume.pdf", icon: "notebook", label: "Resume" },
   ],
   contact: {
@@ -71,8 +71,8 @@ export const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/SH20RAJ",
-        icon: "github",
+        url: "https://gitlab.com/SH20RAJ",
+        icon: "gitlab",
         navbar: false,
       },
       GitHubDump: {
@@ -196,8 +196,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/campusloop",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/campusloop",
+          icon: "gitlab",
         },
       ],
       image: "https://campusloop.space/og-image.png",
@@ -270,8 +270,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/debo",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/debo",
+          icon: "gitlab",
         },
       ],
       image: "https://ph-files.imgix.net/cfa307d8-4afb-4bc7-934a-7ab7cf316aa7.png",
@@ -293,8 +293,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/sh20raj/sopplayer",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/sopplayer",
+          icon: "gitlab",
         },
         {
           type: "Proof",
@@ -339,8 +339,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/index-fast",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/index-fast",
+          icon: "gitlab",
         },
       ],
       image: "https://indexfast.co/og-image.png",
@@ -362,8 +362,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/algoforge",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/algoforge",
+          icon: "gitlab",
         },
       ],
       image: "/projects/algoforge.png",
@@ -371,7 +371,7 @@ export const DATA = {
     },
     {
       title: "CodeVisualizer",
-      href: "https://github.com/SH20RAJ/codevisualizer",
+      href: "https://gitlab.com/SH20RAJ/codevisualizer",
       dates: "2025",
       active: true,
       description:
@@ -380,8 +380,8 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/codevisualizer",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/codevisualizer",
+          icon: "gitlab",
         },
       ],
       image: "",
@@ -398,8 +398,8 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/solus",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/solus",
+          icon: "gitlab",
         },
       ],
       image: "https://solus.shraj.workers.dev/og-image.png",
@@ -439,8 +439,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/shade-solutions/mcp-pure",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/shade-solutions-mcp-pure",
+          icon: "gitlab",
         },
       ],
       image: "https://mcppure.shraj.workers.dev/og-image.png",
@@ -546,8 +546,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/formguard",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/formguard",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/formguard/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -569,8 +569,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/notesflow",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/notesflow",
+          icon: "gitlab",
         },
       ],
       image: "https://i.ibb.co/twghXwLL/Screenshot-2025-05-22-at-9-33-08-AM.png",
@@ -592,8 +592,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/reflecto",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/reflecto",
+          icon: "gitlab",
         },
       ],
       image: "https://i.ibb.co/1tDkptVS/Screenshot-2025-05-22-at-9-38-58-AM.png",
@@ -601,7 +601,7 @@ export const DATA = {
     },
     {
       title: "Sopplayer",
-      href: "https://sh20raj.github.io/Sopplayer/players/",
+      href: "https://sh20raj.gitlab.io/Sopplayer/players/",
       dates: "2020 - Present",
       active: true,
       description:
@@ -610,13 +610,13 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://sh20raj.github.io/Sopplayer/players/",
+          href: "https://sh20raj.gitlab.io/Sopplayer/players/",
           icon: "globe",
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/Sopplayer",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/Sopplayer",
+          icon: "gitlab",
         },
       ],
       image: "https://1.bp.blogspot.com/-MXdsGGbh59A/X-cM2B2eQ6I/AAAAAAAAAZU/KLEP-6BI85gMXR-7NjBWIdxnCKyIaNzbACLcBGAsYHQ/w640-h361/sopplayer.JPG",
@@ -624,7 +624,7 @@ export const DATA = {
     },
     {
       title: "AudiPlay",
-      href: "https://sh20raj.github.io/AudiPlay/",
+      href: "https://sh20raj.gitlab.io/AudiPlay/",
       dates: "2020 – Present",
       active: true,
       description:
@@ -633,13 +633,13 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://sh20raj.github.io/AudiPlay/",
+          href: "https://sh20raj.gitlab.io/AudiPlay/",
           icon: "globe",
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/AudiPlay",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/AudiPlay",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/AudiPlay/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -661,8 +661,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/sketchflow",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/sketchflow",
+          icon: "gitlab",
         },
       ],
       image: "https://i.ibb.co/k2qr4gtF/Screenshot-2025-05-22-at-9-40-30-AM.png",
@@ -684,8 +684,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/SocialScribe",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/SocialScribe",
+          icon: "gitlab",
         },
       ],
       image: "https://i.ibb.co/8ng5N1Yz/Screenshot-2025-05-22-at-9-47-10-AM.png",
@@ -707,8 +707,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/aayechup",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/aayechup",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/aayechup/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -730,8 +730,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/scaleboard",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/scaleboard",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/scaleboard/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -753,8 +753,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/peerdrop",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/peerdrop",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/peerdrop/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -776,8 +776,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/CodeSeek",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/CodeSeek",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/CodeSeek/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -799,8 +799,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/markmind-editor",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/markmind-editor",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/markmind-editor/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -822,8 +822,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/waitlist.js",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/waitlist.js",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/waitlist.js/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -831,7 +831,7 @@ export const DATA = {
     },
     {
       title: "TubeSonic",
-      href: "https://github.com/SH20RAJ/TubeSonic/releases",
+      href: "https://gitlab.com/SH20RAJ/TubeSonic/releases",
       dates: "2024",
       active: true,
       description:
@@ -840,13 +840,13 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://github.com/SH20RAJ/TubeSonic/releases",
+          href: "https://gitlab.com/SH20RAJ/TubeSonic/releases",
           icon: "globe",
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/TubeSonic",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/TubeSonic",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/TubeSonic/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -868,8 +868,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/OpenDictionaryAPI",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/OpenDictionaryAPI",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/OpenDictionaryAPI/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -891,8 +891,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/SafeStore",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/SafeStore",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/SafeStore/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -914,8 +914,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/create-tanstack-app",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/create-tanstack-app",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/create-tanstack-app/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -923,7 +923,7 @@ export const DATA = {
     },
     {
       title: "YouTube Remote Uploader",
-      href: "https://github.com/SH20RAJ/youtube-remote-uploader/releases",
+      href: "https://gitlab.com/SH20RAJ/youtube-remote-uploader/releases",
       dates: "2024",
       active: true,
       description:
@@ -932,13 +932,13 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://github.com/SH20RAJ/youtube-remote-uploader/releases",
+          href: "https://gitlab.com/SH20RAJ/youtube-remote-uploader/releases",
           icon: "globe",
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/youtube-remote-uploader",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/youtube-remote-uploader",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/youtube-remote-uploader/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -960,8 +960,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/sequence-game",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/sequence-game",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/sequence-game/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -983,8 +983,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/image-bg-remover",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/image-bg-remover",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/image-bg-remover/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",
@@ -1006,8 +1006,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/SH20RAJ/sanskrit",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/sanskrit",
+          icon: "gitlab",
         },
       ],
       image: "https://socialify.git.ci/SH20RAJ/sanskrit/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Solid&theme=Auto",

@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "Projects",
   description: "A curated list of my most impactful projects and open-source contributions.",
   alternates: {
-    canonical: "https://sh20raj.github.io/projects",
+    canonical: "https://sh20raj.gitlab.io/projects",
   },
   openGraph: {
     title: "Projects | Shaswat Raj",
     description: "A curated list of my most impactful projects and open-source contributions.",
-    url: "https://sh20raj.github.io/projects",
+    url: "https://sh20raj.gitlab.io/projects",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "website",

@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Founder notes on shipped products, user traction (4.3M+ requests on 30tools), and why I'm building CampusLoop.",
   alternates: {
-    canonical: "https://sh20raj.github.io/building",
+    canonical: "https://sh20raj.gitlab.io/building",
   },
   openGraph: {
     title: "Building & Traction | Shaswat Raj",
     description:
       "Founder notes on shipped products, user traction (4.3M+ requests on 30tools), and why I'm building CampusLoop.",
-    url: "https://sh20raj.github.io/building",
+    url: "https://sh20raj.gitlab.io/building",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "website",

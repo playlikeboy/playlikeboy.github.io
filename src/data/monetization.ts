@@ -23,7 +23,7 @@ export const monetization = {
   // Optional: links shown in the "Working with me" social-proof strip.
   socialProof: {
     linkedinRecommendations: "https://www.linkedin.com/in/sh20raj/details/recommendations/",
-    github: "https://github.com/SH20RAJ",
+    github: "https://gitlab.com/SH20RAJ",
     peerlist: "https://peerlist.io/sh20raj",
     productHunt: "https://www.producthunt.com/@sh20raj",
   },

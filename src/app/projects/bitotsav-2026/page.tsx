@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Engineering case study on Bitotsav '26: architecting high-concurrency event infrastructure, offline-tolerant cryptographic QR verification, and Redis caching for 5,000+ live participants.",
   alternates: {
-    canonical: "https://sh20raj.github.io/projects/bitotsav-2026",
+    canonical: "https://sh20raj.gitlab.io/projects/bitotsav-2026",
   },
   openGraph: {
     title: "Bitotsav '26 Case Study — High-Concurrency Festival Infrastructure | Shaswat Raj",
     description:
       "Engineering case study on Bitotsav '26: architecting high-concurrency event infrastructure, offline-tolerant cryptographic QR verification, and Redis caching for 5,000+ live participants.",
-    url: "https://sh20raj.github.io/projects/bitotsav-2026",
+    url: "https://sh20raj.gitlab.io/projects/bitotsav-2026",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "article",

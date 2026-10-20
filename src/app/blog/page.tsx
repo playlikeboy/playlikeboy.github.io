@@ -5,12 +5,12 @@ export const metadata = {
   title: "Blog — Shaswat Raj",
   description: "Thoughts on software engineering, open source, AI, and building products.",
   alternates: {
-    canonical: "https://sh20raj.github.io/blog",
+    canonical: "https://sh20raj.gitlab.io/blog",
   },
   openGraph: {
     title: "Blog — Shaswat Raj",
     description: "Thoughts on software engineering, open source, AI, and building products.",
-    url: "https://sh20raj.github.io/blog",
+    url: "https://sh20raj.gitlab.io/blog",
     siteName: "Shaswat Raj",
     locale: "en_US",
     type: "website",

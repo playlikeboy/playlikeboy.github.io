@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     "High-conversion Next.js & Tailwind CSS landing pages, interactive web interfaces, and motion design engineered by Shaswat Raj.",
   alternates: {
-    canonical: "https://sh20raj.github.io/landing-pages",
+    canonical: "https://sh20raj.gitlab.io/landing-pages",
   },
   openGraph: {
     title: "Landing Pages & Interactive Web Systems | Shaswat Raj",
     description:
       "High-conversion Next.js & Tailwind CSS landing pages, interactive web interfaces, and motion design.",
-    url: "https://sh20raj.github.io/landing-pages",
+    url: "https://sh20raj.gitlab.io/landing-pages",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "website",

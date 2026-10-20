@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   description:
     "Engineering production AI tools, Model Context Protocol (MCP) servers, agentic pipelines, and RAG architectures. Gemini API, Claude API, OpenAI.",
   alternates: {
-    canonical: "https://sh20raj.github.io/ai-automation",
+    canonical: "https://sh20raj.gitlab.io/ai-automation",
   },
   openGraph: {
     type: "website",
     title: "AI Tools & Autonomous Agent Development | Shaswat Raj",
     description:
       "Engineering production AI tools, Model Context Protocol (MCP) servers, agentic pipelines, and RAG architectures.",
-    url: "https://sh20raj.github.io/ai-automation",
+    url: "https://sh20raj.gitlab.io/ai-automation",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     images: [{ url: "/og.png", width: 1200, height: 630 }],

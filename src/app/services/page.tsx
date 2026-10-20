@@ -31,12 +31,12 @@ export const metadata = {
   title: "Services — Sprint Pricing for Next.js & AI Product Work",
   description:
     "Landing page sprints from $199, SaaS frontend sprints from $500, AI tool prototypes from $300, and ongoing agency overflow support — for founders, agencies, and YC-track startups.",
-  alternates: { canonical: "https://sh20raj.github.io/services" },
+  alternates: { canonical: "https://sh20raj.gitlab.io/services" },
   openGraph: {
     title: "Services — Shaswat Raj | Next.js & AI Sprint Packages",
     description:
       "Hire Shaswat Raj for Next.js landing pages, SaaS dashboards, AI tools, and agency overflow work. Fixed-scope sprints with clear timelines.",
-    url: "https://sh20raj.github.io/services",
+    url: "https://sh20raj.gitlab.io/services",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "website",

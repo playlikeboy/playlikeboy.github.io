@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Engineering case study on SopKit (formerly 30tools): 605+ client-side WebAssembly tools, programmatic SEO architecture, sub-millisecond execution, and migration to a sustainable open-source domain.",
   alternates: {
-    canonical: "https://sh20raj.github.io/projects/sopkit",
+    canonical: "https://sh20raj.gitlab.io/projects/sopkit",
   },
   openGraph: {
     title: "SopKit (formerly 30tools) Case Study — Scaling 605+ Tools to 4.3M+ Requests | Shaswat Raj",
     description:
       "Engineering case study on SopKit (formerly 30tools): 605+ client-side WebAssembly tools, programmatic SEO architecture, and scaling to 4.3M+ requests.",
-    url: "https://sh20raj.github.io/projects/sopkit",
+    url: "https://sh20raj.gitlab.io/projects/sopkit",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "article",

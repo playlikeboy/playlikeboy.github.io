@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Engineering case study on SopPlayer: zero-dependency customizable HTML5 video player library scaled to 1.18M+ requests and 38GB+ CDN bandwidth via jsDelivr.",
   alternates: {
-    canonical: "https://sh20raj.github.io/projects/sopplayer",
+    canonical: "https://sh20raj.gitlab.io/projects/sopplayer",
   },
   openGraph: {
     title: "SopPlayer Case Study — Lightweight Open-Source HTML5 Video Player | Shaswat Raj",
     description:
       "Engineering case study on SopPlayer: zero-dependency customizable HTML5 video player library scaled to 1.18M+ requests and 38GB+ CDN bandwidth via jsDelivr.",
-    url: "https://sh20raj.github.io/projects/sopplayer",
+    url: "https://sh20raj.gitlab.io/projects/sopplayer",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "article",
@@ -58,7 +58,7 @@ export default function SopPlayerCaseStudy() {
 
           <div className="flex flex-wrap items-center gap-3 pt-5">
             <a
-              href="https://github.com/sh20raj/sopplayer"
+              href="https://gitlab.com/SH20RAJ/sopplayer"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-medium bg-foreground text-background px-3 py-1.5 rounded-md hover:bg-foreground/90 transition-colors"

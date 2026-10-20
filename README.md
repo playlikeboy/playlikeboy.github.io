@@ -1,10 +1,12 @@
 # Shaswat Raj — Portfolio
 
+> **Migrated from GitHub to GitLab (October 2026):** Due to some unknown problems with my GitHub account, I have migrated all of my projects from GitHub to GitLab. Everything now lives at **[gitlab.com/SH20RAJ](https://gitlab.com/SH20RAJ)** and this portfolio is served from GitLab Pages.
+
 🍅 **I'm Coming babygirl** 🍅
 
 Full-stack developer & AI product builder from India. I turn rough ideas into launch-ready products.
 
-**[sh20raj.github.io](https://sh20raj.github.io)**
+**[sh20raj.gitlab.io](https://sh20raj.gitlab.io)**
 
 ---
 
@@ -31,7 +33,7 @@ Full-stack developer & AI product builder from India. I turn rough ideas into la
 
 500+ projects built. 50+ npm packages. 45k+ Dev.to followers.
 
-**Live:** [sh20raj.github.io/projects](https://sh20raj.github.io/projects)
+**Live:** [sh20raj.gitlab.io/projects](https://sh20raj.gitlab.io/projects)
 
 ## Services
 
@@ -44,7 +46,7 @@ Full-stack developer & AI product builder from India. I turn rough ideas into la
 | Mentorship | Per session |
 | Founding Engineer | Flexible |
 
-**Details:** [sh20raj.github.io/services](https://sh20raj.github.io/services)
+**Details:** [sh20raj.gitlab.io/services](https://sh20raj.gitlab.io/services)
 
 ## Marketplace
 
@@ -55,7 +57,7 @@ International? Pay via **PayPal** (shaswatraj3@gmail.com) or **[Razorpay](https:
 ## Contact
 
 - **Email:** [sh20raj@gmail.com](mailto:sh20raj@gmail.com)
-- **GitHub:** [github.com/SH20RAJ](https://github.com/SH20RAJ)
+- **GitHub:** [gitlab.com/SH20RAJ](https://gitlab.com/SH20RAJ)
 - **LinkedIn:** [linkedin.com/in/sh20raj](https://linkedin.com/in/sh20raj)
 - **Dev.to:** [dev.to/sh20raj](https://dev.to/sh20raj)
 - **Twitter:** [@SH20RAJ](https://twitter.com/SH20RAJ)
@@ -63,7 +65,7 @@ International? Pay via **PayPal** (shaswatraj3@gmail.com) or **[Razorpay](https:
 ## Local Development
 
 ```bash
-git clone https://github.com/SH20RAJ/sh20raj.git
+git clone https://gitlab.com/SH20RAJ/sh20raj.git
 cd sh20raj
 npm install
 npm run dev

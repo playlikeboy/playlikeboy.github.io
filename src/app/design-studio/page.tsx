@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   description:
     "High-impact visual brand assets, UI design systems, product presentations, and digital marketing graphics engineered by Shaswat Raj.",
   alternates: {
-    canonical: "https://sh20raj.github.io/design-studio",
+    canonical: "https://sh20raj.gitlab.io/design-studio",
   },
   openGraph: {
     title: "Brand Systems & Visual Design Architecture | Shaswat Raj",
     description:
       "High-impact visual brand assets, UI design systems, product presentations, and digital marketing graphics.",
-    url: "https://sh20raj.github.io/design-studio",
+    url: "https://sh20raj.gitlab.io/design-studio",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "website",

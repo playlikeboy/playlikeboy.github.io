@@ -113,8 +113,8 @@ export default function RootLayout({
       "@type": "Person",
       name: "Shaswat Raj",
       alternateName: "SH20RAJ",
-      url: "https://sh20raj.github.io/",
-      image: "https://avatars.githubusercontent.com/u/66713844",
+      url: "https://sh20raj.gitlab.io/",
+      image: "https://gitlab.com/uploads/-/system/user/avatar/7770239/avatar.png",
       jobTitle: "Software Engineer & Open-Source Builder",
       description:
         "Software engineer. 79 external PRs merged into open-source repositories — including a fix in Google's gemini-cli. Builds full products: AI agents, dev tools, and web systems.",
@@ -138,7 +138,7 @@ export default function RootLayout({
         "DSA",
       ],
       sameAs: [
-        "https://github.com/SH20RAJ",
+        "https://gitlab.com/SH20RAJ",
         "https://linkedin.com/in/sh20raj",
         "https://x.com/SH20RAJ",
         "https://www.youtube.com/@StackShade",
@@ -155,7 +155,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Shaswat Raj",
-    url: "https://sh20raj.github.io/",
+    url: "https://sh20raj.gitlab.io/",
     author: {
       "@type": "Person",
       name: "Shaswat Raj",
@@ -189,6 +189,10 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light">
           <ResumeProvider>
             <TooltipProvider delayDuration={0}>
+              <div className="bg-amber-400 text-black text-center text-sm font-semibold px-4 py-2">
+                I&apos;ve migrated from GitHub to GitLab — due to some unknown problems with my GitHub account, all my projects now live at{" "}
+                <a href="https://gitlab.com/SH20RAJ" target="_blank" rel="noreferrer" className="underline underline-offset-2">gitlab.com/SH20RAJ</a>
+              </div>
               <Navbar />
               <main className="pt-12">
                 {children}
