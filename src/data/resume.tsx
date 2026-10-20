@@ -306,6 +306,24 @@ export const DATA = {
       video: "",
     },
     {
+      title: "Baby",
+      href: "https://baby.shraj.workers.dev/about",
+      dates: "2026",
+      active: true,
+      description:
+        "A personal project and web experience hosted on Cloudflare Workers. Explore the about page to learn more about the project.",
+      technologies: ["Web", "Cloudflare Workers"],
+      links: [
+        {
+          type: "Website",
+          href: "https://baby.shraj.workers.dev/about",
+          icon: "globe",
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
       title: "IndexFast",
       href: "https://indexfast.co",
       dates: "2025",
