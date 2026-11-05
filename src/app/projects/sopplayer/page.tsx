@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Engineering case study on SopPlayer: zero-dependency customizable HTML5 video player library scaled to 1.18M+ requests and 38GB+ CDN bandwidth via jsDelivr.",
   alternates: {
-    canonical: "https://sh20raj.gitlab.io/projects/sopplayer",
+    canonical: "https://playlikeboy.github.io/projects/sopplayer",
   },
   openGraph: {
     title: "SopPlayer Case Study — Lightweight Open-Source HTML5 Video Player | Shaswat Raj",
     description:
       "Engineering case study on SopPlayer: zero-dependency customizable HTML5 video player library scaled to 1.18M+ requests and 38GB+ CDN bandwidth via jsDelivr.",
-    url: "https://sh20raj.gitlab.io/projects/sopplayer",
+    url: "https://playlikeboy.github.io/projects/sopplayer",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "article",
@@ -124,7 +124,7 @@ export default function SopPlayerCaseStudy() {
 
             <pre className="p-3.5 rounded-lg bg-card border border-border font-mono text-xs text-muted-foreground overflow-x-auto leading-normal">
 {`<!-- Single-line CDN inclusion -->
-<script src="https://cdn.jsdelivr.net/gh/sh20raj/sopplayer/dist/sopplayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/playlikeboy/Sopplayer/dist/sopplayer.min.js"></script>
 
 <!-- Declarative HTML5 Video Mount -->
 <video class="sopplayer" controls data-setup='{"playbackRates": [0.5, 1, 1.5, 2]}'>

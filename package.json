@@ -1,5 +1,5 @@
 {
-  "name": "porfolio",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -50,5 +50,10 @@
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/playlikeboy/playlikeboy.github.io.git"
+  },
+  "homepage": "https://playlikeboy.github.io/"
 }

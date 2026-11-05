@@ -143,11 +143,11 @@ export function CommandPalette() {
     {
       id: "gitlab",
       title: "GitLab Profile",
-      subtitle: "gitlab.com/SH20RAJ",
+      subtitle: "github.com/playlikeboy",
       category: "Projects & Work",
       icon: ExternalLink,
       action: () => {
-        window.open("https://gitlab.com/SH20RAJ", "_blank");
+        window.open("https://github.com/playlikeboy", "_blank");
         closePalette();
       },
     },
@@ -292,7 +292,7 @@ export function CommandPalette() {
 
         <div className="px-4 py-2 border-t border-border bg-accent/30 flex items-center justify-between text-[10px] text-muted-foreground">
           <span>Navigate with ↑ ↓ and Enter</span>
-          <span>sh20raj.gitlab.io</span>
+          <span>playlikeboy.github.io</span>
         </div>
       </div>
     </div>

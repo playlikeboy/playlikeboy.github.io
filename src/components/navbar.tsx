@@ -27,7 +27,7 @@ export default function Navbar() {
         <nav className="mx-auto max-w-2xl flex items-center justify-between h-12 px-6">
           <div className="flex items-center gap-4">
             <Link href="/" className="text-sm font-bold text-foreground hover:opacity-80 transition-opacity">
-              sh20raj
+              playlikeboy
             </Link>
 
             {/* Desktop links */}

@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Engineering case study on Debo: multimodal context ingestion, vector embedding pipelines, hybrid search retrieval (BM25 + Cosine), and agentic memory architecture.",
   alternates: {
-    canonical: "https://sh20raj.gitlab.io/projects/debo",
+    canonical: "https://playlikeboy.github.io/projects/debo",
   },
   openGraph: {
     title: "Debo Case Study — Autonomous Personal AI Memory & RAG Pipeline | Shaswat Raj",
     description:
       "Engineering case study on Debo: multimodal context ingestion, vector embedding pipelines, hybrid search retrieval (BM25 + Cosine), and agentic memory architecture.",
-    url: "https://sh20raj.gitlab.io/projects/debo",
+    url: "https://playlikeboy.github.io/projects/debo",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "article",
@@ -66,7 +66,7 @@ export default function DeboCaseStudy() {
               <Globe className="size-3.5" /> Visit Debo.life
             </a>
             <a
-              href="https://gitlab.com/SH20RAJ/debo"
+              href="https://github.com/playlikeboy/debo"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-medium border border-border px-3 py-1.5 rounded-md hover:bg-accent transition-colors text-muted-foreground hover:text-foreground"

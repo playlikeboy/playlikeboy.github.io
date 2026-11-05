@@ -79,7 +79,7 @@ export function HomeClient({ DATA }: { DATA: any }) {
                   View work <ArrowRightIcon className="size-3.5" />
                 </Link>
                 <Link
-                  href="https://gitlab.com/SH20RAJ"
+                  href="https://github.com/playlikeboy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"

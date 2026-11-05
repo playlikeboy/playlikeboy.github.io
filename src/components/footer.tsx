@@ -10,7 +10,7 @@ export default function Footer() {
           <Link href="/building" className="hover:text-foreground transition-colors">
             Building
           </Link>
-          <Link href="https://gitlab.com/SH20RAJ" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+          <Link href="https://github.com/playlikeboy" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
             GitHub
           </Link>
           <Link href="https://linkedin.com/in/sh20raj" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">

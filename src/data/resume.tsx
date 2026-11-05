@@ -24,7 +24,7 @@ export interface Education {
 export const DATA = {
   name: "Shaswat Raj",
   initials: "SH",
-  url: "https://sh20raj.gitlab.io",
+  url: "https://playlikeboy.github.io",
   location: "India",
   locationLink: "https://www.google.com/maps/place/India",
   description:
@@ -62,7 +62,8 @@ export const DATA = {
     { href: "/", icon: "home", label: "Home" },
     { href: "/projects", icon: "briefcase", label: "Projects" },
     { href: "/story", icon: "notebook", label: "Story" },
-    { href: "https://gitlab.com/SH20RAJ", icon: "gitlab", label: "GitLab" },
+    { href: "https://github.com/playlikeboy", icon: "github", label: "GitHub" },
+    { href: "https://gitlab.com/SH20RAJ", icon: "gitlab", label: "GitLab mirror" },
     { href: "/resume.pdf", icon: "notebook", label: "Resume" },
   ],
   contact: {
@@ -71,8 +72,8 @@ export const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://gitlab.com/SH20RAJ",
-        icon: "gitlab",
+        url: "https://github.com/playlikeboy",
+        icon: "github",
         navbar: false,
       },
       GitHubDump: {
@@ -173,8 +174,8 @@ export const DATA = {
         },
         {
           type: "GitLab",
-          href: "https://gitlab.com/SH20RAJ/30tools",
-          icon: "gitlab",
+          href: "https://github.com/playlikeboy/30tools",
+          icon: "github",
         },
       ],
       image: "https://sopkit.github.io/og-image.jpg",
@@ -201,8 +202,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://gitlab.com/SH20RAJ/campusloop",
-          icon: "gitlab",
+          href: "https://github.com/playlikeboy/campusloop",
+          icon: "github",
         },
       ],
       image: "https://campusloop.space/og-image.png",
@@ -210,7 +211,7 @@ export const DATA = {
     },
     {
       title: "NetScopeX",
-      href: "https://gitlab.com/SH20RAJ/netscopex",
+      href: "https://github.com/playlikeboy/netscopex",
       dates: "2026 – Present",
       active: true,
       description:
@@ -219,8 +220,8 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "https://gitlab.com/SH20RAJ/netscopex",
-          icon: "gitlab",
+          href: "https://github.com/playlikeboy/netscopex",
+          icon: "github",
         },
       ],
       image: "",
@@ -242,8 +243,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://gitlab.com/SH20RAJ/omniaudit",
-          icon: "gitlab",
+          href: "https://github.com/playlikeboy/omniaudit",
+          icon: "github",
         },
       ],
       image: "",
@@ -251,7 +252,7 @@ export const DATA = {
     },
     {
       title: "RUXs",
-      href: "https://gitlab.com/SH20RAJ/ruxs",
+      href: "https://github.com/playlikeboy/ruxs",
       dates: "2026 – Present",
       active: true,
       description:
@@ -260,8 +261,8 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "https://gitlab.com/SH20RAJ/ruxs",
-          icon: "gitlab",
+          href: "https://github.com/playlikeboy/ruxs",
+          icon: "github",
         },
       ],
       image: "",
@@ -334,8 +335,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://gitlab.com/SH20RAJ/debo",
-          icon: "gitlab",
+          href: "https://github.com/playlikeboy/debo",
+          icon: "github",
         },
       ],
       image: "https://ph-files.imgix.net/cfa307d8-4afb-4bc7-934a-7ab7cf316aa7.png",
@@ -357,8 +358,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://gitlab.com/SH20RAJ/sopplayer",
-          icon: "gitlab",
+          href: "https://github.com/playlikeboy/Sopplayer",
+          icon: "github",
         },
         {
           type: "Proof",
@@ -403,8 +404,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://gitlab.com/SH20RAJ/index-fast",
-          icon: "gitlab",
+          href: "https://github.com/playlikeboy/index-fast",
+          icon: "github",
         },
       ],
       image: "https://indexfast.co/og-image.png",
@@ -426,8 +427,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://gitlab.com/SH20RAJ/algoforge",
-          icon: "gitlab",
+          href: "https://github.com/playlikeboy/algoforge",
+          icon: "github",
         },
       ],
       image: "/projects/algoforge.png",
@@ -679,8 +680,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://gitlab.com/SH20RAJ/Sopplayer",
-          icon: "gitlab",
+          href: "https://github.com/playlikeboy/Sopplayer",
+          icon: "github",
         },
       ],
       image: "https://1.bp.blogspot.com/-MXdsGGbh59A/X-cM2B2eQ6I/AAAAAAAAAZU/KLEP-6BI85gMXR-7NjBWIdxnCKyIaNzbACLcBGAsYHQ/w640-h361/sopplayer.JPG",
@@ -725,8 +726,8 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://gitlab.com/SH20RAJ/sketchflow",
-          icon: "gitlab",
+          href: "https://github.com/playlikeboy/sketchflow",
+          icon: "github",
         },
       ],
       image: "https://i.ibb.co/k2qr4gtF/Screenshot-2025-05-22-at-9-40-30-AM.png",

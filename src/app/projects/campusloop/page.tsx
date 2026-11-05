@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Engineering case study on CampusLoop: institutional domain verification, multi-tenant PostgreSQL schema, cryptographically decoupled anonymity, and real-time WebSocket infrastructure for 1,350+ Indian colleges.",
   alternates: {
-    canonical: "https://sh20raj.gitlab.io/projects/campusloop",
+    canonical: "https://playlikeboy.github.io/projects/campusloop",
   },
   openGraph: {
     title: "CampusLoop Case Study — Architecture of a Verified Student Social Network | Shaswat Raj",
     description:
       "Engineering case study on CampusLoop: institutional domain verification, multi-tenant PostgreSQL schema, cryptographically decoupled anonymity, and real-time WebSocket infrastructure for 1,350+ Indian colleges.",
-    url: "https://sh20raj.gitlab.io/projects/campusloop",
+    url: "https://playlikeboy.github.io/projects/campusloop",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "article",
@@ -66,7 +66,7 @@ export default function CampusLoopCaseStudy() {
               <Globe className="size-3.5" /> Visit CampusLoop.space
             </a>
             <a
-              href="https://gitlab.com/SH20RAJ/campusloop"
+              href="https://github.com/playlikeboy/campusloop"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-medium border border-border px-3 py-1.5 rounded-md hover:bg-accent transition-colors text-muted-foreground hover:text-foreground"

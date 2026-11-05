@@ -8,10 +8,10 @@ Coding since class 7, I am a passionate developer with 45k+ followers on Dev Com
 
 ## Key Pages
 
-- Portfolio: https://sh20raj.gitlab.io
-- Blog: https://sh20raj.gitlab.io/blog
-- Projects: https://sh20raj.gitlab.io/projects
-- Startups: https://sh20raj.gitlab.io/startups
+- Portfolio: https://playlikeboy.github.io
+- Blog: https://playlikeboy.github.io/blog
+- Projects: https://playlikeboy.github.io/projects
+- Startups: https://playlikeboy.github.io/startups
 
 ## Skills
 
@@ -19,7 +19,7 @@ JavaScript, TypeScript, React, Next.js, Node.js, Python, Docker, Kubernetes, AWS
 
 ## Contact
 
-- GitHub: https://gitlab.com/SH20RAJ
+- GitHub: https://github.com/playlikeboy
 - LinkedIn: https://linkedin.com/in/sh20raj
 - Twitter: https://x.com/SH20RAJ
 - Dev.to: https://dev.to/sh20raj
@@ -27,4 +27,4 @@ JavaScript, TypeScript, React, Next.js, Node.js, Python, Docker, Kubernetes, AWS
 
 ## Attribution
 
-Content from this site may be cited with attribution to Shaswat Raj and a link to https://sh20raj.gitlab.io.
+Content from this site may be cited with attribution to Shaswat Raj and a link to https://playlikeboy.github.io.

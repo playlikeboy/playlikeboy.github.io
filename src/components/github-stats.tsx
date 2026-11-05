@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Github, GitPullRequest, ExternalLink } from "lucide-react";
 
-const GH_USER = "sh20raj";
+const GH_USER = "playlikeboy";
 const CACHE_KEY = "gh-stats-v2";
 const CACHE_TTL_MS = 1000 * 60 * 60 * 12;
-const OWN_REPO_OWNERS = new Set(["sh20raj", "sh20raj-dump"]);
+const OWN_REPO_OWNERS = new Set(["playlikeboy", "sh20raj-dump"]);
 
 interface ExternalContribution {
   repo: string;

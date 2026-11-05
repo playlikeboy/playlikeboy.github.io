@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     type: "profile",
     firstName: "Shaswat",
     lastName: "Raj",
-    username: "SH20RAJ",
+    username: "playlikeboy",
     images: [
       {
         url: "/og.png",
@@ -113,7 +113,7 @@ export default function RootLayout({
       "@type": "Person",
       name: "Shaswat Raj",
       alternateName: "SH20RAJ",
-      url: "https://sh20raj.gitlab.io/",
+      url: "https://playlikeboy.github.io/",
       image: "https://gitlab.com/uploads/-/system/user/avatar/7770239/avatar.png",
       jobTitle: "Software Engineer & Open-Source Builder",
       description:
@@ -138,6 +138,7 @@ export default function RootLayout({
         "DSA",
       ],
       sameAs: [
+        "https://github.com/playlikeboy",
         "https://gitlab.com/SH20RAJ",
         "https://linkedin.com/in/sh20raj",
         "https://x.com/SH20RAJ",
@@ -155,7 +156,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Shaswat Raj",
-    url: "https://sh20raj.gitlab.io/",
+    url: "https://playlikeboy.github.io/",
     author: {
       "@type": "Person",
       name: "Shaswat Raj",
@@ -190,7 +191,7 @@ export default function RootLayout({
           <ResumeProvider>
             <TooltipProvider delayDuration={0}>
               <div className="bg-amber-400 text-black text-center text-sm font-semibold px-4 py-2">
-                I&apos;ve migrated from GitHub to GitLab — due to some unknown problems with my GitHub account, all my projects now live at{" "}
+                GitHub is the source of truth for this portfolio; the GitLab mirror remains available for older projects. Visit{" "}
                 <a href="https://gitlab.com/SH20RAJ" target="_blank" rel="noreferrer" className="underline underline-offset-2">gitlab.com/SH20RAJ</a>
               </div>
               <Navbar />
