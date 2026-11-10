@@ -1,11 +1,11 @@
 # SHASWAT RAJ
 **Software Engineer | Systems Builder | Open-Source Contributor**  
-[sh20raj@gmail.com](mailto:sh20raj@gmail.com) • [gitlab.com/SH20RAJ](https://gitlab.com/SH20RAJ) • [sh20raj.gitlab.io](https://sh20raj.gitlab.io) • [linkedin.com/in/sh20raj](https://linkedin.com/in/sh20raj) • India
+[sh20raj@gmail.com](mailto:sh20raj@gmail.com) • [github.com/playlikeboy](https://github.com/playlikeboy) • [playlikeboy.github.io](https://playlikeboy.github.io) • [linkedin.com/in/sh20raj](https://linkedin.com/in/sh20raj) • India
 
 ---
 
 ### PROFESSIONAL SUMMARY
-Software Engineer & CS student at BIT Mesra with **500+ public repositories** and **300+ merged pull requests** across global open-source — including core contributions to **Google's gemini-cli**. Experienced in high-concurrency systems, distributed cloud architecture, Model Context Protocol (MCP) servers, edge caching, and scalable AI agent pipelines. Shipped production systems serving 5,000+ live event participants and platforms handling 4.3M+ requests.
+Software engineer and CS student at BIT Mesra (graduating 2028) with **merged pull requests in Google's gemini-cli, Preact and Editor.js**. I build and operate web systems, developer tooling, MCP servers and AI products end to end. Shipped a festival platform for ~5,000 participants and a browser-tool platform that served 4.3M+ requests in 30 days. Open to SDE, forward-deployed and DevOps/platform internships and new-grad roles.
 
 ---
 
@@ -26,11 +26,10 @@ Expected Graduation: 2028
 
 ### KEY ENGINEERING & OPEN-SOURCE PROJECTS
 
-#### **Google Gemini CLI — Core Contributor**
+#### **Google Gemini CLI — Upstream Contributor**
 *TypeScript · Node.js · Gemini API · Open Source* ([PR #20778](https://github.com/google-gemini/gemini-cli/pull/20778))
 * Contributed directly to Google's official `google-gemini/gemini-cli` repository.
-* Threaded `AbortSignal` propagation through multi-turn chat compression pipelines, eliminating memory leaks and stream cancellation race conditions.
-* Hardened async error boundaries for reliable terminal CLI execution.
+* Threaded `AbortSignal` propagation through multi-turn chat compression pipelines, so cancelling a turn also cancels the in-flight compression request.
 
 #### **CampusLoop — Verified College Social Network**
 *Next.js · TypeScript · PostgreSQL · Cloudflare Workers · WebSockets · PWA* ([campusloop.space](https://campusloop.space/))
@@ -41,12 +40,11 @@ Expected Graduation: 2028
 *Next.js · PostgreSQL · Redis · OpenAI · Cloudflare*
 * Architected end-to-end cloud and security infrastructure powering ~5,000 live participants under heavy network variance.
 * Engineered offline-tolerant cryptographic QR access verification, low-latency Redis caching layers, real-time leaderboard telemetry, and AI participant support bots.
-* Maintained 99.99% uptime with sub-50ms query response times during peak festival check-in surges.
 
 #### **SopKit (formerly 30tools) — Privacy-First WebAssembly Tool Suite**
 *Next.js · TypeScript · WebAssembly · Web APIs · Programmatic SEO* ([sopkit.github.io](https://sopkit.github.io))
 * Built 605+ zero-upload, client-side developer, image, and PDF utilities running in WebAssembly and browser V8 sandboxes.
-* Scaled to **4.3M+ requests**, **213K+ monthly active users**, and **500K+ search impressions** with $0 server compute bills.
+* Reached **4.3M+ requests**, **213K+ visits**, and **500K+ search impressions** in 30 days with $0 server compute bills.
 * Migrated to `sopkit.github.io` for permanent, sustainable open-source hosting.
 
 #### **SopPlayer — Open-Source HTML5 Video Player Library**
@@ -72,6 +70,6 @@ Expected Graduation: 2028
 ---
 
 ### OPEN SOURCE & ACHIEVEMENTS
-* **GitHub Track Record:** 15,000+ contributions, 500+ repositories, and 300+ merged pull requests across global open-source ecosystems.
-* **Package Ecosystem:** 50+ npm packages published with 1M+ combined downloads.
-* **Fellowships & Competitions:** 10+ Hackathon podium finishes; Shortlisted for AICTE APF 2025 Top 500 National Fellowship.
+* **Open source:** merged pull requests in gemini-cli, Preact and Editor.js; 13 more in review, including Jaeger, Kmesh, Lexical and Radix UI.
+* **Packages:** 50+ npm packages published.
+* **Fellowships & competitions:** AICTE Productization Fellowship 2025, national Top 500; Apify hackathon prize winner.

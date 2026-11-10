@@ -133,7 +133,7 @@ export function ProjectsClient({ projects }: { projects: any[] }) {
           <div className="mt-10 pt-6 border-t border-border text-center">
             <p className="text-sm text-muted-foreground">
               {filtered.length} project{filtered.length === 1 ? "" : "s"} shown.{" "}
-              <Link href="https://gitlab.com/SH20RAJ" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:text-muted-foreground">
+              <Link href="https://github.com/playlikeboy" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:text-muted-foreground">
                 View GitHub
               </Link>
             </p>

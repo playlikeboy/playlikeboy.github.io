@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: `%s | ${DATA.name}`,
   },
   description:
-    "Software engineer. 79 external PRs merged into open-source repositories — including a fix in Google's gemini-cli. Builds full products: AI agents, dev tools, and web systems.",
+    "Software engineer and CS undergrad at BIT Mesra. Merged pull requests in Google's gemini-cli, Preact and Editor.js. Builds and runs full products: web systems, developer tooling, and AI.",
   keywords: [
     "software engineer portfolio",
     "open source contributor",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Shaswat Raj — Software Engineer & Open-Source Builder",
     description:
-      "Software engineer. 79 external PRs merged into open-source repositories — including a fix in Google's gemini-cli. Builds full products: AI agents, dev tools, and web systems.",
+      "Software engineer and CS undergrad at BIT Mesra. Merged pull requests in Google's gemini-cli, Preact and Editor.js. Builds and runs full products: web systems, developer tooling, and AI.",
     url: DATA.url,
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shaswat Raj — Software Engineer & Open-Source Builder",
     description:
-      "Software engineer. 79 external PRs merged into open-source repositories — including a fix in Google's gemini-cli. Builds full products: AI agents, dev tools, and web systems.",
+      "Software engineer and CS undergrad at BIT Mesra. Merged pull requests in Google's gemini-cli, Preact and Editor.js. Builds and runs full products: web systems, developer tooling, and AI.",
     creator: "@SH20RAJ",
     images: ["/og.png"],
   },
@@ -117,9 +117,17 @@ export default function RootLayout({
       image: "https://gitlab.com/uploads/-/system/user/avatar/7770239/avatar.png",
       jobTitle: "Software Engineer & Open-Source Builder",
       description:
-        "Software engineer. 79 external PRs merged into open-source repositories — including a fix in Google's gemini-cli. Builds full products: AI agents, dev tools, and web systems.",
+        "Software engineer and CS undergrad at BIT Mesra. Merged pull requests in Google's gemini-cli, Preact and Editor.js. Builds and runs full products: web systems, developer tooling, and AI.",
       email: "sh20raj@gmail.com",
       nationality: "Indian",
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Birla Institute of Technology, Mesra",
+      },
+      seeks: {
+        "@type": "Demand",
+        name: "Software engineering, forward deployed engineering and DevOps internships and new-grad roles",
+      },
       knowsAbout: [
         "Next.js",
         "React",
@@ -190,12 +198,8 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light">
           <ResumeProvider>
             <TooltipProvider delayDuration={0}>
-              <div className="bg-amber-400 text-black text-center text-sm font-semibold px-4 py-2">
-                GitHub is the source of truth for this portfolio; the GitLab mirror remains available for older projects. Visit{" "}
-                <a href="https://gitlab.com/SH20RAJ" target="_blank" rel="noreferrer" className="underline underline-offset-2">gitlab.com/SH20RAJ</a>
-              </div>
               <Navbar />
-              <main className="pt-12">
+              <main className="pt-12 print:pt-0">
                 {children}
               </main>
               <Footer />

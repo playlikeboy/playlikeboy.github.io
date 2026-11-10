@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "resume:pdf": "node scripts/resume-pdf.mjs",
     "deploy:surge": "next build && surge ./out sh20raj.surge.sh"
   },
   "dependencies": {

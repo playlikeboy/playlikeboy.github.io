@@ -90,8 +90,8 @@ export default function DeboCaseStudy() {
               <p className="text-xs text-muted-foreground">BM25 + Cosine Vectors</p>
             </div>
             <div>
-              <p className="text-xl font-bold tracking-tight">&lt; 150ms</p>
-              <p className="text-xs text-muted-foreground">Retrieval Latency</p>
+              <p className="text-xl font-bold tracking-tight">Solo</p>
+              <p className="text-xs text-muted-foreground">Built End-to-End</p>
             </div>
             <div>
               <p className="text-xl font-bold tracking-tight">Multimodal</p>

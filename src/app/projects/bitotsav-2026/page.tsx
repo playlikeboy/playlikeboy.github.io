@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Engineering case study on Bitotsav '26: architecting high-concurrency event infrastructure, offline-tolerant cryptographic QR verification, and Redis caching for 5,000+ live participants.",
   alternates: {
-    canonical: "https://sh20raj.gitlab.io/projects/bitotsav-2026",
+    canonical: "https://playlikeboy.github.io/projects/bitotsav-2026",
   },
   openGraph: {
     title: "Bitotsav '26 Case Study — High-Concurrency Festival Infrastructure | Shaswat Raj",
     description:
       "Engineering case study on Bitotsav '26: architecting high-concurrency event infrastructure, offline-tolerant cryptographic QR verification, and Redis caching for 5,000+ live participants.",
-    url: "https://sh20raj.gitlab.io/projects/bitotsav-2026",
+    url: "https://playlikeboy.github.io/projects/bitotsav-2026",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "article",
@@ -49,7 +49,7 @@ export default function BitotsavCaseStudy() {
               <span className="text-xs text-muted-foreground">BIT Mesra · 2026</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-              Bitotsav &apos;26 — High-Concurrency Cloud Architecture for 5,000+ Live Users
+              Bitotsav &apos;26 — Event Infrastructure for 5,000+ Live Participants
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed pt-1">
               End-to-end engineering leadership of the complete festival platform: offline-resilient QR access verification, low-latency Redis caching, and real-time operational telemetry.
@@ -74,16 +74,16 @@ export default function BitotsavCaseStudy() {
               <p className="text-xs text-muted-foreground">Live Participants</p>
             </div>
             <div>
-              <p className="text-xl font-bold tracking-tight">99.99%</p>
-              <p className="text-xs text-muted-foreground">Festival Uptime</p>
+              <p className="text-xl font-bold tracking-tight">Offline</p>
+              <p className="text-xs text-muted-foreground">QR Scanning Without Network</p>
             </div>
             <div>
-              <p className="text-xl font-bold tracking-tight">&lt; 40ms</p>
-              <p className="text-xs text-muted-foreground">Check-in Scan Latency</p>
+              <p className="text-xl font-bold tracking-tight">Redis</p>
+              <p className="text-xs text-muted-foreground">Hot-Path Caching over Postgres</p>
             </div>
             <div>
-              <p className="text-xl font-bold tracking-tight">0</p>
-              <p className="text-xs text-muted-foreground">Gate Failures / Breaches</p>
+              <p className="text-xl font-bold tracking-tight">Tech Lead</p>
+              <p className="text-xs text-muted-foreground">End-to-End Ownership</p>
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@ export default function BitotsavCaseStudy() {
                   <Database className="size-3.5 text-blue-500" /> Volunteer Offline Cache
                 </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Volunteer scanner PWA devices pre-sync indexed bloom filters of valid registrations, verifying authenticity in sub-40ms even during complete internet blackout.
+                  Volunteer scanner PWA devices pre-sync indexed bloom filters of valid registrations, verifying authenticity locally even during a complete internet blackout.
                 </p>
               </div>
             </div>
@@ -158,7 +158,7 @@ export default function BitotsavCaseStudy() {
             <h2 className="text-lg font-bold tracking-tight">4. Engineering Leadership Takeaway</h2>
             <div className="rounded-lg border border-border p-4 space-y-2 bg-accent/20 text-xs text-muted-foreground leading-relaxed">
               <p>
-                <strong className="text-foreground">High-stakes event systems require defensive design at every layer:</strong> From presenting security architecture to university leadership to running 72 hours of uninterrupted live production operations, Bitotsav demonstrated how resilient distributed primitives deliver flawless real-world experiences.
+                <strong className="text-foreground">High-stakes event systems require defensive design at every layer:</strong> From presenting security architecture to university leadership to running live production operations through the festival, Bitotsav taught me to design for the failure cases first — no network, bad data, and last-minute changes.
               </p>
             </div>
           </section>

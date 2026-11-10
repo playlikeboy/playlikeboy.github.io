@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description:
     "Get custom, premium, and psychology-backed YouTube thumbnails that grab attention, increase click-through-rate (CTR), and get more views.",
   alternates: {
-    canonical: "https://sh20raj.gitlab.io/youtube-thumbnail",
+    canonical: "https://playlikeboy.github.io/youtube-thumbnail",
   },
   openGraph: {
     type: "website",
     title: "YouTube Thumbnail Designer — Premium, High-CTR Thumbnail Design",
     description:
       "Get custom, premium, and psychology-backed YouTube thumbnails that grab attention, increase click-through-rate (CTR), and get more views.",
-    url: "https://sh20raj.gitlab.io/youtube-thumbnail",
+    url: "https://playlikeboy.github.io/youtube-thumbnail",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
   },

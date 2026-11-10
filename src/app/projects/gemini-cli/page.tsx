@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Engineering case study on fixing stream cancellation race conditions and memory leaks in Google's official gemini-cli repository (PR #20778).",
   alternates: {
-    canonical: "https://sh20raj.gitlab.io/projects/gemini-cli",
+    canonical: "https://playlikeboy.github.io/projects/gemini-cli",
   },
   openGraph: {
     title: "Google Gemini CLI Case Study — PR #20778 Stream Cancellation Architecture | Shaswat Raj",
     description:
       "Engineering case study on fixing stream cancellation race conditions and memory leaks in Google's official gemini-cli repository (PR #20778).",
-    url: "https://sh20raj.gitlab.io/projects/gemini-cli",
+    url: "https://playlikeboy.github.io/projects/gemini-cli",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "article",
@@ -44,7 +44,7 @@ export default function GeminiCliCaseStudy() {
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <span className="text-xs font-mono uppercase bg-accent text-foreground px-2 py-0.5 rounded">
-                Open Source Core Contribution
+                Upstream Contribution
               </span>
               <span className="text-xs text-muted-foreground">Google Gemini Ecosystem</span>
             </div>
@@ -78,12 +78,12 @@ export default function GeminiCliCaseStudy() {
           {/* Metric Highlights */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-6 border-t border-border">
             <div>
-              <p className="text-xl font-bold tracking-tight">100%</p>
-              <p className="text-xs text-muted-foreground">Merged by Google Team</p>
+              <p className="text-xl font-bold tracking-tight">Merged</p>
+              <p className="text-xs text-muted-foreground">Upstream, March 2026</p>
             </div>
             <div>
-              <p className="text-xl font-bold tracking-tight">0 Leaks</p>
-              <p className="text-xs text-muted-foreground">Detached Promises Fixed</p>
+              <p className="text-xl font-bold tracking-tight">core</p>
+              <p className="text-xs text-muted-foreground">Package Changed</p>
             </div>
             <div>
               <p className="text-xl font-bold tracking-tight">TypeScript</p>
@@ -109,7 +109,7 @@ export default function GeminiCliCaseStudy() {
               In multi-turn terminal chat sessions with Gemini, pressing <kbd className="px-1 py-0.5 font-mono text-xs bg-accent rounded border border-border">Ctrl+C</kbd> or issuing an abort command cancelled the active UI stream, but failed to cancel the background chat history compression service.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Because the compression routine was invoked on a detached promise chain without receiving the active turn&apos;s <code>AbortSignal</code>, background network requests continued executing against Google Cloud APIs — causing billing spikes, memory leaks, and race conditions on subsequent prompt dispatches.
+              Because the compression routine was invoked on a detached promise chain without receiving the active turn&apos;s <code>AbortSignal</code>, the background compression request kept running after the user had cancelled — wasting an API call and leaving work in flight that could race with the next prompt.
             </p>
           </section>
 
@@ -122,6 +122,9 @@ export default function GeminiCliCaseStudy() {
               I refactored the execution pipeline across <code>LocalAgentExecutor</code>, <code>GeminiClient</code>, and the <code>ChatCompressionService</code>:
             </p>
 
+            <p className="text-xs text-muted-foreground">
+              Simplified illustration of the change — see the pull request for the actual diff.
+            </p>
             <pre className="p-3.5 rounded-lg bg-card border border-border font-mono text-xs text-muted-foreground overflow-x-auto leading-normal">
 {`// Refactored async execution boundary with AbortSignal threading
 async executeTurn(prompt: string, options: { signal?: AbortSignal }) {
@@ -141,10 +144,10 @@ async executeTurn(prompt: string, options: { signal?: AbortSignal }) {
 
             <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1.5 pl-1">
               <li>
-                <strong className="text-foreground">Graceful Cleanup:</strong> Guaranteed that all HTTP sockets and background workers terminate immediately upon user cancellation.
+                <strong className="text-foreground">Graceful Cleanup:</strong> Cancelling a turn now also cancels the in-flight compression request instead of leaving it running.
               </li>
               <li>
-                <strong className="text-foreground">Deterministic State:</strong> Eliminated out-of-order history compression race conditions when rapid consecutive prompts are entered.
+                <strong className="text-foreground">Deterministic State:</strong> A cancelled compression can no longer finish late and interleave with the next prompt.
               </li>
             </ul>
           </section>
@@ -155,7 +158,7 @@ async executeTurn(prompt: string, options: { signal?: AbortSignal }) {
               <CheckCircle2 className="size-4 text-emerald-500" /> 3. Code Review &amp; Upstream Merge
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              The pull request underwent review by Google engineers, verified with unit test suites and integration tests across Linux, macOS, and Windows runtime environments, and was merged into main.
+              The pull request was reviewed by the gemini-cli maintainers, passed the repository&apos;s CI, and was merged into main as “fix(core): thread AbortSignal to chat compression requests”.
             </p>
           </section>
         </div>

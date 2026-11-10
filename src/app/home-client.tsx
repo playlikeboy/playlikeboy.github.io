@@ -6,6 +6,8 @@ import { ContributionsAccordion } from "@/components/contributions-accordion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import { roles } from "@/data/roles";
+import { mergedContributions, openContributions } from "@/data/contributions";
 import {
   ArrowRightIcon,
   FileDown,
@@ -56,14 +58,18 @@ export function HomeClient({ DATA }: { DATA: any }) {
             <div className="flex-1 min-w-0">
               <h1 className="text-xl font-bold tracking-tight">Shaswat Raj</h1>
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                Software Engineer · Open-Source Builder
+                Software Engineer · B.Tech CSE, BIT Mesra &apos;28
               </p>
-              <h1 className="mt-1 text-2xl sm:text-3xl font-bold tracking-tight">
+              <p className="mt-1 text-2xl sm:text-3xl font-bold tracking-tight">
                 I build software that survives real users.
-              </h1>
-              <p className="text-sm text-muted-foreground mt-3 leading-relaxed max-w-xl">
-                I build high-performance web systems, developer infrastructure, and AI tooling end-to-end — from architecture and APIs to production and iteration.
               </p>
+              <p className="text-sm text-muted-foreground mt-3 leading-relaxed max-w-xl">
+                Merged pull requests in Google&apos;s gemini-cli, Preact and Editor.js, with more in review at Jaeger, Kmesh, Lexical and Radix UI. I build and run web systems, developer tooling and AI products end to end — from the first commit to production.
+              </p>
+              <div className="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/60 border border-border text-xs text-muted-foreground">
+                <span className="size-2 rounded-full bg-emerald-500 shrink-0" />
+                <span>Open to SDE, forward-deployed and DevOps internships &amp; new-grad roles</span>
+              </div>
               <div className="flex flex-wrap items-center gap-3 mt-4">
                 <a
                   href="/resume.pdf"
@@ -105,7 +111,7 @@ export function HomeClient({ DATA }: { DATA: any }) {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-px overflow-hidden rounded-lg border border-border bg-border mt-8">
             {[
-              ["79", "external PRs merged"],
+              [String(mergedContributions.length + openContributions.length), `upstream PRs · ${mergedContributions.length} merged`],
               ["4.3M+", "SopKit requests"],
               ["213K+", "SopKit visits"],
               ["5K+", "event participants"],
@@ -114,6 +120,30 @@ export function HomeClient({ DATA }: { DATA: any }) {
                 <p className="text-base sm:text-lg font-bold tracking-tight">{value}</p>
                 <p className="mt-0.5 text-[10px] sm:text-xs text-muted-foreground">{label}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Roles */}
+      <section id="roles" className="py-10 border-b border-border scroll-mt-12">
+        <div className="mx-auto w-full max-w-2xl px-6">
+          <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Hiring for a specific role?</p>
+          <h2 className="text-lg font-bold tracking-tight mt-1 mb-5">Start with the evidence for it</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {roles.map((role) => (
+              <Link
+                key={role.slug}
+                href={`/roles/${role.slug}`}
+                className="group flex flex-col rounded-lg border border-border p-4 hover:bg-accent/50 transition-colors"
+              >
+                <p className="text-sm font-semibold">{role.title}</p>
+                <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed flex-1">{role.headline}</p>
+                <span className="inline-flex items-center gap-1 text-xs font-medium mt-3">
+                  {role.evidence.length} proof points
+                  <ArrowRightIcon className="size-3 group-hover:translate-x-0.5 transition-transform" />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -169,10 +199,41 @@ export function HomeClient({ DATA }: { DATA: any }) {
       </section>
 
       {/* GitHub Stats */}
-      <section id="open-source" className="py-10 border-b border-border">
+      <section id="open-source" className="py-10 border-b border-border scroll-mt-12">
         <div className="mx-auto w-full max-w-2xl px-6">
           <ContributionsAccordion />
           <GitHubStats />
+        </div>
+      </section>
+
+      {/* Experience & Education */}
+      <section id="experience" className="py-10 border-b border-border">
+        <div className="mx-auto w-full max-w-2xl px-6">
+          <h2 className="text-lg font-bold tracking-tight mb-5">Experience</h2>
+          <div className="space-y-5">
+            {DATA.work.map((job: any) => (
+              <div key={job.company + job.start}>
+                <div className="flex items-baseline justify-between gap-3">
+                  <p className="text-sm font-semibold">
+                    {job.title} <span className="font-normal text-muted-foreground">· {job.company}</span>
+                  </p>
+                  <p className="text-xs text-muted-foreground whitespace-nowrap">
+                    {job.start === job.end ? job.start : `${job.start} – ${job.end}`}
+                  </p>
+                </div>
+                <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{job.description}</p>
+              </div>
+            ))}
+          </div>
+          <h2 className="text-lg font-bold tracking-tight mt-8 mb-3">Education</h2>
+          {DATA.education.map((edu: any) => (
+            <div key={edu.school} className="flex items-baseline justify-between gap-3">
+              <p className="text-sm font-semibold">
+                {edu.school} <span className="font-normal text-muted-foreground">· {edu.degree}</span>
+              </p>
+              <p className="text-xs text-muted-foreground whitespace-nowrap">{edu.end}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -180,7 +241,7 @@ export function HomeClient({ DATA }: { DATA: any }) {
       <section id="projects" className="py-10 border-b border-border">
         <div className="mx-auto w-full max-w-2xl px-6">
           <div className="flex items-center justify-between mb-5">
-            <h2 className="text-lg font-bold tracking-tight">Featured Projects</h2>
+            <h2 className="text-lg font-bold tracking-tight">More projects</h2>
             <Link
               href="/projects"
               className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -189,7 +250,7 @@ export function HomeClient({ DATA }: { DATA: any }) {
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {DATA.projects.slice(0, 4).map((project: any) => (
+            {DATA.projects.slice(4, 8).map((project: any) => (
               <ProjectCard
                 key={project.title}
                 href={project.href}
@@ -319,7 +380,7 @@ export function HomeClient({ DATA }: { DATA: any }) {
         <div className="mx-auto w-full max-w-2xl px-6">
           <h2 className="text-lg font-bold tracking-tight mb-3">About</h2>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            I like owning the whole path: understanding the problem, choosing the architecture, writing the product, deploying it, measuring what happens, and iterating. My open-source work includes 79 external PRs, including a merged contribution to Google&apos;s gemini-cli.
+            I like owning the whole path: understanding the problem, choosing the architecture, writing the product, deploying it, measuring what happens, and iterating. My open-source work includes merged contributions to Google&apos;s gemini-cli, Preact and Editor.js.
           </p>
           <Link
             href="/story"
@@ -335,16 +396,16 @@ export function HomeClient({ DATA }: { DATA: any }) {
         <div className="mx-auto w-full max-w-2xl px-6 text-center space-y-3">
           <h2 className="text-lg font-bold tracking-tight">Get in touch</h2>
           <p className="text-sm text-muted-foreground">
-            Open to software engineering and founding-engineer opportunities, especially around systems, developer tooling, and AI infrastructure.{" "}
-            <Link href="/hire" className="text-foreground underline underline-offset-4 hover:text-muted-foreground">
-              Contact me
+            Open to SDE, forward-deployed and DevOps/platform internships and new-grad roles — at startups and large engineering teams alike.{" "}
+            <Link href="/resume" className="text-foreground underline underline-offset-4 hover:text-muted-foreground">
+              Read my résumé
             </Link>
           </p>
 
           {/* Availability Status */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/60 border border-border text-xs text-muted-foreground">
             <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>Available for full-time roles · Remote / relocation</span>
+            <span>Graduating 2028 · Remote or relocation</span>
           </div>
 
           <div className="flex justify-center gap-4 pt-2">

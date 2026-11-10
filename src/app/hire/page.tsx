@@ -114,8 +114,8 @@ export default function HirePage() {
             className="space-y-5"
           >
             <input type="hidden" name="access_key" value={monetization.web3formsAccessKey} />
-            <input type="hidden" name="subject" value="New project brief from sh20raj.gitlab.io" />
-            <input type="hidden" name="from_name" value="sh20raj.gitlab.io" />
+            <input type="hidden" name="subject" value="New project brief from playlikeboy.github.io" />
+            <input type="hidden" name="from_name" value="playlikeboy.github.io" />
             <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
