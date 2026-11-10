@@ -17,7 +17,7 @@ const chapters = [
   {
     year: "Open source",
     title: "Proof matters more than labels",
-    text: "I began contributing beyond repositories I own. My portfolio documents 79 external pull requests merged into open-source projects, including a fix merged into Google's gemini-cli. Open source taught me to read unfamiliar code, explain trade-offs, respond to review, and ship changes that have to survive someone else's standards.",
+    text: "I began contributing beyond repositories I own. My pull requests have been merged into projects like Google's gemini-cli, Preact and Editor.js, with more in review at Jaeger, Kmesh, Lexical and Radix UI. Open source taught me to read unfamiliar code, explain trade-offs, respond to review, and ship changes that have to survive someone else's standards.",
   },
   {
     year: "Products",
@@ -28,9 +28,9 @@ const chapters = [
 
 const proof = [
   {
-    metric: "79+",
-    label: "external PRs merged",
-    detail: "Open-source repositories I don't own.",
+    metric: "17",
+    label: "upstream PRs",
+    detail: "Opened in repositories I don't own; see the list on the home page.",
   },
   {
     metric: "4.3M+",

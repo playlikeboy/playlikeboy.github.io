@@ -98,12 +98,12 @@ export function CommandPalette() {
     },
     {
       id: "services",
-      title: "Services & Sprints",
-      subtitle: "Full-stack & AI prototyping sprints",
+      title: "Résumé",
+      subtitle: "One page, with PDF download",
       category: "Navigation",
       icon: Laptop,
       action: () => {
-        router.push("/services");
+        router.push("/resume");
         closePalette();
       },
     },

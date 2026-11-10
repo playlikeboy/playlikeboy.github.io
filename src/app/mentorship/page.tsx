@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: "Engineering Mentorship & Systems Architecture Coaching | Shaswat Raj",
   description:
     "Technical mentorship for software engineers covering open-source contribution, system design, Next.js architecture, AI agents, and competitive problem solving.",
-  alternates: { canonical: "https://sh20raj.gitlab.io/mentorship" },
+  alternates: { canonical: "https://playlikeboy.github.io/mentorship" },
   openGraph: {
     title: "Engineering Mentorship & Systems Architecture Coaching | Shaswat Raj",
     description:
       "Technical mentorship for software engineers covering open-source contribution, system design, Next.js architecture, AI agents, and competitive problem solving.",
-    url: "https://sh20raj.gitlab.io/mentorship",
+    url: "https://playlikeboy.github.io/mentorship",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "website",

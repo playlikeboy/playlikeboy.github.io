@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <>
       <CommandPalette />
-      <header className="fixed top-0 inset-x-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <header className="print:hidden fixed top-0 inset-x-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <nav className="mx-auto max-w-2xl flex items-center justify-between h-12 px-6">
           <div className="flex items-center gap-4">
             <Link href="/" className="text-sm font-bold text-foreground hover:opacity-80 transition-opacity">

@@ -36,12 +36,12 @@ export async function generateMetadata({
     title: `${category.title} | AI Design Studio — Shaswat Raj`,
     description: category.description,
     alternates: {
-      canonical: `https://sh20raj.gitlab.io/design-studio/${category.slug}`,
+      canonical: `https://playlikeboy.github.io/design-studio/${category.slug}`,
     },
     openGraph: {
       title: `${category.title} | AI Design Studio — Shaswat Raj`,
       description: category.description,
-      url: `https://sh20raj.gitlab.io/design-studio/${category.slug}`,
+      url: `https://playlikeboy.github.io/design-studio/${category.slug}`,
       siteName: "Shaswat Raj Portfolio",
       locale: "en_US",
       type: "website",

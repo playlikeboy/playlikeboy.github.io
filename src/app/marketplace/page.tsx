@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   description:
     "Production-ready Next.js templates, AI developer tools, system architectures, and engineering playbooks built by Shaswat Raj.",
   alternates: {
-    canonical: "https://sh20raj.gitlab.io/marketplace",
+    canonical: "https://playlikeboy.github.io/marketplace",
   },
   openGraph: {
     type: "website",
     title: "Marketplace — Developer Templates, Tools & Assets | Shaswat Raj",
     description:
       "Production-ready Next.js templates, AI developer tools, system architectures, and engineering playbooks.",
-    url: "https://sh20raj.gitlab.io/marketplace",
+    url: "https://playlikeboy.github.io/marketplace",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     images: [{ url: "/og.png", width: 1200, height: 630 }],

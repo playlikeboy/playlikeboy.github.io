@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: "Founding Engineer & Technical Lead | Shaswat Raj",
   description:
     "End-to-end technical execution for high-velocity startups. Architecting MVPs, AI platforms, distributed cloud backends, and responsive frontends.",
-  alternates: { canonical: "https://sh20raj.gitlab.io/founding-engineer" },
+  alternates: { canonical: "https://playlikeboy.github.io/founding-engineer" },
   openGraph: {
     title: "Founding Engineer & Technical Lead | Shaswat Raj",
     description:
       "End-to-end technical execution for high-velocity startups. Architecting MVPs, AI platforms, distributed cloud backends, and responsive frontends.",
-    url: "https://sh20raj.gitlab.io/founding-engineer",
+    url: "https://playlikeboy.github.io/founding-engineer",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
     type: "website",

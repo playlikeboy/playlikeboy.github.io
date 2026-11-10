@@ -95,7 +95,7 @@ export default function SopKitCaseStudy() {
             </div>
             <div>
               <p className="text-xl font-bold tracking-tight">213K+</p>
-              <p className="text-xs text-muted-foreground">Monthly Active Users</p>
+              <p className="text-xs text-muted-foreground">30-Day Visits</p>
             </div>
             <div>
               <p className="text-xl font-bold tracking-tight">0</p>
@@ -143,7 +143,7 @@ export default function SopKitCaseStudy() {
                   <strong className="text-foreground">Zero Rent-Seeking / Domain Friction:</strong> Eliminates recurring private TLD expiration vulnerabilities, locking in perpetual open access for global students and indie developers.
                 </li>
                 <li>
-                  <strong className="text-foreground">Permanent Edge Reliability:</strong> Leveraging GitHub Pages and Cloudflare Global Anycast guarantees 99.99% uptime with global edge distribution and zero server compute bills.
+                  <strong className="text-foreground">Permanent Edge Reliability:</strong> Leveraging GitHub Pages and Cloudflare Global Anycast gives global edge distribution on static hosting with zero server compute bills.
                 </li>
                 <li>
                   <strong className="text-foreground">True Open-Source Transparency:</strong> The codebase, issue tracker, and tool definitions are openly inspectable and verifiable by anyone.

@@ -25,12 +25,12 @@ export const DATA = {
   name: "Shaswat Raj",
   initials: "SH",
   url: "https://playlikeboy.github.io",
-  location: "India",
+  location: "Ranchi, India",
   locationLink: "https://www.google.com/maps/place/India",
   description:
     "Software engineer and open-source builder.",
   summary:
-    "I'm Shaswat Raj, a software engineer and open-source contributor. I build full products end-to-end: AI agents, dev tools, MCP servers, and large-scale web systems. My strength is taking a rough idea to a working system quickly — backend, frontend, deployment, and iteration.\n\n79 merged pull requests across open-source repositories I don't own (including a merged fix into Google's gemini-cli), and 50+ npm packages. I've shipped systems that handled real load at scale, from 5,000-participant cultural fests to million-request browser tool platforms.",
+    "I'm Shaswat Raj, a software engineer and open-source contributor. I build full products end-to-end: AI agents, dev tools, MCP servers, and large-scale web systems. My strength is taking a rough idea to a working system quickly — backend, frontend, deployment, and iteration.\n\nMerged pull requests in Google's gemini-cli, Preact and Editor.js, with more in review at Jaeger, Kmesh, Lexical and Radix UI. I've shipped systems that handled real load at scale, from 5,000-participant cultural fests to million-request browser tool platforms.",
   avatarUrl: "https://gitlab.com/uploads/-/system/user/avatar/7770239/avatar.png",
   skills: [
     "UI/UX Design",
@@ -61,10 +61,10 @@ export const DATA = {
   navbar: [
     { href: "/", icon: "home", label: "Home" },
     { href: "/projects", icon: "briefcase", label: "Projects" },
+    { href: "/#roles", icon: "briefcase", label: "Roles" },
     { href: "/story", icon: "notebook", label: "Story" },
     { href: "https://github.com/playlikeboy", icon: "github", label: "GitHub" },
-    { href: "https://gitlab.com/SH20RAJ", icon: "gitlab", label: "GitLab mirror" },
-    { href: "/resume.pdf", icon: "notebook", label: "Resume" },
+    { href: "/resume", icon: "notebook", label: "Resume" },
   ],
   contact: {
     email: "sh20raj@gmail.com",
@@ -145,9 +145,78 @@ export const DATA = {
     },
   },
 
-  work: [] as WorkExperience[],
-  education: [] as Education[],
+  work: [
+    {
+      company: "Bitotsav '26 — BIT Mesra's annual fest",
+      title: "Tech Lead",
+      start: "2025",
+      end: "2026",
+      location: "Ranchi, India",
+      description:
+        "Led and built the full tech stack for a ~5,000-participant festival: website, QR entry and scanning that keeps working without network, team and points workflows, admin panel, and internal tools. Ran live operations through the event.",
+      href: "/projects/bitotsav-2026",
+      badges: ["Next.js", "PostgreSQL", "Redis", "Cloudflare"],
+      logoUrl: "/projects/bitotsav-2026.svg",
+    },
+    {
+      company: "Open source",
+      title: "Contributor & maintainer",
+      start: "2022",
+      end: "Present",
+      location: "Remote",
+      description:
+        "Merged pull requests in Google's gemini-cli, Preact and Editor.js. Changes in review at Jaeger, Kmesh, Lexical and Radix UI. Maintainer of SopKit and SopPlayer.",
+      href: "/#open-source",
+      badges: ["TypeScript", "Go", "Code review"],
+      logoUrl: "",
+    },
+    {
+      company: "Bitotsav '25",
+      title: "Web team",
+      start: "2025",
+      end: "2025",
+      location: "Ranchi, India",
+      description:
+        "Built frontend for the fest website, improved its SEO, and created the QR-based entry management system used for scanning and security.",
+      href: "https://www.linkedin.com/posts/sh20raj_bitotsav2025-bitmesra-webdevelopment-activity-7313430509747888128-vHg3",
+      badges: ["Frontend", "QR", "SEO"],
+      logoUrl: "",
+    },
+  ] as WorkExperience[],
+  education: [
+    {
+      school: "Birla Institute of Technology, Mesra",
+      degree: "B.Tech, Computer Science & Engineering",
+      start: "",
+      end: "Expected May 2028",
+      href: "https://www.bitmesra.ac.in/",
+      logoUrl: "",
+    },
+  ] as Education[],
   projects: [
+    {
+      title: "Google Gemini CLI (PR #20778)",
+      href: "/projects/gemini-cli",
+      dates: "2026",
+      active: true,
+      description:
+        "Merged fix in Google's gemini-cli: cancelling a turn did not cancel the background chat-compression request. Traced where AbortSignal propagation stopped and threaded it through the execution and compression layers. Reviewed and merged upstream.",
+      technologies: ["TypeScript", "Node.js", "Gemini API", "Open Source", "Streams"],
+      links: [
+        {
+          type: "Case Study",
+          href: "/projects/gemini-cli",
+          icon: "globe",
+        },
+        {
+          type: "Pull Request",
+          href: "https://github.com/google-gemini/gemini-cli/pull/20778",
+          icon: "github",
+        },
+      ],
+      image: "/projects/gemini-cli.svg",
+      video: "",
+    },
     {
       title: "SopKit (formerly 30tools)",
       href: "/projects/sopkit",
@@ -173,12 +242,35 @@ export const DATA = {
           icon: "github",
         },
         {
-          type: "GitLab",
+          type: "30tools repo",
           href: "https://github.com/playlikeboy/30tools",
           icon: "github",
         },
       ],
       image: "https://sopkit.github.io/og-image.jpg",
+      video: "",
+    },
+    {
+      title: "Bitotsav '26 Tech Platform",
+      href: "/projects/bitotsav-2026",
+      dates: "2026",
+      active: true,
+      description:
+        "Tech lead for a ~5,000-participant festival. Built the website, signed-QR entry scanning that works without network, team and points workflows, Redis-backed hot paths, the admin panel, and internal tools — then ran it live.",
+      technologies: ["Next.js", "PostgreSQL", "Redis", "OpenAI", "Cloudflare", "QR Cryptography"],
+      links: [
+        {
+          type: "Case Study",
+          href: "/projects/bitotsav-2026",
+          icon: "globe",
+        },
+        {
+          type: "Proof",
+          href: "https://www.linkedin.com/posts/sh20raj_bitotsav-2026-what-a-journey-what-a-responsibility-activity-7442608760193216512-Y_nn",
+          icon: "globe",
+        },
+      ],
+      image: "/projects/bitotsav-2026.svg",
       video: "",
     },
     {
@@ -228,6 +320,131 @@ export const DATA = {
       video: "",
     },
     {
+      title: "Debo",
+      href: "https://debo.life",
+      dates: "2025",
+      active: true,
+      description:
+        "An AI memory system that ingests notes, links, audio, and conversations, embeds them for retrieval, and surfaces relevant context through a chat interface — a personal RAG pipeline over everything you capture day to day. Built solo end-to-end: ingestion, vector search, and the agent layer on top.",
+      technologies: ["Next.js", "TypeScript", "AI Agents", "AI SDK", "Voice Agent", "Vector Search", "Cloudflare", "Agentic Memory", "OpenAI"],
+      links: [
+        {
+          type: "Case Study",
+          href: "/projects/debo",
+          icon: "globe",
+        },
+        {
+          type: "Website",
+          href: "https://debo.life",
+          icon: "globe",
+        },
+        {
+          type: "Source",
+          href: "https://github.com/playlikeboy/debo",
+          icon: "github",
+        },
+      ],
+      image: "https://ph-files.imgix.net/cfa307d8-4afb-4bc7-934a-7ab7cf316aa7.png",
+      video: "",
+    },
+    {
+      title: "IndexFast",
+      href: "https://indexfast.co",
+      dates: "2025",
+      active: true,
+      description:
+        "An MCP server that pushes URLs directly to Google, Bing, and IndexNow from inside your IDE instead of waiting on crawl schedules — built to explore what MCP-native tooling looks like for a real developer workflow.",
+      technologies: ["Next.js", "TypeScript", "IndexNow API", "Bing API", "MCP"],
+      links: [
+        {
+          type: "Website",
+          href: "https://indexfast.co",
+          icon: "globe",
+        },
+        {
+          type: "Source",
+          href: "https://github.com/playlikeboy/index-fast",
+          icon: "github",
+        },
+      ],
+      image: "https://indexfast.co/og-image.png",
+      video: "",
+    },
+    {
+      title: "MCP Pure",
+      href: "https://mcppure.shraj.workers.dev/",
+      dates: "2025",
+      active: true,
+      description:
+        "An open-source hub for high-performance Model Context Protocol (MCP) servers. Built with Hono and Bun, deployed on Cloudflare Workers, and designed to serve as a lightweight registry for MCP infrastructure.",
+      technologies: ["TypeScript", "Hono", "Bun", "MCP", "Cloudflare Workers"],
+      links: [
+        {
+          type: "Website",
+          href: "https://mcppure.shraj.workers.dev/",
+          icon: "globe",
+        },
+        {
+          type: "Source",
+          href: "https://gitlab.com/SH20RAJ/shade-solutions-mcp-pure",
+          icon: "gitlab",
+        },
+      ],
+      image: "https://mcppure.shraj.workers.dev/og-image.png",
+      video: "",
+    },
+    {
+      title: "SopPlayer",
+      href: "/projects/sopplayer",
+      dates: "2024 – Present",
+      active: true,
+      description:
+        "Ultra-lightweight (< 15KB), zero-dependency open-source HTML5 video player library. Scaled to 1.18M+ requests and 38GB+ CDN bandwidth on jsDelivr with customizable skins, scrub preview, and Picture-in-Picture support.",
+      technologies: ["JavaScript", "HTML5 Video", "Web APIs", "jsDelivr", "Open Source"],
+      links: [
+        {
+          type: "Case Study",
+          href: "/projects/sopplayer",
+          icon: "globe",
+        },
+        {
+          type: "Source",
+          href: "https://github.com/playlikeboy/Sopplayer",
+          icon: "github",
+        },
+        {
+          type: "Proof",
+          href: "https://www.linkedin.com/posts/sh20raj_sopplayer-html5videoplayer-opensourcelove-activity-7279897143249715201-4gO6",
+          icon: "globe",
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "AlgoForge",
+      href: "https://algoforge.shraj.workers.dev/",
+      dates: "2026",
+      active: true,
+      description:
+        "A self-hosted coding interview preparation platform built to make DSA practice searchable and structured at scale. Pattern-based learning paths, curated collections (Blind 75, Grind 169), multi-language solutions, and SEO-optimized content for organic discovery.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "SEO", "Cloudflare Workers"],
+      links: [
+        {
+          type: "Website",
+          href: "https://algoforge.shraj.workers.dev/",
+          icon: "globe",
+        },
+        {
+          type: "Source",
+          href: "https://github.com/playlikeboy/algoforge",
+          icon: "github",
+        },
+      ],
+      image: "/projects/algoforge.png",
+      video: "",
+    },
+    {
       title: "OmniAudit-GEO",
       href: "https://omniaudit-geo.onrender.com/",
       dates: "2026 – Present",
@@ -269,169 +486,21 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Google Gemini CLI (PR #20778)",
-      href: "https://github.com/google-gemini/gemini-cli/pull/20778",
-      dates: "2025",
+      title: "Solus",
+      href: "https://solus.shraj.workers.dev",
+      dates: "2025 – Present",
       active: true,
       description:
-        "Core contribution to Google's official gemini-cli. Fixed in-flight stream cancellation race conditions and memory leaks by threading AbortSignal through multi-turn chat compression pipelines. Reviewed and merged upstream by Google engineers.",
-      technologies: ["TypeScript", "Node.js", "Gemini API", "Open Source", "Streams"],
+        "A privacy-first personal social network with no followers, no likes, and no algorithmic feed. Built on Hono, Cloudflare Workers, Neon, Drizzle, and R2 for a clean, end-to-end encrypted, single-user experience.",
+      technologies: ["Hono", "Cloudflare Workers", "Neon", "Drizzle", "R2", "TypeScript"],
       links: [
-        {
-          type: "Case Study",
-          href: "/projects/gemini-cli",
-          icon: "globe",
-        },
-        {
-          type: "Pull Request",
-          href: "https://github.com/google-gemini/gemini-cli/pull/20778",
-          icon: "github",
-        },
-      ],
-      image: "/projects/gemini-cli.svg",
-      video: "",
-    },
-    {
-      title: "Bitotsav '26 Tech Platform",
-      href: "/projects/bitotsav-2026",
-      dates: "2026",
-      active: true,
-      description:
-        "Architected high-concurrency event infrastructure serving 5,000+ live participants. Built offline-resilient cryptographic QR access verification, low-latency Redis state caches, real-time leaderboard telemetry, and AI participant services.",
-      technologies: ["Next.js", "PostgreSQL", "Redis", "OpenAI", "Cloudflare", "QR Cryptography"],
-      links: [
-        {
-          type: "Case Study",
-          href: "/projects/bitotsav-2026",
-          icon: "globe",
-        },
-        {
-          type: "Proof",
-          href: "https://www.linkedin.com/posts/sh20raj_bitotsav-2026-what-a-journey-what-a-responsibility-activity-7442608760193216512-Y_nn",
-          icon: "globe",
-        },
-      ],
-      image: "/projects/bitotsav-2026.svg",
-      video: "",
-    },
-    {
-      title: "Debo",
-      href: "https://debo.life",
-      dates: "2025",
-      active: true,
-      description:
-        "An AI memory system that ingests notes, links, audio, and conversations, embeds them for retrieval, and surfaces relevant context through a chat interface — a personal RAG pipeline over everything you capture day to day. Built solo end-to-end: ingestion, vector search, and the agent layer on top.",
-      technologies: ["Next.js", "TypeScript", "AI Agents", "AI SDK", "Voice Agent", "Vector Search", "Cloudflare", "Agentic Memory", "OpenAI"],
-      links: [
-        {
-          type: "Case Study",
-          href: "/projects/debo",
-          icon: "globe",
-        },
-        {
-          type: "Website",
-          href: "https://debo.life",
-          icon: "globe",
-        },
         {
           type: "Source",
-          href: "https://github.com/playlikeboy/debo",
-          icon: "github",
+          href: "https://gitlab.com/SH20RAJ/solus",
+          icon: "gitlab",
         },
       ],
-      image: "https://ph-files.imgix.net/cfa307d8-4afb-4bc7-934a-7ab7cf316aa7.png",
-      video: "",
-    },
-    {
-      title: "SopPlayer",
-      href: "/projects/sopplayer",
-      dates: "2024 – Present",
-      active: true,
-      description:
-        "Ultra-lightweight (< 15KB), zero-dependency open-source HTML5 video player library. Scaled to 1.18M+ requests and 38GB+ CDN bandwidth on jsDelivr with customizable skins, scrub preview, and Picture-in-Picture support.",
-      technologies: ["JavaScript", "HTML5 Video", "Web APIs", "jsDelivr", "Open Source"],
-      links: [
-        {
-          type: "Case Study",
-          href: "/projects/sopplayer",
-          icon: "globe",
-        },
-        {
-          type: "Source",
-          href: "https://github.com/playlikeboy/Sopplayer",
-          icon: "github",
-        },
-        {
-          type: "Proof",
-          href: "https://www.linkedin.com/posts/sh20raj_sopplayer-html5videoplayer-opensourcelove-activity-7279897143249715201-4gO6",
-          icon: "globe",
-        },
-      ],
-      image: "",
-      video: "",
-    },
-    {
-      title: "Baby",
-      href: "https://baby.shraj.workers.dev/about",
-      dates: "2026",
-      active: true,
-      description:
-        "A personal project and web experience hosted on Cloudflare Workers. Explore the about page to learn more about the project.",
-      technologies: ["Web", "Cloudflare Workers"],
-      links: [
-        {
-          type: "Website",
-          href: "https://baby.shraj.workers.dev/about",
-          icon: "globe",
-        },
-      ],
-      image: "",
-      video: "",
-    },
-    {
-      title: "IndexFast",
-      href: "https://indexfast.co",
-      dates: "2025",
-      active: true,
-      description:
-        "An MCP server that pushes URLs directly to Google, Bing, and IndexNow from inside your IDE instead of waiting on crawl schedules — built to explore what MCP-native tooling looks like for a real developer workflow.",
-      technologies: ["Next.js", "TypeScript", "IndexNow API", "Bing API", "MCP"],
-      links: [
-        {
-          type: "Website",
-          href: "https://indexfast.co",
-          icon: "globe",
-        },
-        {
-          type: "Source",
-          href: "https://github.com/playlikeboy/index-fast",
-          icon: "github",
-        },
-      ],
-      image: "https://indexfast.co/og-image.png",
-      video: "",
-    },
-    {
-      title: "AlgoForge",
-      href: "https://algoforge.shraj.workers.dev/",
-      dates: "2026",
-      active: true,
-      description:
-        "A self-hosted coding interview preparation platform built to make DSA practice searchable and structured at scale. Pattern-based learning paths, curated collections (Blind 75, Grind 169), multi-language solutions, and SEO-optimized content for organic discovery.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "SEO", "Cloudflare Workers"],
-      links: [
-        {
-          type: "Website",
-          href: "https://algoforge.shraj.workers.dev/",
-          icon: "globe",
-        },
-        {
-          type: "Source",
-          href: "https://github.com/playlikeboy/algoforge",
-          icon: "github",
-        },
-      ],
-      image: "/projects/algoforge.png",
+      image: "https://solus.shraj.workers.dev/og-image.png",
       video: "",
     },
     {
@@ -453,24 +522,6 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Solus",
-      href: "https://solus.shraj.workers.dev",
-      dates: "2025 – Present",
-      active: true,
-      description:
-        "A privacy-first personal social network with no followers, no likes, and no algorithmic feed. Built on Hono, Cloudflare Workers, Neon, Drizzle, and R2 for a clean, end-to-end encrypted, single-user experience.",
-      technologies: ["Hono", "Cloudflare Workers", "Neon", "Drizzle", "R2", "TypeScript"],
-      links: [
-        {
-          type: "Source",
-          href: "https://gitlab.com/SH20RAJ/solus",
-          icon: "gitlab",
-        },
-      ],
-      image: "https://solus.shraj.workers.dev/og-image.png",
-      video: "",
-    },
-    {
       title: "Dhwani — college Music Society",
       href: "https://dhwanibitmesra.in",
       dates: "2026",
@@ -486,29 +537,6 @@ export const DATA = {
         },
       ],
       image: "/images/dhwani-poster.jpg",
-      video: "",
-    },
-    {
-      title: "MCP Pure",
-      href: "https://mcppure.shraj.workers.dev/",
-      dates: "2025",
-      active: true,
-      description:
-        "An open-source hub for high-performance Model Context Protocol (MCP) servers. Built with Hono and Bun, deployed on Cloudflare Workers, and designed to serve as a lightweight registry for MCP infrastructure.",
-      technologies: ["TypeScript", "Hono", "Bun", "MCP", "Cloudflare Workers"],
-      links: [
-        {
-          type: "Website",
-          href: "https://mcppure.shraj.workers.dev/",
-          icon: "globe",
-        },
-        {
-          type: "Source",
-          href: "https://gitlab.com/SH20RAJ/shade-solutions-mcp-pure",
-          icon: "gitlab",
-        },
-      ],
-      image: "https://mcppure.shraj.workers.dev/og-image.png",
       video: "",
     },
     {
@@ -550,29 +578,6 @@ export const DATA = {
         },
       ],
       image: "https://storix.linespedia.com/og-image.png",
-      video: "",
-    },
-    {
-      title: "SopKit",
-      href: "https://sopkit.github.io",
-      dates: "2025",
-      active: true,
-      description:
-        "A collection of fast, simple browser tools for developers, creators, and everyday users. Created SEO-focused tool pages with clean UX and fast client-side processing.",
-      technologies: ["Next.js", "TypeScript", "Browser APIs", "SEO", "Client-side Utilities"],
-      links: [
-        {
-          type: "Website",
-          href: "https://sopkit.github.io",
-          icon: "globe",
-        },
-        {
-          type: "Source",
-          href: "https://github.com/sopkit",
-          icon: "github",
-        },
-      ],
-      image: "https://sopkit.github.io/og-image.jpg",
       video: "",
     },
   ],
@@ -1121,7 +1126,7 @@ export const DATA = {
     },
     {
       title: "BIT Mesra — B.Tech, Computer Science",
-      dates: "2022 – 2026",
+      dates: "Expected 2028",
       location: "Ranchi, India",
       description:
         "Bachelor of Technology in Computer Science. Active in hackathons, open source, and product building.",

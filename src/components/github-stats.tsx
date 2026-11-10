@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Github, GitPullRequest, ExternalLink } from "lucide-react";
+import { mergedContributions } from "@/data/contributions";
 
 const GH_USER = "playlikeboy";
-const CACHE_KEY = "gh-stats-v2";
+const CACHE_KEY = "gh-stats-v3";
 const CACHE_TTL_MS = 1000 * 60 * 60 * 12;
 const OWN_REPO_OWNERS = new Set(["playlikeboy", "sh20raj-dump"]);
 
@@ -33,63 +34,28 @@ interface MergedPullRequestData {
   topExternalRepos: ExternalRepoSummary[];
 }
 
+// Fallback shown before (or instead of) the live GitHub API response.
+// Keep it in line with what github.com/playlikeboy publicly shows — never
+// higher. Last checked 2026-11-10.
 const BASELINE = {
-  publicRepos: 500,
-  followers: 800,
+  publicRepos: 150,
+  followers: 0,
   totalStars: 0,
   totalContributionsLastYear: 1500,
   totalContributionsAllTime: 15000,
-  prsMerged: 300,
-  topLanguages: ["TypeScript", "JavaScript", "Python", "CSS", "HTML"] as string[],
+  prsMerged: mergedContributions.length,
+  topLanguages: ["TypeScript", "JavaScript", "HTML", "Python", "PHP", "CSS"] as string[],
   orgs: [] as { login: string; avatar_url: string; url: string }[],
-  externalPrsMerged: 79,
-  externalReposContributed: 24,
-  recentExternalContributions: [
-    {
-      repo: "corsairdev/corsair",
-      title: "feat: add Bluesky integration plugin",
-      url: "https://github.com/corsairdev/corsair/pull/228",
-      mergedAt: "2026-05-29T00:36:39Z",
-      number: 228,
-    },
-    {
-      repo: "google-gemini/gemini-cli",
-      title: "fix(core): thread AbortSignal to chat compression requests",
-      url: "https://github.com/google-gemini/gemini-cli/pull/20778",
-      mergedAt: "2026-03-25T17:12:27Z",
-      number: 20778,
-    },
-    {
-      repo: "mofa-org/mofa",
-      title: "refactor(foundation): add non_exhaustive to Backoff and CircuitState",
-      url: "https://github.com/mofa-org/mofa/pull/1594",
-      mergedAt: "2026-04-12T15:26:43Z",
-      number: 1594,
-    },
-  ] as ExternalContribution[],
-  topExternalRepos: [
-    {
-      repo: "ArticlePlanet/articleplanet.github.io",
-      url: "https://github.com/ArticlePlanet/articleplanet.github.io",
-      count: 23,
-      latestMergedAt: "2024-02-13T13:10:44Z",
-      sampleTitles: ["Bug removed from new.js"],
-    },
-    {
-      repo: "mofa-org/mofa",
-      url: "https://github.com/mofa-org/mofa",
-      count: 8,
-      latestMergedAt: "2026-04-12T15:26:43Z",
-      sampleTitles: ["refactor(foundation): add non_exhaustive to Backoff and CircuitState"],
-    },
-    {
-      repo: "corsairdev/corsair",
-      url: "https://github.com/corsairdev/corsair",
-      count: 3,
-      latestMergedAt: "2026-05-29T00:36:39Z",
-      sampleTitles: ["feat: add Bluesky integration plugin"],
-    },
-  ] as ExternalRepoSummary[],
+  externalPrsMerged: mergedContributions.length,
+  externalReposContributed: new Set(mergedContributions.map((pr) => pr.repo)).size,
+  recentExternalContributions: mergedContributions.map((pr) => ({
+    repo: pr.repo,
+    title: pr.title,
+    url: pr.url,
+    mergedAt: pr.date,
+    number: pr.number,
+  })) as ExternalContribution[],
+  topExternalRepos: [] as ExternalRepoSummary[],
 };
 
 type Stats = typeof BASELINE;

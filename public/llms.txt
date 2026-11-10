@@ -1,28 +1,31 @@
 # Shaswat Raj
 
-Full Stack Developer specializing in System Design, Web Dev, DevOps, and Open-Source.
+Software engineer and B.Tech Computer Science student at BIT Mesra, India (graduating 2028). Open to SDE, forward deployed engineer and DevOps/platform internships and new-grad roles.
 
-## About
+## Summary
 
-Coding since class 7, I am a passionate developer with 45k+ followers on Dev Community and a portfolio of 500+ projects. I build tools, libraries, and applications across the full stack.
+- Merged pull requests in google-gemini/gemini-cli (#20778), preactjs/preact (#5331) and codex-team/editor.js (#3040); more in review at Jaeger, Kmesh, Lexical and Radix UI.
+- Tech lead for Bitotsav '26, a festival platform for about 5,000 participants.
+- Built and runs SopKit, 605+ client-side browser tools (4.3M+ requests in 30 days).
 
 ## Key Pages
 
 - Portfolio: https://playlikeboy.github.io
-- Blog: https://playlikeboy.github.io/blog
+- Resume: https://playlikeboy.github.io/resume
+- Software Development Engineer evidence: https://playlikeboy.github.io/roles/sde
+- Forward Deployed Engineer evidence: https://playlikeboy.github.io/roles/fde
+- DevOps / Platform Engineer evidence: https://playlikeboy.github.io/roles/devops
 - Projects: https://playlikeboy.github.io/projects
-- Startups: https://playlikeboy.github.io/startups
+- Blog: https://playlikeboy.github.io/blog
 
 ## Skills
 
-JavaScript, TypeScript, React, Next.js, Node.js, Python, Docker, Kubernetes, AWS, System Design, DevOps, Open-Source
+TypeScript, JavaScript, C++, Python, Go, SQL, React, Next.js, Node.js, PostgreSQL, Redis, Docker, GitHub Actions, Cloudflare Workers, RAG, Model Context Protocol
 
 ## Contact
 
 - GitHub: https://github.com/playlikeboy
 - LinkedIn: https://linkedin.com/in/sh20raj
-- Twitter: https://x.com/SH20RAJ
-- Dev.to: https://dev.to/sh20raj
 - Email: sh20raj@gmail.com
 
 ## Attribution

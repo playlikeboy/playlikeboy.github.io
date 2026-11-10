@@ -1,78 +1,54 @@
 # Shaswat Raj — Portfolio
 
-> **Current source of truth:** This portfolio is maintained in [playlikeboy/playlikeboy.github.io](https://github.com/playlikeboy/playlikeboy.github.io) and deployed through GitHub Pages. A GitLab mirror is retained for legacy project access.
+Source for **[playlikeboy.github.io](https://playlikeboy.github.io)**.
 
-🍅 **I'm Coming babygirl** 🍅
+Software engineer and B.Tech CSE student at BIT Mesra (2028). Open to SDE, forward-deployed and DevOps/platform internships and new-grad roles.
 
-Full-stack developer & AI product builder from India. I turn rough ideas into launch-ready products.
+- [Résumé](https://playlikeboy.github.io/resume) · [PDF](https://playlikeboy.github.io/resume.pdf)
+- Evidence by role: [SDE](https://playlikeboy.github.io/roles/sde) · [Forward Deployed](https://playlikeboy.github.io/roles/fde) · [DevOps / Platform](https://playlikeboy.github.io/roles/devops)
+- [Projects](https://playlikeboy.github.io/projects)
 
-**[playlikeboy.github.io](https://playlikeboy.github.io)**
+## Highlights
 
----
+- Merged pull requests in [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli/pull/20778), [Preact](https://github.com/preactjs/preact/pull/5331) and [Editor.js](https://github.com/codex-team/editor.js/pull/3040); more in review at Jaeger, Kmesh, Lexical and Radix UI.
+- Tech lead for Bitotsav '26 — the platform behind a ~5,000-participant festival.
+- [SopKit](https://sopkit.github.io) — 605+ client-side browser tools, 4.3M+ requests in 30 days.
 
-## What I Build
+## How this site is built
 
-- AI tools, chatbots, agent workflows, and RAG systems
-- SaaS apps with auth, payments, dashboards, and APIs
-- Landing pages, programmatic SEO, and content systems
-- Developer utilities, browser tools, and npm packages
-- Automation pipelines, MCP integrations, and launch systems
+| Part | Choice |
+|------|--------|
+| Framework | Next.js (App Router, static export), React, TypeScript |
+| Styling | Tailwind CSS, shadcn/ui |
+| Content | `src/data/*.ts(x)` and MDX in `content/` |
+| Deploy | GitHub Actions → GitHub Pages on every push to `main` |
+| Mirror | A second workflow pushes `main` to GitLab |
 
-## Tech Stack
+Where to edit:
 
-| Layer | Tools |
-|-------|-------|
-| Frontend | Next.js, React, TypeScript, Tailwind CSS, Framer Motion |
-| Backend | Node.js, Express, Prisma, REST APIs, tRPC |
-| AI | OpenAI, Claude, Gemini, RAG, embeddings, agent workflows |
-| Database | PostgreSQL, MongoDB, Firebase, Redis |
-| Infra | Cloudflare, Vercel, Docker, GitHub Actions |
-| Design | Duolingo Design System, shadcn/ui, Magic UI |
+- `src/data/resume.tsx` — profile, experience, education, projects
+- `src/data/roles.ts` — the three role pages
+- `src/data/contributions.ts` — upstream pull requests
+- `src/app/resume/page.tsx` — the one-page résumé (`public/resume.pdf` is printed from it)
 
-## Projects
+## Local development
 
-500+ projects built. 50+ npm packages. 45k+ Dev.to followers.
+```bash
+bun install
+bun run dev
+```
 
-**Live:** [playlikeboy.github.io/projects](https://playlikeboy.github.io/projects)
+Regenerate the résumé PDF after editing the résumé page (needs `playwright` installed):
 
-## Services
+```bash
+bun run build && bun run resume:pdf
+```
 
-| Service | Starting Price |
-|---------|---------------|
-| Landing Pages | From $199 |
-| SaaS MVPs | Custom |
-| AI Tools & Automation | Custom |
-| Growth Systems | From $299 |
-| Mentorship | Per session |
-| Founding Engineer | Flexible |
-
-**Details:** [playlikeboy.github.io/services](https://playlikeboy.github.io/services)
-
-## Marketplace
-
-Premium templates, guides, and tools on **[Gumroad](https://sh20raj.gumroad.com/)**.
-
-International? Pay via **PayPal** (shaswatraj3@gmail.com) or **[Razorpay](https://razorpay.me/@iamsh)** and email screenshot for access.
+`PLAN.md` tracks what is done and what is next for job applications.
 
 ## Contact
 
-- **Email:** [sh20raj@gmail.com](mailto:sh20raj@gmail.com)
-- **GitHub:** [github.com/playlikeboy](https://github.com/playlikeboy)
-- **GitLab mirror:** [gitlab.com/SH20RAJ](https://gitlab.com/SH20RAJ)
-- **LinkedIn:** [linkedin.com/in/sh20raj](https://linkedin.com/in/sh20raj)
-- **Dev.to:** [dev.to/sh20raj](https://dev.to/sh20raj)
-- **Twitter:** [@SH20RAJ](https://twitter.com/SH20RAJ)
-
-## Local Development
-
-```bash
-git clone https://github.com/playlikeboy/playlikeboy.github.io.git
-cd playlikeboy.github.io
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000)
+[sh20raj@gmail.com](mailto:sh20raj@gmail.com) · [GitHub](https://github.com/playlikeboy) · [LinkedIn](https://linkedin.com/in/sh20raj)
 
 ## License
 
