@@ -71,7 +71,7 @@ export function ContributionsAccordion() {
       <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Open source</p>
       <h2 className="text-lg font-bold tracking-tight mt-1 mb-1">Upstream pull requests</h2>
       <p className="text-sm text-muted-foreground mb-3">
-        {mergedContributions.length} code PRs merged and {openContributions.length} in review across{" "}
+        {mergedContributions.length} code PRs merged and {openContributions.length} in review, across{" "}
         {upstreamRepos} projects I don&apos;t maintain, plus {upstreamDocsMerged} merged documentation PRs in MoFA.
         Authored from{" "}
         <a
