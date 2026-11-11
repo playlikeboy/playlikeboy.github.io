@@ -23,7 +23,7 @@ Branch with all code changes: `claude/brave-pascal-bonhq1` in both repos. **Noth
 | Surface | Before | After | Why |
 |---|---|---|---|
 | GitHub profile README | 4 | 7 | Before: AI-builder framing, an unverifiable Rocket.Chat claim, the inflated "330+" repo count, 4 "upstream" merges of which 2 were own org, gemini-cli missing from the merged list, 6 widgets. After: positioning line, 4 proof projects, verified merged table, honest counts. To reach 9: pins, bio and repo descriptions (manual) |
-| GitHub account (pins, bio, repos) | 3 | 3 | Unchanged until you do the manual steps: no pins, location "Shade", 151/186 repos without descriptions, duplicate repos |
+| GitHub account (pins, bio, repos) | 3 | 3 | Unchanged until you do the manual steps: no pins; company field "Shade"; bio still "AI products, SaaS & developer tools"; 0 followers; 151 of 186 public repos without descriptions; duplicate repos. Your logged-in view shows 280+ because it includes private repos; visitors see 186 |
 | Portfolio | 6 | 8 | Before: empty-looking In-review list, gemini missing from Merged, own org counted upstream, duplicate "Open source" heading, "0 Followers", 15k contributions fallback, a11y 90. After: honest grouping, every metric names its source, a11y 100 |
 | Resume | 7 | 7 | Audit only. Strong one-pager; stale PR count, no headline, no CGPA, no PR links. See [RESUME_EDITS.md](RESUME_EDITS.md) |
 | LinkedIn *(est.)* | ? | — | Not readable. Drafts in [LINKEDIN_REWRITE.md](LINKEDIN_REWRITE.md) |
@@ -39,7 +39,7 @@ Branch with all code changes: `claude/brave-pascal-bonhq1` in both repos. **Noth
 | 3 | Found 8 merged MoFA PRs (3 Rust code, 5 docs) from the old account and added them | ✅ pushed |
 | 4 | Removed false or unverifiable claims: Rocket.Chat, "330+ repositories", `main.tex` (300+ merged PRs, 15k contributions, 45k active users), `/resume.md`, live-stats 15k fallback, "0 Followers" | ✅ pushed |
 | 5 | Pin six repos and fix their descriptions (campusloop says 1,400+, indexfast homepage typo, netscopex links the dead account) | 📝 manual, see §5 |
-| 6 | GitHub bio and location ("Shade") | 📝 manual, see §5 |
+| 6 | GitHub bio and company field ("Shade") | 📝 manual, see §5 |
 | 7 | Resume: headline line, current PR counts with links, MoFA, CGPA | 📝 manual, see RESUME_EDITS.md |
 | 8 | Every home-page metric links to its evidence; 213K = visits (not MAU), 1,350+ = college domains (not users), ~5,000 participants | ✅ pushed |
 | 9 | Accessibility 90 → 100: contrast, labelled icon buttons, Cmd+K palette exposed as dialog/combobox/listbox | ✅ pushed |
@@ -70,7 +70,7 @@ Also pushed:
 |---|---|---|---|---|---|---|
 | Name | Shaswat Raj ✅ | Shaswat Raj ✅ | Shaswat Raj ✅ | check display name | ? | ? |
 | Handle | playlikeboy / sh20raj | playlikeboy, sh20raj ✅ | playlikeboy, explains @SH20RAJ ✅ | playlikeboy | sh20raj (posts also use `shaswatraj_` ⚠️) | sh20raj |
-| Headline | none ⚠️ | "Software Engineer · B.Tech CSE, BIT Mesra '28" | "Software engineer…" ✅ | bio unknown, location "Shade" ⚠️ | ? → draft A | ? → draft |
+| Headline | none ⚠️ | "Software Engineer · B.Tech CSE, BIT Mesra '28" | "Software engineer…" ✅ | bio "AI products, SaaS & developer tools", company "Shade" ⚠️ | ? → draft A | ? → draft |
 | Education | BIT Mesra, B.Tech CSE, Expected May 2028 | "'28" / "Expected 2028" ✅ | "graduating May 2028" ✅ | — | ? | ? |
 | Upstream merged | gemini-cli, Preact, Editor.js (no MoFA ⚠️) | 6 code + 5 docs ✅ | same 4 projects ✅; auto block counts @playlikeboy only (2) and says so | — | ? | ? |
 | In review | "13 further" ⚠️ (14 + 1 draft) | 15 ✅ | 14 + 1 draft ✅ | — | ? | ? |
@@ -83,9 +83,9 @@ Also pushed:
 
 **GitHub account** (run with your own `gh`, logged in as playlikeboy):
 
-- [ ] Bio and location (147 chars):
+- [ ] Bio, company and location (bio is 147 chars; clears the "Shade" company field):
 ```bash
-gh api -X PATCH user -f bio="Software engineer, BIT Mesra '28. Merged upstream: gemini-cli, Preact, Editor.js, MoFA. Go fixes in Kmesh/Jaeger. Open to SDE & DevOps internships." -f location="Ranchi, India" -f blog="https://playlikeboy.github.io" -f twitter_username="SH20RAJ"
+gh api -X PATCH user -f bio="Software engineer, BIT Mesra '28. Merged upstream: gemini-cli, Preact, Editor.js, MoFA. Go fixes in Kmesh/Jaeger. Open to SDE & DevOps internships." -f company="" -f location="Ranchi, India" -f blog="https://playlikeboy.github.io" -f twitter_username="SH20RAJ"
 ```
 - [ ] Pins (no API; Profile → "Customize your pins"), in this order:
   1. `SopKit/sopkit.github.io` (or `playlikeboy/30tools`; pick one and archive the other's description to point to it)
