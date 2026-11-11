@@ -1,26 +1,25 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-
+import { CommandPalette } from "@/components/command-palette";
 import { ThemeProvider } from "@/components/theme-provider";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { ResumeProvider } from "@/lib/resume-context";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
-import { Nunito, Nunito_Sans } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const fontDisplay = Nunito({
+const fontMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800", "900"],
-  variable: "--font-display",
+  variable: "--font-mono",
+  display: "swap",
 });
 
-const fontSans = Nunito_Sans({
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
-  variable: "--font-sans",
-});
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#101217" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
@@ -160,11 +159,8 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={fontMono.variable}>
       <head>
-        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta httpEquiv="Pragma" content="no-cache" />
-        <meta httpEquiv="Expires" content="0" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -174,26 +170,20 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
-      <body
-        suppressHydrationWarning
-        className={cn(
-          "min-h-screen bg-background font-body antialiased selection:bg-primary/10",
-          fontDisplay.variable,
-          fontSans.variable
-        )}
-      >
-
-        <ThemeProvider attribute="class" defaultTheme="light">
-          <ResumeProvider>
-            <TooltipProvider delayDuration={0}>
-              <Navbar />
-              <main className="pt-12 print:pt-0">
-                {children}
-              </main>
-              <Footer />
-
-            </TooltipProvider>
-          </ResumeProvider>
+      <body suppressHydrationWarning className={cn("min-h-dvh flex flex-col")}>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[200] focus:bg-background focus:px-3 focus:py-2 focus:font-mono focus:text-sm"
+        >
+          Skip to content
+        </a>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <Navbar />
+          <main id="main" className="flex-1 print:pt-0">
+            {children}
+          </main>
+          <Footer />
+          <CommandPalette />
         </ThemeProvider>
       </body>
     </html>

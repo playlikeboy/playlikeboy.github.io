@@ -18,9 +18,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        display: ["Nunito", "sans-serif"],
-        body: ["Nunito Sans", "sans-serif"],
-        sans: ["Nunito Sans", ...fontFamily.sans],
+        sans: ["var(--font-prose)", ...fontFamily.sans],
+        mono: ["var(--font-mono)", ...fontFamily.mono],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -35,31 +34,19 @@ const config = {
         accent: { DEFAULT: "hsl(var(--accent))", foreground: "hsl(var(--accent-foreground))" },
         popover: { DEFAULT: "hsl(var(--popover))", foreground: "hsl(var(--popover-foreground))" },
         card: { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" },
-        duo: {
-          feather: "var(--duo-feather)", mask: "var(--duo-mask)",
-          macaw: "var(--duo-macaw)", cardinal: "var(--duo-cardinal)",
-          bee: "var(--duo-bee)", fox: "var(--duo-fox)",
-          beetle: "var(--duo-beetle)", humpback: "var(--duo-humpback)",
-          eel: "var(--duo-eel)", wolf: "var(--duo-wolf)",
-          hare: "var(--duo-hare)", swan: "var(--duo-swan)",
-          polar: "var(--duo-polar)", snow: "var(--duo-snow)",
-        },
+        link: "hsl(var(--link))",
+        merged: "hsl(var(--merged))",
+        review: "hsl(var(--review))",
+        quote: "hsl(var(--quote))",
+        rule: "hsl(var(--rule))",
       },
       borderRadius: {
-        lg: "var(--radius-lg)", md: "var(--radius-md)", sm: "var(--radius-sm)",
-        pill: "var(--radius-pill)", "2xl": "1rem", "3xl": "1.5rem", "4xl": "2rem",
+        lg: "4px", md: "3px", sm: "2px",
       },
-      keyframes: {
-        "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
-        "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
+      maxWidth: { measure: "70ch", page: "52rem" },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [],
 } satisfies Config;
 
 export default config;

@@ -1,311 +1,184 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import {
-  Search,
-  ArrowRight,
-  Code,
-  Globe,
-  FileText,
-  Sun,
-  Moon,
-  Copy,
-  Check,
-  Zap,
-  ExternalLink,
-  Laptop,
-  type LucideIcon,
-} from "lucide-react";
+import { OPEN_PALETTE_EVENT } from "@/components/nav-actions";
 
-interface ActionItem {
+interface Item {
   id: string;
-  title: string;
-  subtitle?: string;
-  category: "Navigation" | "Projects & Work" | "Actions" | "Theme";
-  icon: LucideIcon;
-  action: () => void;
+  label: string;
+  hint: string;
+  run: () => void | Promise<void>;
 }
 
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [copied, setCopied] = useState(false);
-  const [copyError, setCopyError] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [notice, setNotice] = useState("");
   const router = useRouter();
-  const { setTheme, theme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
+  const returnFocus = useRef<HTMLElement | null>(null);
 
-  const closePalette = useCallback(() => {
+  const close = useCallback(() => {
     setOpen(false);
     setQuery("");
-    setSelectedIndex(0);
-    setCopyError(false);
+    setIndex(0);
+    setNotice("");
+    returnFocus.current?.focus?.();
   }, []);
 
-  const handleCopyEmail = useCallback(async () => {
-    try {
-      if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable");
-      await navigator.clipboard.writeText("sh20raj@gmail.com");
-      setCopyError(false);
-      setCopied(true);
-      setTimeout(() => {
-        setCopied(false);
-        closePalette();
-      }, 800);
-    } catch (error) {
-      console.error("Failed to copy email:", error);
-      setCopied(false);
-      setCopyError(true);
-      setTimeout(() => setCopyError(false), 1600);
-    }
-  }, [closePalette]);
+  const go = useCallback(
+    (href: string) => () => {
+      if (href.startsWith("http") || href.startsWith("mailto:") || href.endsWith(".pdf")) {
+        window.open(href, href.startsWith("mailto:") ? "_self" : "_blank", "noopener");
+      } else {
+        router.push(href);
+      }
+      close();
+    },
+    [router, close],
+  );
 
-  const actions: ActionItem[] = [
-    {
-      id: "home",
-      title: "Go to Home",
-      subtitle: "Overview & engineering highlights",
-      category: "Navigation",
-      icon: Globe,
-      action: () => {
-        router.push("/");
-        closePalette();
+  const items: Item[] = useMemo(
+    () => [
+      { id: "home", label: "Home", hint: "the patch series", run: go("/") },
+      { id: "bugs", label: "Bug journal", hint: "bugs found in code I don't maintain", run: go("/bugs") },
+      { id: "proof", label: "Proof", hint: "every claim with its source", run: go("/proof") },
+      { id: "sde", label: "Role: SDE", hint: "evidence for software engineering roles", run: go("/roles/sde") },
+      { id: "fde", label: "Role: Forward Deployed Engineer", hint: "evidence for FDE roles", run: go("/roles/fde") },
+      { id: "devops", label: "Role: DevOps / Platform", hint: "evidence for infra roles", run: go("/roles/devops") },
+      { id: "projects", label: "Projects", hint: "systems I built and run", run: go("/projects") },
+      { id: "status", label: "Status", hint: "live uptime of my products", run: go("/status") },
+      { id: "resume", label: "Resume", hint: "one page", run: go("/resume") },
+      { id: "pdf", label: "Download resume PDF", hint: "/resume.pdf", run: go("/resume.pdf") },
+      { id: "story", label: "Story", hint: "how I got here", run: go("/story") },
+      { id: "blog", label: "Blog", hint: "writing", run: go("/blog") },
+      { id: "github", label: "GitHub", hint: "github.com/playlikeboy", run: go("https://github.com/playlikeboy") },
+      { id: "linkedin", label: "LinkedIn", hint: "linkedin.com/in/sh20raj", run: go("https://www.linkedin.com/in/sh20raj/") },
+      {
+        id: "copy-email",
+        label: "Copy email address",
+        hint: "sh20raj@gmail.com",
+        run: async () => {
+          try {
+            await navigator.clipboard.writeText("sh20raj@gmail.com");
+            setNotice("Copied sh20raj@gmail.com");
+          } catch {
+            setNotice("Couldn't copy. The address is sh20raj@gmail.com");
+          }
+        },
       },
-    },
-    {
-      id: "projects",
-      title: "View Projects",
-      subtitle: "Production products & dev tools",
-      category: "Navigation",
-      icon: Code,
-      action: () => {
-        router.push("/projects");
-        closePalette();
+      {
+        id: "theme",
+        label: resolvedTheme === "dark" ? "Switch to light theme" : "Switch to dark theme",
+        hint: "theme",
+        run: () => {
+          setTheme(resolvedTheme === "dark" ? "light" : "dark");
+          close();
+        },
       },
-    },
-    {
-      id: "startups",
-      title: "Startups & Ventures",
-      subtitle: "CampusLoop, Debo, IndexFast, Solus",
-      category: "Navigation",
-      icon: Zap,
-      action: () => {
-        router.push("/startups");
-        closePalette();
-      },
-    },
-    {
-      id: "services",
-      title: "Résumé",
-      subtitle: "One page, with PDF download",
-      category: "Navigation",
-      icon: Laptop,
-      action: () => {
-        router.push("/resume");
-        closePalette();
-      },
-    },
-    {
-      id: "blog",
-      title: "Blog",
-      subtitle: "Technical articles & system design notes",
-      category: "Navigation",
-      icon: FileText,
-      action: () => {
-        router.push("/blog");
-        closePalette();
-      },
-    },
-    {
-      id: "campusloop",
-      title: "CampusLoop",
-      subtitle: "Verified campus social network (campusloop.space)",
-      category: "Projects & Work",
-      icon: ExternalLink,
-      action: () => {
-        window.open("https://campusloop.space/", "_blank");
-        closePalette();
-      },
-    },
-    {
-      id: "gemini-pr",
-      title: "Google Gemini CLI Contribution",
-      subtitle: "google-gemini/gemini-cli (#20778)",
-      category: "Projects & Work",
-      icon: ExternalLink,
-      action: () => {
-        window.open("https://github.com/google-gemini/gemini-cli/pull/20778", "_blank");
-        closePalette();
-      },
-    },
-    {
-      id: "gitlab",
-      title: "GitLab Profile",
-      subtitle: "github.com/playlikeboy",
-      category: "Projects & Work",
-      icon: ExternalLink,
-      action: () => {
-        window.open("https://github.com/playlikeboy", "_blank");
-        closePalette();
-      },
-    },
-    {
-      id: "copy-email",
-      title: copied ? "Copied to Clipboard!" : copyError ? "Copy failed" : "Copy Email Address",
-      subtitle: "sh20raj@gmail.com",
-      category: "Actions",
-      icon: copied ? Check : Copy,
-      action: handleCopyEmail,
-    },
-    {
-      id: "resume-pdf",
-      title: "Download Resume (PDF)",
-      subtitle: "Formatted single-page resume",
-      category: "Actions",
-      icon: FileText,
-      action: () => {
-        window.open("/resume.pdf", "_blank");
-        closePalette();
-      },
-    },
-    {
-      id: "toggle-theme",
-      title: `Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`,
-      subtitle: "Toggle color scheme",
-      category: "Theme",
-      icon: theme === "dark" ? Sun : Moon,
-      action: () => {
-        setTheme(theme === "dark" ? "light" : "dark");
-        closePalette();
-      },
-    },
-  ];
+    ],
+    [go, resolvedTheme, setTheme, close],
+  );
 
-  const filtered = actions.filter((item) => {
-    const term = query.toLowerCase().trim();
-    if (!term) return true;
-    return (
-      item.title.toLowerCase().includes(term) ||
-      item.subtitle?.toLowerCase().includes(term) ||
-      item.category.toLowerCase().includes(term)
-    );
-  });
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return q ? items.filter((i) => `${i.label} ${i.hint}`.toLowerCase().includes(q)) : items;
+  }, [items, query]);
 
   useEffect(() => {
-    if (!open) return;
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = previousOverflow;
+    const openPalette = () => {
+      returnFocus.current = document.activeElement as HTMLElement | null;
+      setOpen(true);
     };
-  }, [open]);
-
-  // Keyboard shortcut listener
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        if (open) closePalette();
-        else setOpen(true);
-      } else if (e.key === "Escape" && open) {
-        closePalette();
-      } else if (open) {
-        if (e.key === "ArrowDown") {
-          e.preventDefault();
-          setSelectedIndex((prev) => (prev + 1) % Math.max(1, filtered.length));
-        } else if (e.key === "ArrowUp") {
-          e.preventDefault();
-          setSelectedIndex((prev) => (prev - 1 + filtered.length) % Math.max(1, filtered.length));
-        } else if (e.key === "Enter" && filtered[selectedIndex]) {
-          e.preventDefault();
-          filtered[selectedIndex].action();
-        }
+        if (open) close();
+        else openPalette();
       }
     };
+    window.addEventListener("keydown", onKey);
+    window.addEventListener(OPEN_PALETTE_EVENT, openPalette);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener(OPEN_PALETTE_EVENT, openPalette);
+    };
+  }, [open, close]);
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [open, filtered, selectedIndex, closePalette]);
+  useEffect(() => setIndex(0), [query]);
 
   if (!open) return null;
 
+  const onInputKey = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape") {
+      e.preventDefault();
+      close();
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setIndex((i) => (filtered.length ? (i + 1) % filtered.length : 0));
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setIndex((i) => (filtered.length ? (i - 1 + filtered.length) % filtered.length : 0));
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      filtered[index]?.run();
+    } else if (e.key === "Tab") {
+      e.preventDefault();
+    }
+  };
+
   return (
-    <div
-      className="fixed inset-0 z-[100] flex items-start justify-center pt-20 px-4 bg-background/80 backdrop-blur-sm animate-in fade-in duration-150"
-      onClick={closePalette}
-    >
+    <div className="fixed inset-0 z-[100] flex items-start justify-center bg-foreground/20 px-4 pt-[12vh]" onClick={close}>
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="Command palette"
-        className="w-full max-w-lg rounded-xl border border-border bg-card shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150"
+        aria-label="Search pages and actions"
+        className="w-full max-w-lg border border-border bg-background shadow-[0_12px_40px_-12px_hsl(var(--foreground)/0.35)]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center gap-3 px-4 py-3 border-b border-border">
-          <Search className="size-4 text-muted-foreground shrink-0" aria-hidden="true" />
+        <div className="flex items-center gap-2 border-b border-border px-3 font-mono text-sm">
+          <span className="text-muted-foreground" aria-hidden="true">search:</span>
           <input
             autoFocus
             role="combobox"
-            aria-label="Search pages and commands"
             aria-expanded="true"
-            aria-controls="command-palette-list"
-            aria-activedescendant={filtered[selectedIndex] ? `cmd-${filtered[selectedIndex].id}` : undefined}
-            type="text"
-            placeholder="Type a command or search..."
+            aria-controls="palette-list"
+            aria-activedescendant={filtered[index] ? `palette-${filtered[index].id}` : undefined}
+            aria-label="Search pages and actions"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="flex-1 bg-transparent text-sm focus:outline-none placeholder:text-muted-foreground"
+            onKeyDown={onInputKey}
+            placeholder="bugs, devops, resume…"
+            className="h-11 flex-1 bg-transparent outline-none placeholder:text-muted-foreground/70"
           />
-          <kbd className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] font-mono text-muted-foreground bg-accent rounded border border-border">
-            ESC
-          </kbd>
+          <kbd className="text-[0.75rem] text-muted-foreground">esc</kbd>
         </div>
-
-        <div id="command-palette-list" role="listbox" className="max-h-80 overflow-y-auto p-2 space-y-1">
-          {filtered.length === 0 ? (
-            <div className="py-8 text-center text-xs text-muted-foreground">
-              No matching commands found.
-            </div>
-          ) : (
-            filtered.map((item, idx) => {
-              const isSelected = idx === selectedIndex;
-              const Icon = item.icon;
-              return (
-                <button
-                  key={item.id}
-                  id={`cmd-${item.id}`}
-                  role="option"
-                  aria-selected={isSelected}
-                  tabIndex={-1}
-                  onClick={item.action}
-                  onMouseEnter={() => setSelectedIndex(idx)}
-                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left text-xs transition-colors ${
-                    isSelected ? "bg-accent text-foreground font-medium" : "text-muted-foreground hover:bg-accent/50"
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5 min-w-0">
-                    <Icon className="size-3.5 shrink-0" aria-hidden="true" />
-                    <div className="truncate">
-                      <p className="font-medium text-foreground">{item.title}</p>
-                      {item.subtitle && (
-                        <p className="text-[10px] text-muted-foreground truncate">{item.subtitle}</p>
-                      )}
-                    </div>
-                  </div>
-                  <ArrowRight className={`size-3 text-muted-foreground shrink-0 ml-2 ${isSelected ? "opacity-100" : "opacity-0"}`} />
-                </button>
-              );
-            })
-          )}
-        </div>
-
-        <div className="px-4 py-2 border-t border-border bg-accent/30 flex items-center justify-between text-[10px] text-muted-foreground">
-          <span>Navigate with ↑ ↓ and Enter</span>
-          <span>playlikeboy.github.io</span>
-        </div>
+        <ul id="palette-list" role="listbox" className="max-h-[50vh] overflow-y-auto py-1 font-mono text-[0.8125rem]">
+          {filtered.length === 0 && <li className="px-3 py-6 text-center text-muted-foreground">Nothing matches &ldquo;{query}&rdquo;.</li>}
+          {filtered.map((item, i) => (
+            <li
+              key={item.id}
+              id={`palette-${item.id}`}
+              role="option"
+              aria-selected={i === index}
+              onMouseEnter={() => setIndex(i)}
+              onClick={() => item.run()}
+              className={`flex cursor-pointer items-baseline justify-between gap-4 px-3 py-1.5 ${i === index ? "bg-accent text-foreground" : "text-foreground/90"}`}
+            >
+              <span>
+                <span className="text-muted-foreground" aria-hidden="true">{i === index ? "> " : "  "}</span>
+                {item.label}
+              </span>
+              <span className="truncate text-muted-foreground">{item.hint}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="border-t border-border px-3 py-1.5 font-mono text-[0.75rem] text-muted-foreground" aria-live="polite">
+          {notice || "↑↓ to move · enter to open · esc to close"}
+        </p>
       </div>
     </div>
   );

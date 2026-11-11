@@ -1,25 +1,38 @@
-import { DATA } from "@/data/resume";
 import Link from "next/link";
+
+// A mail signature: "-- " then who, and how to reply.
+const LINKS = [
+  ["email", "mailto:sh20raj@gmail.com"],
+  ["github", "https://github.com/playlikeboy"],
+  ["linkedin", "https://www.linkedin.com/in/sh20raj/"],
+  ["peerlist", "https://peerlist.io/sh20raj"],
+  ["gitlab", "https://gitlab.com/SH20RAJ"],
+  ["dev.to", "https://dev.to/sh20raj"],
+] as const;
 
 export default function Footer() {
   return (
-    <footer className="print:hidden border-t border-border py-6 px-6">
-      <div className="mx-auto max-w-2xl flex items-center justify-between text-xs text-muted-foreground">
-        <p>&copy; {new Date().getFullYear()} {DATA.name}</p>
-        <div className="flex items-center gap-4">
-          <Link href="/building" className="hover:text-foreground transition-colors">
-            Building
-          </Link>
-          <Link href="https://github.com/playlikeboy" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-            GitHub
-          </Link>
-          <Link href="https://linkedin.com/in/sh20raj" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-            LinkedIn
-          </Link>
-          <Link href="https://x.com/SH20RAJ" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-            X
-          </Link>
-        </div>
+    <footer className="print:hidden mt-16 border-t border-border">
+      <div className="mx-auto max-w-page px-4 sm:px-6 py-8 font-mono text-[0.8125rem] leading-relaxed text-muted-foreground">
+        <p aria-hidden="true">--&nbsp;</p>
+        <p className="text-foreground">Shaswat Raj</p>
+        <p>B.Tech CSE, BIT Mesra, graduating May 2028 · Ranchi, India</p>
+        <p>Open to SDE, forward-deployed and DevOps internships and new-grad roles.</p>
+        <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1">
+          {LINKS.map(([label, href]) => (
+            <a
+              key={href}
+              href={href}
+              {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              className="a-link"
+            >
+              {label}
+            </a>
+          ))}
+          <Link href="/status" className="a-link">status</Link>
+          <Link href="/story" className="a-link">story</Link>
+          <Link href="/blog" className="a-link">blog</Link>
+        </p>
       </div>
     </footer>
   );
