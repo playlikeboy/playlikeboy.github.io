@@ -5,14 +5,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Bitotsav '26 Case Study — High-Concurrency Festival Infrastructure",
   description:
-    "Engineering case study on Bitotsav '26: architecting high-concurrency event infrastructure, offline-tolerant cryptographic QR verification, and Redis caching for 5,000+ live participants.",
+    "Engineering case study on Bitotsav '26: architecting high-concurrency event infrastructure, offline-tolerant cryptographic QR verification, and Redis caching for ~5,000 live participants.",
   alternates: {
     canonical: "https://playlikeboy.github.io/projects/bitotsav-2026",
   },
   openGraph: {
     title: "Bitotsav '26 Case Study — High-Concurrency Festival Infrastructure | Shaswat Raj",
     description:
-      "Engineering case study on Bitotsav '26: architecting high-concurrency event infrastructure, offline-tolerant cryptographic QR verification, and Redis caching for 5,000+ live participants.",
+      "Engineering case study on Bitotsav '26: architecting high-concurrency event infrastructure, offline-tolerant cryptographic QR verification, and Redis caching for ~5,000 live participants.",
     url: "https://playlikeboy.github.io/projects/bitotsav-2026",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bitotsav '26 Case Study — High-Concurrency Festival Infrastructure",
     description:
-      "Engineering case study on Bitotsav '26: architecting high-concurrency event infrastructure, offline-tolerant cryptographic QR verification, and Redis caching for 5,000+ live participants.",
+      "Engineering case study on Bitotsav '26: architecting high-concurrency event infrastructure, offline-tolerant cryptographic QR verification, and Redis caching for ~5,000 live participants.",
     creator: "@SH20RAJ",
     images: ["/og.png"],
   },
@@ -49,7 +49,7 @@ export default function BitotsavCaseStudy() {
               <span className="text-xs text-muted-foreground">BIT Mesra · 2026</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-              Bitotsav &apos;26 — Event Infrastructure for 5,000+ Live Participants
+              Bitotsav &apos;26 — Event Infrastructure for ~5,000 Live Participants
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed pt-1">
               End-to-end engineering leadership of the complete festival platform: offline-resilient QR access verification, low-latency Redis caching, and real-time operational telemetry.
@@ -70,7 +70,7 @@ export default function BitotsavCaseStudy() {
           {/* Metric Highlights */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-6 border-t border-border">
             <div>
-              <p className="text-xl font-bold tracking-tight">5,000+</p>
+              <p className="text-xl font-bold tracking-tight">~5,000</p>
               <p className="text-xs text-muted-foreground">Live Participants</p>
             </div>
             <div>

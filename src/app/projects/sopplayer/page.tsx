@@ -166,7 +166,7 @@ export default function SopPlayerCaseStudy() {
                 <strong className="text-foreground">1,183,451+ verified HTTP requests</strong> served to websites globally.
               </li>
               <li>
-                <strong className="text-foreground">38+ GB of cached JavaScript/CSS assets</strong> transferred with sub-millisecond edge latency.
+                <strong className="text-foreground">38+ GB of cached JavaScript/CSS assets</strong> transferred.
               </li>
               <li>
                 Ranked in jsDelivr popularity tiers for open-source media utilities.

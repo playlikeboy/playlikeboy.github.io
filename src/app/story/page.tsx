@@ -38,7 +38,7 @@ const proof = [
     detail: "A privacy-first browser tool platform.",
   },
   {
-    metric: "5,000+",
+    metric: "~5,000",
     label: "live participants",
     detail: "Event infrastructure built for Bitotsav.",
   },
