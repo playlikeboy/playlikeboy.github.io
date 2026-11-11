@@ -66,7 +66,7 @@ export default function DeboCaseStudy() {
               <Globe className="size-3.5" /> Visit Debo.life
             </a>
             <a
-              href="https://github.com/playlikeboy/debo"
+              href="https://github.com/playlikeboy/debo.life"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-medium border border-border px-3 py-1.5 rounded-md hover:bg-accent transition-colors text-muted-foreground hover:text-foreground"

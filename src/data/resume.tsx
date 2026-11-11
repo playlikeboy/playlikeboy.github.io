@@ -340,7 +340,7 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/playlikeboy/debo",
+          href: "https://github.com/playlikeboy/debo.life",
           icon: "github",
         },
       ],
@@ -363,7 +363,7 @@ export const DATA = {
         },
         {
           type: "Source",
-          href: "https://github.com/playlikeboy/index-fast",
+          href: "https://github.com/playlikeboy/indexfast",
           icon: "github",
         },
       ],
