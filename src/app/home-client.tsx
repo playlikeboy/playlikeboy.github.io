@@ -132,6 +132,12 @@ export function HomeClient({ DATA }: { DATA: any }) {
               </a>
             ))}
           </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Every number here links to its source.{" "}
+            <Link href="/proof" className="underline underline-offset-2 hover:text-foreground">Check all of them</Link>
+            {" · "}
+            <Link href="/status" className="underline underline-offset-2 hover:text-foreground">Live product status</Link>
+          </p>
         </div>
       </section>
 
@@ -212,6 +218,11 @@ export function HomeClient({ DATA }: { DATA: any }) {
       <section id="open-source" className="py-10 border-b border-border scroll-mt-12">
         <div className="mx-auto w-full max-w-2xl px-6">
           <ContributionsAccordion />
+          <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium">
+            <Link href="/bugs" className="inline-flex items-center gap-1 hover:text-muted-foreground">
+              Bug journal: every bug I reproduced and filed upstream <ArrowRightIcon className="size-3.5" />
+            </Link>
+          </div>
         </div>
       </section>
 

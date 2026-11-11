@@ -19,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 1,
     },
-    ...["resume", "roles/sde", "roles/fde", "roles/devops"].map((path) => ({
+    ...["resume", "roles/sde", "roles/fde", "roles/devops", "bugs", "proof", "status"].map((path) => ({
       url: `https://playlikeboy.github.io/${path}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
