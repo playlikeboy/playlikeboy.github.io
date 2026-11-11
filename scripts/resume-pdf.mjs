@@ -1,4 +1,4 @@
-// Prints the built /resume page to public/resume.pdf.
+// Prints the built /resume pages (general + one per role) to PDFs in public/.
 // Usage: bun run build && bun run resume:pdf   (needs `playwright` available)
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
@@ -28,13 +28,22 @@ const { port } = server.address();
 const browser = await chromium.launch();
 const page = await browser.newPage();
 await page.emulateMedia({ media: "print", colorScheme: "light" });
-await page.goto(`http://localhost:${port}/resume`, { waitUntil: "networkidle" });
-await page.evaluate(() => document.fonts.ready);
-await page.pdf({
-  path: "public/resume.pdf",
-  format: "A4",
-  margin: { top: "12mm", bottom: "12mm", left: "13mm", right: "13mm" },
-});
+// The general resume and one tailored version per role.
+const targets = [
+  ["/resume", "public/resume.pdf"],
+  ["/resume/sde", "public/resume-sde.pdf"],
+  ["/resume/fde", "public/resume-fde.pdf"],
+  ["/resume/devops", "public/resume-devops.pdf"],
+];
+for (const [route, path] of targets) {
+  await page.goto(`http://localhost:${port}${route}`, { waitUntil: "networkidle" });
+  await page.evaluate(() => document.fonts.ready);
+  await page.pdf({
+    path,
+    format: "A4",
+    margin: { top: "12mm", bottom: "12mm", left: "13mm", right: "13mm" },
+  });
+  console.log(`wrote ${path}`);
+}
 await browser.close();
 server.close();
-console.log("wrote public/resume.pdf");
