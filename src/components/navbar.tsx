@@ -50,6 +50,8 @@ export default function Navbar() {
               onClick={triggerCommandPalette}
               className="flex items-center gap-1.5 px-2 py-1 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-colors border border-border/60"
               title="Open Command Palette (Cmd+K)"
+              aria-label="Search the site (Cmd+K)"
+              aria-keyshortcuts="Meta+K Control+K"
             >
               <Search className="size-3" />
               <span className="hidden sm:inline text-[10px] font-mono opacity-80">⌘K</span>
@@ -61,6 +63,7 @@ export default function Navbar() {
               className="sm:hidden p-1.5 rounded hover:bg-accent transition-colors"
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
+              aria-expanded={open}
             >
               {open ? <X className="size-4" /> : <Menu className="size-4" />}
             </button>
