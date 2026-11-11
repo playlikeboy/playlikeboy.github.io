@@ -13,14 +13,22 @@ export const metadata: Metadata = {
 };
 
 const skills: [string, string][] = [
-  ["Languages", "TypeScript, JavaScript, C++, Python, Go, SQL, Bash"],
+  ["Languages", "TypeScript, JavaScript, Go, Rust, C++, Python, SQL, Bash"],
   ["Backend", "Node.js, Express, Hono, FastAPI, PostgreSQL, Redis, REST, WebSockets"],
-  ["Infrastructure", "Docker, GitHub Actions, GitLab CI, Cloudflare Workers, Linux"],
+  ["Infrastructure", "Docker, CI/CD (GitHub Actions, GitLab CI), Cloudflare Workers, Linux"],
   ["Frontend", "React, Next.js, Tailwind CSS, WebAssembly"],
   ["AI", "OpenAI / Claude / Gemini APIs, RAG, vector search, Model Context Protocol"],
 ];
 
-const experience = [
+function PR({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a href={href} className="underline decoration-neutral-400 underline-offset-2">
+      {children}
+    </a>
+  );
+}
+
+const experience: { org: string; role: string; when: string; points: React.ReactNode[] }[] = [
   {
     org: "Bitotsav '26 — BIT Mesra annual festival",
     role: "Tech Lead",
@@ -33,12 +41,26 @@ const experience = [
   },
   {
     org: "Open source",
-    role: "Contributor and maintainer",
+    role: "Contributor",
     when: "2022 – Present",
     points: [
-            "google-gemini/gemini-cli #20778: fixed turn cancellation not reaching chat-compression requests by threading AbortSignal through the execution layers.",
-      "Merged fixes in preactjs/preact (#5331, input type definitions) and codex-team/editor.js (#3040, inline toolbar).",
-      "13 further pull requests in review, including jaegertracing/jaeger, kmesh-net/kmesh (Go), meta/lexical and radix-ui/primitives.",
+      <>
+        Merged: <PR href="https://github.com/google-gemini/gemini-cli/pull/20778">google-gemini/gemini-cli #20778</PR>, turn
+        cancellation now reaches in-flight chat-compression requests (AbortSignal threaded through the execution layers).
+      </>,
+      <>
+        Merged: <PR href="https://github.com/mofa-org/mofa/pull/1577">mofa-org/mofa #1577</PR>,{" "}
+        <PR href="https://github.com/mofa-org/mofa/pull/1587">#1587</PR>, <PR href="https://github.com/mofa-org/mofa/pull/1594">#1594</PR>{" "}
+        (Rust): replaced a panicking unwrap() in cron parsing; #[non_exhaustive] public enums. Also{" "}
+        <PR href="https://github.com/preactjs/preact/pull/5331">preactjs/preact #5331</PR> and{" "}
+        <PR href="https://github.com/codex-team/editor.js/pull/3040">codex-team/editor.js #3040</PR>.
+      </>,
+      <>
+        In review: Go fixes in <PR href="https://github.com/kmesh-net/kmesh/pulls?q=author%3Aplaylikeboy">kmesh-net/kmesh</PR> (CNI
+        nil-pointer panic, duplicate DNS refresh loops) and{" "}
+        <PR href="https://github.com/jaegertracing/jaeger/pull/10024">jaegertracing/jaeger #10024</PR> (reject out-of-range sampling
+        config); 14 open upstream PRs in all, each from a reproduced, filed issue.
+      </>,
     ],
   },
 ];
@@ -58,7 +80,7 @@ const projects = [
     stack: "Next.js, PostgreSQL, Cloudflare Workers, WebSockets",
     link: "campusloop.space",
     points: [
-      "Verified student network for 1,350+ Indian colleges, gated by institutional email; feeds, marketplace, polls and time capsules.",
+      "Student network gated by college email; sign-up accepts the domains of 1,350+ Indian colleges. Feeds, marketplace, polls and time capsules.",
     ],
   },
   {
@@ -112,16 +134,19 @@ export default function ResumePage() {
       </div>
 
       <article className="text-[12.5px] leading-[1.42] text-neutral-900 dark:text-neutral-100 print:text-black print:text-[11.5px] print:leading-[1.42]">
-        <header className="text-center">
+        <div className="text-center">
           <h1 className="text-2xl font-bold tracking-tight">{DATA.name}</h1>
-          <p className="mt-1">
+          <p className="mt-0.5 font-semibold">
+            Software Engineer · SDE / DevOps · Merged upstream in gemini-cli, MoFA, Preact and Editor.js
+          </p>
+          <p className="mt-0.5">
             Ranchi, India ·{" "}
             <a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a> ·{" "}
             <a href={DATA.url}>playlikeboy.github.io</a> ·{" "}
             <a href="https://github.com/playlikeboy">github.com/playlikeboy</a> ·{" "}
             <a href="https://linkedin.com/in/sh20raj">linkedin.com/in/sh20raj</a>
           </p>
-        </header>
+        </div>
 
         <Section title="Education">
           <div className="flex justify-between gap-4">
@@ -154,8 +179,8 @@ export default function ResumePage() {
                 <p className="shrink-0">{item.when}</p>
               </div>
               <ul className="list-disc pl-4">
-                {item.points.map((point) => (
-                  <li key={point}>{point}</li>
+                {item.points.map((point, i) => (
+                  <li key={i}>{point}</li>
                 ))}
               </ul>
             </div>
@@ -187,7 +212,7 @@ export default function ResumePage() {
         <Section title="Honors">
           <ul className="list-disc pl-4">
             <li>AICTE Productization Fellowship 2025 — shortlisted in the national Top 500 (Kishan AI).</li>
-            <li>Apify hackathon — prize winner for a production web-scraping actor.</li>
+            <li>Apify hackathon — prize ($100) for a production web-scraping actor.</li>
             <li>Technical writing on Dev.to, 45K+ followers.</li>
           </ul>
         </Section>
