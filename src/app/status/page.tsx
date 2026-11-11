@@ -1,7 +1,6 @@
-import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowLeft } from "lucide-react";
 import { DATA } from "@/data/resume";
+import { Ext, Page, PageHead } from "@/components/mail";
 import { StatusClient } from "./status-client";
 
 const description =
@@ -15,34 +14,16 @@ export const metadata: Metadata = {
 
 export default function StatusPage() {
   return (
-    <main className="mx-auto w-full max-w-2xl px-6 py-10">
-      <Link href="/" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
-        <ArrowLeft className="size-3.5" aria-hidden="true" /> Home
-      </Link>
-      <p className="mt-6 text-xs font-medium uppercase tracking-wider text-muted-foreground">Status</p>
-      <h1 className="mt-1 text-2xl font-bold tracking-tight">Products I run, checked every hour</h1>
-      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-        A GitHub Actions job requests each site hourly and keeps 30 days of results on the{" "}
-        <a
-          href="https://github.com/playlikeboy/playlikeboy.github.io/tree/status"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-2 hover:text-foreground"
-        >
-          status branch
-        </a>
-        . The{" "}
-        <a
-          href="https://github.com/playlikeboy/playlikeboy.github.io/blob/main/scripts/uptime.mjs"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-2 hover:text-foreground"
-        >
-          checker
-        </a>{" "}
-        is 60 lines of Node with no dependencies.
-      </p>
+    <Page>
+      <PageHead subject="products I run, checked every hour" fields={[["Checker", "GitHub Actions, hourly, 30 days kept"]]}>
+        <p>
+          A scheduled job requests each site and keeps the results on this repo&apos;s{" "}
+          <Ext href="https://github.com/playlikeboy/playlikeboy.github.io/tree/status">status branch</Ext>. The{" "}
+          <Ext href="https://github.com/playlikeboy/playlikeboy.github.io/blob/main/scripts/uptime.mjs">checker</Ext> is about
+          60 lines of Node with no dependencies.
+        </p>
+      </PageHead>
       <StatusClient />
-    </main>
+    </Page>
   );
 }

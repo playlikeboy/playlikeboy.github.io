@@ -1,5 +1,6 @@
 import { getBlogPosts } from "@/data/blog";
 import Link from "next/link";
+import { Page, PageHead } from "@/components/mail";
 
 export const metadata = {
   title: "Blog — Shaswat Raj",
@@ -26,49 +27,28 @@ export const metadata = {
 };
 
 export default async function BlogPage() {
-  const posts = await getBlogPosts();
-
+  const posts = (await getBlogPosts()).sort(
+    (a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime(),
+  );
   return (
-    <main className="flex flex-col min-h-[100dvh] pb-16">
-      <section className="py-10 border-b border-border">
-        <div className="mx-auto w-full max-w-2xl px-6">
-          <h1 className="text-xl font-bold tracking-tight">Blog</h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Thoughts on software, open source, and building things.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-10">
-        <div className="mx-auto w-full max-w-2xl px-6">
-          {posts.length === 0 ? (
-            <p className="text-sm text-muted-foreground">No posts yet.</p>
-          ) : (
-            <div className="space-y-1">
-              {posts
-                .sort(
-                  (a, b) =>
-                    new Date(b.metadata.publishedAt).getTime() -
-                    new Date(a.metadata.publishedAt).getTime()
-                )
-                .map((post) => (
-                  <Link
-                    key={post.slug}
-                    href={`/blog/${post.slug}`}
-                    className="flex items-center justify-between gap-4 py-2.5 group hover:bg-accent/50 rounded px-2 -mx-2 transition-colors"
-                  >
-                    <p className="text-sm font-medium group-hover:text-foreground transition-colors truncate">
-                      {post.metadata.title}
-                    </p>
-                    <time className="text-xs text-muted-foreground whitespace-nowrap shrink-0">
-                      {post.metadata.publishedAt}
-                    </time>
-                  </Link>
-                ))}
-            </div>
-          )}
-        </div>
-      </section>
-    </main>
+    <Page>
+      <PageHead subject="writing" fields={[["Posts", String(posts.length)]]}>
+        <p>Notes on software, open source and building products. Longer pieces are on <a href="https://dev.to/sh20raj" className="a-link" target="_blank" rel="noopener noreferrer">Dev.to</a>.</p>
+      </PageHead>
+      {posts.length === 0 ? (
+        <p className="mt-6 font-mono text-[0.8125rem] text-muted-foreground">No posts yet.</p>
+      ) : (
+        <ul className="divide-y divide-border">
+          {posts.map((post) => (
+            <li key={post.slug}>
+              <Link href={`/blog/${post.slug}`} className="group grid grid-cols-[1fr_auto] items-baseline gap-4 py-3">
+                <span className="font-mono text-[0.875rem] font-semibold group-hover:text-link">{post.metadata.title}</span>
+                <time className="font-mono text-[0.75rem] text-muted-foreground">{post.metadata.publishedAt}</time>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </Page>
   );
 }

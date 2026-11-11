@@ -1,6 +1,6 @@
 import Link from "next/link";
+import { Ext, Page, PageHead, State, ThreadHeading, Trailer } from "@/components/mail";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRightIcon, ExternalLink, FileDown, Github, Mail } from "lucide-react";
 import type { Metadata } from "next";
 import { DATA } from "@/data/resume";
 import { roles, getRole } from "@/data/roles";
@@ -44,13 +44,6 @@ export async function generateMetadata({
   };
 }
 
-const statusStyle: Record<string, string> = {
-  merged: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400",
-  live: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400",
-  "in review": "bg-amber-500/10 text-amber-700 dark:text-amber-400",
-  "in progress": "bg-accent text-muted-foreground",
-};
-
 export default async function RolePage({
   params,
 }: {
@@ -59,148 +52,65 @@ export default async function RolePage({
   const { slug } = await params;
   const role = getRole(slug);
   if (!role) notFound();
+  const others = roles.filter((r) => r.slug !== role.slug);
 
   return (
-    <main className="flex flex-col min-h-[100dvh] pb-16">
-      <section className="py-10 border-b border-border">
-        <div className="mx-auto w-full max-w-2xl px-6">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
-          >
-            <ArrowLeft className="size-3.5" /> Home
-          </Link>
-          <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-            {DATA.name} · {role.title}
-          </p>
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mt-2">{role.headline}</h1>
-          <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{role.summary}</p>
-          <p className="text-sm mt-3 leading-relaxed">
-            <span className="font-medium">Looking for:</span>{" "}
-            <span className="text-muted-foreground">{role.lookingFor}</span>
-          </p>
-          <div className="flex flex-wrap items-center gap-3 mt-5">
-            <a
-              href="/resume.pdf"
-              download
-              className="inline-flex items-center gap-1.5 rounded-md bg-foreground px-3 py-1.5 text-sm font-medium text-background hover:opacity-90 transition-opacity"
-            >
-              <FileDown className="size-4" /> Resume
-            </a>
-            <a
-              href={`mailto:${DATA.contact.email}?subject=${encodeURIComponent(role.title + " role")}`}
-              className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1.5 text-sm font-medium hover:bg-accent transition-colors"
-            >
-              <Mail className="size-4" /> {DATA.contact.email}
-            </a>
-            <a
-              href="https://github.com/playlikeboy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium hover:text-muted-foreground transition-colors"
-            >
-              <Github className="size-4" /> GitHub
-            </a>
-          </div>
+    <Page>
+      <PageHead
+        subject={role.title}
+        fields={[
+          ["From", "Shaswat Raj"],
+          ["Looking-for", role.lookingFor],
+        ]}
+      >
+        <p className="font-semibold">{role.headline}</p>
+        <p className="mt-2">{role.summary}</p>
+        <div className="mt-4">
+          <Trailer k="Attachment">
+            <a href="/resume.pdf" className="a-link">resume.pdf</a> · <Ext href="mailto:sh20raj@gmail.com">sh20raj@gmail.com</Ext> ·{" "}
+            <Ext href="https://github.com/playlikeboy">github</Ext>
+          </Trailer>
         </div>
-      </section>
+      </PageHead>
 
-      <section className="py-10 border-b border-border">
-        <div className="mx-auto w-full max-w-2xl px-6">
-          <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Evidence</p>
-          <h2 className="text-lg font-bold tracking-tight mt-1 mb-5">What I have done that is relevant</h2>
-          <ol className="space-y-3">
-            {role.evidence.map((item) => {
-              const internal = item.href.startsWith("/");
-              const body = (
-                <>
-                  <div className="flex items-start justify-between gap-3">
-                    <h3 className="text-sm font-semibold group-hover:text-primary transition-colors">
-                      {item.title}
-                    </h3>
-                    {internal ? (
-                      <ArrowRightIcon className="size-3.5 text-muted-foreground shrink-0 mt-0.5" />
-                    ) : (
-                      <ExternalLink className="size-3.5 text-muted-foreground shrink-0 mt-0.5" />
-                    )}
-                  </div>
-                  <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{item.detail}</p>
-                  {item.status && (
-                    <span
-                      className={`inline-block mt-2.5 rounded px-2 py-0.5 text-xs font-medium ${statusStyle[item.status]}`}
-                    >
-                      {item.status}
-                    </span>
-                  )}
-                </>
-              );
-              const className =
-                "group block rounded-lg border border-border p-4 hover:bg-accent/50 transition-colors";
-              return (
-                <li key={item.title}>
-                  {internal ? (
-                    <Link href={item.href} className={className}>
-                      {body}
-                    </Link>
-                  ) : (
-                    <a href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
-                      {body}
-                    </a>
-                  )}
-                </li>
-              );
-            })}
-          </ol>
-        </div>
-      </section>
-
-      <section className="py-10 border-b border-border">
-        <div className="mx-auto w-full max-w-2xl px-6 grid gap-8 sm:grid-cols-2">
-          <div>
-            <h2 className="text-lg font-bold tracking-tight mb-3">Tools I have shipped with</h2>
-            <div className="flex flex-wrap gap-1.5">
-              {role.stack.map((skill) => (
-                <span key={skill} className="rounded bg-accent px-2 py-0.5 text-xs text-muted-foreground">
-                  {skill}
-                </span>
-              ))}
+      <ThreadHeading aside={`${role.evidence.length} items`}>Evidence</ThreadHeading>
+      <ol className="divide-y divide-border border-y border-border">
+        {role.evidence.map((e) => (
+          <li key={e.title} className="py-4">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+              <h3 className="text-[length:var(--step-1)]">
+                {e.href.startsWith("/") ? (
+                  <Link href={e.href} className="hover:text-link">{e.title}</Link>
+                ) : (
+                  <a href={e.href} target="_blank" rel="noopener noreferrer" className="hover:text-link">{e.title}</a>
+                )}
+              </h3>
+              {e.status && <State state={e.status} />}
             </div>
-          </div>
-          <div>
-            <h2 className="text-lg font-bold tracking-tight mb-3">How I work</h2>
-            <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed list-disc pl-4">
-              {role.howIWork.map((line) => (
-                <li key={line}>{line}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+            <p className="mt-1.5 max-w-measure">{e.detail}</p>
+          </li>
+        ))}
+      </ol>
 
-      <section className="py-10">
-        <div className="mx-auto w-full max-w-2xl px-6">
-          <h2 className="text-lg font-bold tracking-tight mb-3">Other roles I fit</h2>
-          <div className="flex flex-wrap gap-2">
-            {roles
-              .filter((other) => other.slug !== role.slug)
-              .map((other) => (
-                <Link
-                  key={other.slug}
-                  href={`/roles/${other.slug}`}
-                  className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1.5 text-sm font-medium hover:bg-accent transition-colors"
-                >
-                  {other.title} <ArrowRightIcon className="size-3.5" />
-                </Link>
-              ))}
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1.5 text-sm font-medium hover:bg-accent transition-colors"
-            >
-              All projects <ArrowRightIcon className="size-3.5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-    </main>
+      <ThreadHeading>Stack</ThreadHeading>
+      <p className="font-mono text-[0.875rem]">{role.stack.join(" · ")}</p>
+
+      <ThreadHeading>How I work</ThreadHeading>
+      <ul className="max-w-measure space-y-2">
+        {role.howIWork.map((h) => (
+          <li key={h} className="quoted">{h}</li>
+        ))}
+      </ul>
+
+      <ThreadHeading>Other roles</ThreadHeading>
+      <ul className="thread">
+        {others.map((r) => (
+          <li key={r.slug} className="py-1">
+            <Link href={`/roles/${r.slug}`} className="a-link font-mono text-[0.875rem]">{r.title}</Link>
+            <span className="text-muted-foreground"> · {r.headline}</span>
+          </li>
+        ))}
+      </ul>
+    </Page>
   );
 }
