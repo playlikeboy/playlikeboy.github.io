@@ -279,7 +279,7 @@ export const DATA = {
       dates: "2026 – Present",
       active: true,
       description:
-        "Verified student-only campus network for 1,350+ Indian colleges. Gatekept by institutional college email verification to enable anonymous confessions, real-time campus feeds, student marketplace, canteen polls, and batch time capsules.",
+        "Student-only campus network gated by college email; sign-up accepts the email domains of 1,350+ Indian colleges. Campus feeds, marketplace, polls and time capsules.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Cloudflare Workers", "WebSockets", "PWA"],
       links: [
         {
@@ -399,7 +399,7 @@ export const DATA = {
       dates: "2024 – Present",
       active: true,
       description:
-        "Ultra-lightweight (< 15KB), zero-dependency open-source HTML5 video player library. Scaled to 1.18M+ requests and 38GB+ CDN bandwidth on jsDelivr with customizable skins, scrub preview, and Picture-in-Picture support.",
+        "Lightweight (<40KB), zero-dependency HTML5 video player with themes and Picture-in-Picture, served from jsDelivr (1.18M+ requests and 38GB+ bandwidth, self-reported from jsDelivr stats).",
       technologies: ["JavaScript", "HTML5 Video", "Web APIs", "jsDelivr", "Open Source"],
       links: [
         {
