@@ -24,8 +24,8 @@ I build software real people depend on and fix bugs in open source I don't maint
 |---|---|---|---|
 | SopKit | https://sopkit.github.io | https://github.com/SopKit/sopkit.github.io | 605+ browser tools, files never leave the device. 4.3M requests in 30 days |
 | CampusLoop | https://campusloop.space | https://github.com/playlikeboy/campusloop | Student network gated by college email (1,350+ college domains) |
-| IndexFast | https://indexfast.co | https://github.com/playlikeboy/index-fast | MCP server on Cloudflare Workers that submits URLs to Google, Bing and IndexNow |
-| Debo | https://debo.life | https://github.com/playlikeboy/debo | Personal AI memory: notes, links and audio, retrieved through chat |
+| IndexFast | https://indexfast.co | https://github.com/playlikeboy-archive/index-fast | MCP server on Cloudflare Workers that submits URLs to Google, Bing and IndexNow |
+| Debo | https://debo.life | https://github.com/playlikeboy-archive/debo | Personal AI memory: notes, links and audio, retrieved through chat |
 | Bitotsav '26 | https://playlikeboy.github.io/projects/bitotsav-2026 | — | Festival platform, ~5,000 participants |
 
 ## Open source section
