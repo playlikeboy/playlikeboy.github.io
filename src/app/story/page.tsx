@@ -17,7 +17,7 @@ const chapters = [
   {
     year: "Open source",
     title: "Proof matters more than labels",
-    text: "I began contributing beyond repositories I own. My pull requests have been merged into projects like Google's gemini-cli, Preact and Editor.js, with more in review at Jaeger, Kmesh, Lexical and Radix UI. Open source taught me to read unfamiliar code, explain trade-offs, respond to review, and ship changes that have to survive someone else's standards.",
+    text: "I began contributing beyond repositories I own. My pull requests have been merged into projects like Google's gemini-cli, Preact, Editor.js and MoFA, with more in review at Jaeger, Kmesh, Lexical and Radix UI. Open source taught me to read unfamiliar code, explain trade-offs, respond to review, and ship changes that have to survive someone else's standards.",
   },
   {
     year: "Products",
@@ -38,7 +38,7 @@ const proof = [
     detail: "A privacy-first browser tool platform.",
   },
   {
-    metric: "5,000+",
+    metric: "~5,000",
     label: "live participants",
     detail: "Event infrastructure built for Bitotsav.",
   },
@@ -78,12 +78,12 @@ export default function StoryPage() {
             >
               See what I've built <ArrowRight className="size-4" />
             </Link>
-            <Link
+            <a
               href="/resume.pdf"
               className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2 text-sm font-medium hover:bg-accent transition-colors"
             >
               Read my resume
-            </Link>
+            </a>
           </div>
         </div>
       </section>

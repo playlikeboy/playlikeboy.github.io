@@ -5,14 +5,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "CampusLoop Case Study — Architecture of a Verified Student Social Network",
   description:
-    "Engineering case study on CampusLoop: institutional domain verification, multi-tenant PostgreSQL schema, cryptographically decoupled anonymity, and real-time WebSocket infrastructure for 1,350+ Indian colleges.",
+    "Engineering case study on CampusLoop: institutional domain verification, multi-tenant PostgreSQL schema, cryptographically decoupled anonymity, and real-time WebSocket infrastructure, with sign-up open to the email domains of 1,350+ Indian colleges.",
   alternates: {
     canonical: "https://playlikeboy.github.io/projects/campusloop",
   },
   openGraph: {
     title: "CampusLoop Case Study — Architecture of a Verified Student Social Network | Shaswat Raj",
     description:
-      "Engineering case study on CampusLoop: institutional domain verification, multi-tenant PostgreSQL schema, cryptographically decoupled anonymity, and real-time WebSocket infrastructure for 1,350+ Indian colleges.",
+      "Engineering case study on CampusLoop: institutional domain verification, multi-tenant PostgreSQL schema, cryptographically decoupled anonymity, and real-time WebSocket infrastructure, with sign-up open to the email domains of 1,350+ Indian colleges.",
     url: "https://playlikeboy.github.io/projects/campusloop",
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CampusLoop Case Study — Architecture of a Verified Student Social Network",
     description:
-      "Engineering case study on CampusLoop: institutional domain verification, multi-tenant PostgreSQL schema, cryptographically decoupled anonymity, and real-time WebSocket infrastructure for 1,350+ Indian colleges.",
+      "Engineering case study on CampusLoop: institutional domain verification, multi-tenant PostgreSQL schema, cryptographically decoupled anonymity, and real-time WebSocket infrastructure, with sign-up open to the email domains of 1,350+ Indian colleges.",
     creator: "@SH20RAJ",
     images: ["https://campusloop.space/og-image.png"],
   },
@@ -52,7 +52,7 @@ export default function CampusLoopCaseStudy() {
               CampusLoop — Scalable Architecture for a Verified Multi-College Social Intranet
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed pt-1">
-              How I architected a verified student-only campus network for 1,350+ Indian universities — combining institutional domain gating, decoupled cryptographic anonymity, real-time WebSocket pub/sub, and multi-tenant data isolation.
+              How I architected a verified student-only campus network that accepts the email domains of 1,350+ Indian colleges — combining institutional domain gating, decoupled cryptographic anonymity, real-time WebSocket pub/sub, and multi-tenant data isolation.
             </p>
           </div>
 

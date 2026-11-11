@@ -49,7 +49,7 @@ export default function BuildingPage() {
               What I&apos;m Building &amp; Real Traction
             </h1>
             <p className="text-base text-foreground leading-relaxed">
-              I build software that real people use: my developer utility suite (30tools) scaled to <strong>4.3M+ requests and 213K+ monthly active users</strong> organically, and I am now building <strong>CampusLoop</strong> to solve verified student communication across Indian higher education.
+              I build software that real people use: my developer utility suite (30tools) scaled to <strong>4.3M+ requests and 213K+ visits in 30 days</strong> organically, and I am now building <strong>CampusLoop</strong> to solve verified student communication across Indian higher education.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export default function BuildingPage() {
               <p className="text-xs text-muted-foreground">Monthly Active Users</p>
             </div>
             <div>
-              <p className="text-2xl font-bold tracking-tight">5,000+</p>
+              <p className="text-2xl font-bold tracking-tight">~5,000</p>
               <p className="text-xs text-muted-foreground">Live Event Users (Bitotsav)</p>
             </div>
           </div>

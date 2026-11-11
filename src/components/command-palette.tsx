@@ -238,13 +238,21 @@ export function CommandPalette() {
       onClick={closePalette}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Command palette"
         className="w-full max-w-lg rounded-xl border border-border bg-card shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center gap-3 px-4 py-3 border-b border-border">
-          <Search className="size-4 text-muted-foreground shrink-0" />
+          <Search className="size-4 text-muted-foreground shrink-0" aria-hidden="true" />
           <input
             autoFocus
+            role="combobox"
+            aria-label="Search pages and commands"
+            aria-expanded="true"
+            aria-controls="command-palette-list"
+            aria-activedescendant={filtered[selectedIndex] ? `cmd-${filtered[selectedIndex].id}` : undefined}
             type="text"
             placeholder="Type a command or search..."
             value={query}
@@ -256,7 +264,7 @@ export function CommandPalette() {
           </kbd>
         </div>
 
-        <div className="max-h-80 overflow-y-auto p-2 space-y-1">
+        <div id="command-palette-list" role="listbox" className="max-h-80 overflow-y-auto p-2 space-y-1">
           {filtered.length === 0 ? (
             <div className="py-8 text-center text-xs text-muted-foreground">
               No matching commands found.
@@ -268,6 +276,10 @@ export function CommandPalette() {
               return (
                 <button
                   key={item.id}
+                  id={`cmd-${item.id}`}
+                  role="option"
+                  aria-selected={isSelected}
+                  tabIndex={-1}
                   onClick={item.action}
                   onMouseEnter={() => setSelectedIndex(idx)}
                   className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left text-xs transition-colors ${
@@ -275,7 +287,7 @@ export function CommandPalette() {
                   }`}
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <Icon className="size-3.5 shrink-0" />
+                    <Icon className="size-3.5 shrink-0" aria-hidden="true" />
                     <div className="truncate">
                       <p className="font-medium text-foreground">{item.title}</p>
                       {item.subtitle && (

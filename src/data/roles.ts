@@ -3,7 +3,7 @@
 // evidence for that role first.
 //
 // Keep this factual: every evidence item must link to something a reviewer
-// can open. PR statuses were last checked on 2026-11-05 — refresh them
+// can open. PR statuses were last checked on 2026-11-11 — refresh them
 // together with src/data/contributions.ts.
 
 export interface RoleEvidence {
@@ -51,6 +51,13 @@ export const roles: Role[] = [
         status: "merged",
       },
       {
+        title: "mofa-org/mofa #1577, #1587, #1594 — Rust agent framework",
+        detail:
+          "Replaced an unwrap() that panicked on a bad cron expression with real error handling, and marked public enums #[non_exhaustive] so new variants stop being breaking changes. Merged April 2026 (authored as @SH20RAJ).",
+        href: "https://github.com/mofa-org/mofa/pull/1577",
+        status: "merged",
+      },
+      {
         title: "Parser and UI edge cases in Lexical, micromark and Radix UI",
         detail:
           "Markdown import/ordered-list handling in Lexical, a CommonMark list-interruption case in micromark, and pointer/focus fixes in Radix Select and DismissableLayer.",
@@ -68,10 +75,10 @@ export const roles: Role[] = [
         title: "Data structures and algorithms",
         detail:
           "Competitive programming on Codeforces, plus AlgoForge — an interview-prep platform I built around pattern-based problem sets.",
-        href: "https://codeforces.com/profile/sh20raj",
+        href: "https://codeforces.com/profile/playlikeboy",
       },
     ],
-    stack: ["TypeScript", "JavaScript", "C++", "Python", "SQL", "React", "Next.js", "Node.js", "PostgreSQL", "Redis", "Git"],
+    stack: ["TypeScript", "JavaScript", "C++", "Python", "Go", "Rust", "SQL", "React", "Next.js", "Node.js", "PostgreSQL", "Redis", "Git"],
     howIWork: [
       "Reproduce first, then fix: every upstream PR starts from a failing case.",
       "Small diffs with tests, written so a reviewer can say yes quickly.",
@@ -147,9 +154,9 @@ export const roles: Role[] = [
         status: "in review",
       },
       {
-        title: "kmesh-net/kmesh #1977 and #1983 — service-mesh dataplane tooling",
+        title: "kmesh-net/kmesh #1977, #1983, #1987, #1989 — service-mesh dataplane",
         detail:
-          "Decide command success by exit status rather than stderr output, and match the dataplane-mode label the same way the daemon does. Go.",
+          "Four Go fixes, each with a filed issue: a nil-pointer panic in the CNI plugin when CNI_ARGS cannot be loaded, DNS refresh loops duplicated per xDS update, command success judged by stderr instead of exit status, and a case-sensitive label check that disagreed with the daemon.",
         href: "https://github.com/kmesh-net/kmesh/pull/1977",
         status: "in review",
       },

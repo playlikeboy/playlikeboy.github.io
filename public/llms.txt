@@ -4,7 +4,7 @@ Software engineer and B.Tech Computer Science student at BIT Mesra, India (gradu
 
 ## Summary
 
-- Merged pull requests in google-gemini/gemini-cli (#20778), preactjs/preact (#5331) and codex-team/editor.js (#3040); more in review at Jaeger, Kmesh, Lexical and Radix UI.
+- Merged pull requests in google-gemini/gemini-cli (#20778), preactjs/preact (#5331), codex-team/editor.js (#3040) and mofa-org/mofa (#1577, #1587, #1594); more in review at Jaeger, Kmesh, Lexical and Radix UI.
 - Tech lead for Bitotsav '26, a festival platform for about 5,000 participants.
 - Built and runs SopKit, 605+ client-side browser tools (4.3M+ requests in 30 days).
 
@@ -26,6 +26,7 @@ TypeScript, JavaScript, C++, Python, Go, SQL, React, Next.js, Node.js, PostgreSQ
 
 - GitHub: https://github.com/playlikeboy
 - LinkedIn: https://linkedin.com/in/sh20raj
+- Peerlist: https://peerlist.io/sh20raj
 - Email: sh20raj@gmail.com
 
 ## Attribution

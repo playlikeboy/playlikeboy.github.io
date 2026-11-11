@@ -114,7 +114,7 @@ export const DATA = {
       },
       Codeforces: {
         name: "Codeforces",
-        url: "https://codeforces.com/profile/sh20raj",
+        url: "https://codeforces.com/profile/playlikeboy",
         icon: "codeforces",
         navbar: false,
       },
@@ -1115,7 +1115,6 @@ export const DATA = {
       location: "Online",
       description:
         "Won $100 in the Apify web scraping hackathon. Built a production-ready scraping actor using Apify SDK for automated data extraction from web platforms.",
-      image: "https://avatars.githubusercontent.com/u/24586296?s=200&v=4",
       links: [
         {
           type: "Profile",

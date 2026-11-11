@@ -1,7 +1,6 @@
 "use client";
 
 import { ProjectCard } from "@/components/project-card";
-import { GitHubStats } from "@/components/github-stats";
 import { ContributionsAccordion } from "@/components/contributions-accordion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -17,28 +16,33 @@ import {
   Linkedin,
 } from "lucide-react";
 
+const SOPKIT_STATS_POST =
+  "https://www.linkedin.com/posts/sh20raj_indiedev-seo-growthhacking-activity-7392263918737498112-Adp_";
+const BITOTSAV_POST =
+  "https://www.linkedin.com/posts/sh20raj_bitotsav-2026-what-a-journey-what-a-responsibility-activity-7442608760193216512-Y_nn";
+
 const proofPosts = [
   {
-    title: "SopKit — 605+ tools, 4.3M+ requests",
-    text: "A privacy-first browser utility platform where processing happens client-side. Reported 4.3M+ requests and 213K+ visits, driven by product execution and programmatic SEO.",
+    title: "SopKit — 605+ tools, 4.3M+ requests in 30 days",
+    text: "A privacy-first browser utility platform where files are processed client-side, built and run solo. 4.3M+ requests and 213K+ visits in one 30-day window (analytics posted on LinkedIn, linked from the case study).",
     tech: ["Next.js", "TypeScript", "WebAssembly", "SEO"],
     href: "/projects/sopkit",
   },
   {
-    title: "Google Gemini CLI — merged upstream contribution",
-    text: "Traced a cancellation bug where AbortSignal propagation stopped before chat compression, then threaded cancellation through the execution and compression layers. The fix was reviewed and merged upstream.",
+    title: "Google Gemini CLI #20778 — merged upstream",
+    text: "Cancelling a turn did not cancel the background chat-compression request. Traced where AbortSignal propagation stopped and threaded it through the execution and compression layers. Merged March 2026 (authored as @SH20RAJ, my previous account).",
     tech: ["TypeScript", "Node.js", "Gemini", "Open Source"],
     href: "https://github.com/google-gemini/gemini-cli/pull/20778",
   },
   {
-    title: "Bitotsav '26 — production event infrastructure",
-    text: "Architected the technology platform for 5,000+ participants, including QR access verification, Redis-backed state, real-time leaderboard systems, admin tooling, and AI features.",
+    title: "Bitotsav '26 — tech lead, ~5,000 participants",
+    text: "Led and built the festival platform: website, registration, team and points workflows, admin panel, and signed-QR entry scanning that keeps working in no-network zones, with Redis in front of PostgreSQL for hot paths. Ran it live through the event.",
     tech: ["Next.js", "PostgreSQL", "Redis", "Cloudflare"],
     href: "/projects/bitotsav-2026",
   },
   {
-    title: "CampusLoop — campus network",
-    text: "Building a verified student network for 1,350+ Indian colleges with institutional email verification, campus feeds, marketplace workflows, polls, and time capsules.",
+    title: "CampusLoop — verified campus network",
+    text: "A student-only network gated by institutional email: sign-up checks against the email domains of 1,350+ Indian colleges. Campus feeds, marketplace, polls and time capsules.",
     tech: ["Next.js", "PostgreSQL", "Workers", "PWA"],
     href: "https://campusloop.space/",
   },
@@ -64,7 +68,7 @@ export function HomeClient({ DATA }: { DATA: any }) {
                 I build software that survives real users.
               </p>
               <p className="text-sm text-muted-foreground mt-3 leading-relaxed max-w-xl">
-                Merged pull requests in Google&apos;s gemini-cli, Preact and Editor.js, with more in review at Jaeger, Kmesh, Lexical and Radix UI. I build and run web systems, developer tooling and AI products end to end — from the first commit to production.
+                Merged pull requests in Google&apos;s gemini-cli, Preact, Editor.js and MoFA, with more in review at Jaeger, Kmesh, Lexical and Radix UI. I build and run web systems, developer tooling and AI products end to end — from the first commit to production.
               </p>
               <div className="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/60 border border-border text-xs text-muted-foreground">
                 <span className="size-2 rounded-full bg-emerald-500 shrink-0" />
@@ -111,15 +115,21 @@ export function HomeClient({ DATA }: { DATA: any }) {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-px overflow-hidden rounded-lg border border-border bg-border mt-8">
             {[
-              [String(mergedContributions.length + openContributions.length), `upstream PRs · ${mergedContributions.length} merged`],
-              ["4.3M+", "SopKit requests"],
-              ["213K+", "SopKit visits"],
-              ["5K+", "event participants"],
-            ].map(([value, label]) => (
-              <div key={label} className="bg-background px-3 py-3 text-center">
+              [String(mergedContributions.length), "upstream PRs merged", "#open-source"],
+              [String(openContributions.length), "upstream PRs in review", "#open-source"],
+              ["4.3M+", "SopKit requests / 30 days", SOPKIT_STATS_POST],
+              ["~5,000", "Bitotsav participants", BITOTSAV_POST],
+            ].map(([value, label, href]) => (
+              <a
+                key={label}
+                href={href}
+                {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="bg-background px-3 py-3 text-center hover:bg-accent/50 transition-colors"
+                title={href.startsWith("http") ? "Source: LinkedIn post" : "See the list below"}
+              >
                 <p className="text-base sm:text-lg font-bold tracking-tight">{value}</p>
-                <p className="mt-0.5 text-[10px] sm:text-xs text-muted-foreground">{label}</p>
-              </div>
+                <p className="mt-0.5 text-xs text-muted-foreground">{label}</p>
+              </a>
             ))}
           </div>
         </div>
@@ -202,7 +212,6 @@ export function HomeClient({ DATA }: { DATA: any }) {
       <section id="open-source" className="py-10 border-b border-border scroll-mt-12">
         <div className="mx-auto w-full max-w-2xl px-6">
           <ContributionsAccordion />
-          <GitHubStats />
         </div>
       </section>
 
@@ -380,7 +389,7 @@ export function HomeClient({ DATA }: { DATA: any }) {
         <div className="mx-auto w-full max-w-2xl px-6">
           <h2 className="text-lg font-bold tracking-tight mb-3">About</h2>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            I like owning the whole path: understanding the problem, choosing the architecture, writing the product, deploying it, measuring what happens, and iterating. My open-source work includes merged contributions to Google&apos;s gemini-cli, Preact and Editor.js.
+            I like owning the whole path: understanding the problem, choosing the architecture, writing the product, deploying it, measuring what happens, and iterating. My open-source work includes merged contributions to Google&apos;s gemini-cli, Preact, Editor.js and MoFA.
           </p>
           <Link
             href="/story"
@@ -408,13 +417,23 @@ export function HomeClient({ DATA }: { DATA: any }) {
             <span>Graduating 2028 · Remote or relocation</span>
           </div>
 
-          <div className="flex justify-center gap-4 pt-2">
-            <a
-              href="mailto:sh20raj@gmail.com"
-              className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
-            >
-              sh20raj@gmail.com
-            </a>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 pt-2 text-sm font-medium">
+            {[
+              ["sh20raj@gmail.com", "mailto:sh20raj@gmail.com"],
+              ["GitHub", "https://github.com/playlikeboy"],
+              ["LinkedIn", "https://www.linkedin.com/in/sh20raj/"],
+              ["Peerlist", "https://peerlist.io/sh20raj"],
+              ["GitLab", "https://gitlab.com/SH20RAJ"],
+            ].map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="text-foreground underline-offset-4 hover:underline hover:text-muted-foreground transition-colors"
+              >
+                {label}
+              </a>
+            ))}
           </div>
         </div>
       </section>

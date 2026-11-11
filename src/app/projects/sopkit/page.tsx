@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "SopKit (formerly 30tools) Case Study — Scaling 605+ Tools to 4.3M+ Requests",
   description:
-    "Engineering case study on SopKit (formerly 30tools): 605+ client-side WebAssembly tools, programmatic SEO architecture, sub-millisecond execution, and migration to a sustainable open-source domain.",
+    "Engineering case study on SopKit (formerly 30tools): 605+ client-side WebAssembly tools, programmatic SEO architecture, and migration to a sustainable open-source domain.",
   alternates: {
     canonical: "https://playlikeboy.github.io/projects/sopkit",
   },
@@ -52,7 +52,7 @@ export default function SopKitCaseStudy() {
               SopKit — Scaling 605+ Client-Side Tools to 4.3M+ Requests with Programmatic SEO
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed pt-1">
-              How a privacy-first, zero-upload web utility suite scaled to 4.3M+ requests, 213K+ monthly active users, and 500K+ search impressions — and why we transitioned from 30tools.com to a sustainable GitHub domain.
+              How a privacy-first, zero-upload web utility suite scaled to 4.3M+ requests, 213K+ visits in 30 days, and 500K+ search impressions — and why we transitioned from 30tools.com to a sustainable GitHub domain.
             </p>
           </div>
 
@@ -227,7 +227,7 @@ export default function SopKitCaseStudy() {
             <h2 className="text-lg font-bold tracking-tight">5. Engineering Takeaways</h2>
             <div className="rounded-lg border border-border p-4 space-y-2 bg-accent/20">
               <p className="text-xs text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">Edge Compute + Client-Side WASM is the future of utility software:</strong> By eliminating server-side processing, SopKit demonstrated how a single engineer can serve millions of users with near-zero marginal infrastructure overhead, sub-millisecond execution, and total user privacy.
+                <strong className="text-foreground">Edge Compute + Client-Side WASM is the future of utility software:</strong> By eliminating server-side processing, SopKit demonstrated how a single engineer can serve millions of users with near-zero marginal infrastructure overhead, and total user privacy.
               </p>
             </div>
           </section>
