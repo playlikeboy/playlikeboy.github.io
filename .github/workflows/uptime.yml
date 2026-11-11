@@ -1,0 +1,42 @@
+name: Uptime checks
+# Hourly HTTP check of each live product. Results go to the `status` branch
+# (summary.json + 30 days of history), which /status reads. main is untouched,
+# so these runs never trigger a Pages deploy.
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: uptime
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts
+      - name: Fetch previous results
+        run: |
+          if git ls-remote --exit-code --heads origin status >/dev/null; then
+            git fetch --depth 1 origin status
+            mkdir -p data && git --work-tree=data checkout origin/status -- .
+          else
+            mkdir -p data
+          fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/uptime.mjs data
+      - name: Commit to the status branch
+        run: |
+          cd data
+          git init -q
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -q -b status
+          git add summary.json history.json
+          git commit -qm "status: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" status
