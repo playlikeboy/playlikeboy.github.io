@@ -68,7 +68,7 @@ export const roles: Role[] = [
         title: "Data structures and algorithms",
         detail:
           "Competitive programming on Codeforces, plus AlgoForge — an interview-prep platform I built around pattern-based problem sets.",
-        href: "https://codeforces.com/profile/sh20raj",
+        href: "https://codeforces.com/profile/playlikeboy",
       },
     ],
     stack: ["TypeScript", "JavaScript", "C++", "Python", "SQL", "React", "Next.js", "Node.js", "PostgreSQL", "Redis", "Git"],

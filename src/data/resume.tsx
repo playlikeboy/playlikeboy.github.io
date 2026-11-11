@@ -114,7 +114,7 @@ export const DATA = {
       },
       Codeforces: {
         name: "Codeforces",
-        url: "https://codeforces.com/profile/sh20raj",
+        url: "https://codeforces.com/profile/playlikeboy",
         icon: "codeforces",
         navbar: false,
       },
