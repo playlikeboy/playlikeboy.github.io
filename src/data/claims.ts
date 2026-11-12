@@ -100,6 +100,34 @@ export const claims: Claim[] = [
     note: "This counts supported college domains, not users.",
   },
   {
+    claim: "Joint Secretary, ACM BIT Mesra (2026–27)",
+    where: "Resume, portfolio, GitHub README, LinkedIn headline",
+    kind: "self-reported",
+    sources: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/sh20raj/" },
+      { label: "Chapter platform PR", url: "https://github.com/acm-bitmesra/acm-bitmesra.github.io/pull/3" },
+    ],
+  },
+  {
+    claim: "Bitotsav '25 web team: festival site frontend, SEO and the first QR entry system",
+    where: "Resume, portfolio",
+    kind: "self-reported",
+    sources: [
+      { label: "Post", url: "https://www.linkedin.com/posts/sh20raj_bitotsav2025-bitmesra-webdevelopment-activity-7313430509747888128-vHg3" },
+    ],
+  },
+  {
+    claim: "Adobe University Hackathon 2026: reached Round 3 with OmniAudit-GEO (team of two)",
+    where: "Resume, portfolio",
+    kind: "public record",
+    sources: [
+      { label: "Repo README", url: "https://github.com/playlikeboy/omniaudit" },
+      { label: "Live demo", url: "https://omniaudit.streamlit.app/" },
+      { label: "Challenge", url: "https://unstop.com/hackathons/crp-adobe-university-hackathon-2026-adobe-1715333" },
+    ],
+    note: "The README records the Round 3 team submission. The final result is not recorded publicly.",
+  },
+  {
     claim: "AICTE Productization Fellowship 2025: national Top 500 (Kishan AI)",
     where: "Resume, portfolio",
     kind: "self-reported",

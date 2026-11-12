@@ -462,7 +462,7 @@ export const DATA = {
       dates: "2026 – Present",
       active: true,
       description:
-        "Enterprise brand AI-readiness marketplace — audits how discoverable a brand is to AI search engines and agents (GEO), and turns the findings into an actionable readiness score.",
+        "Adobe University Hackathon 2026 entry (team of two, reached Round 3). Audits how visible a brand is to AI search engines and agents, and turns the findings into a readiness score; CLI, FastAPI service and Streamlit app.",
       technologies: ["Python", "FastAPI", "Streamlit", "AI Search", "GEO"],
       links: [
         {

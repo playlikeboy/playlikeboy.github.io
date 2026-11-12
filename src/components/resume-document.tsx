@@ -43,6 +43,7 @@ const BITOTSAV = {
   build: "Led and built the tech platform for ~5,000 participants: website, registration, team workflows, points system, admin panel and internal tools.",
   qr: "Built signed-QR entry verification with a scanner that keeps working in no-network zones; Redis in front of PostgreSQL for hot paths.",
   ops: "Ran live operations through the festival: on call for organisers and gate volunteers, fixing data and flow problems as they came up.",
+  y2025: "2025 (web team): built the festival site's frontend, improved its SEO, and created the first QR-based entry system used at the gates.",
   users: "Gathered requirements from organisers, volunteers and college administration, and shipped changes against a date that did not move.",
 };
 
@@ -172,7 +173,7 @@ export function ResumeDocument({ variant }: { variant: Variant }) {
         <div className="mb-1.5 break-inside-avoid">
           <div className="flex justify-between gap-4">
             <p>
-              <strong>Bitotsav &apos;26 — BIT Mesra annual festival</strong> — Tech Lead
+              <strong>Bitotsav — BIT Mesra annual festival</strong> — Tech Lead &apos;26 · Web team &apos;25
             </p>
             <p className="shrink-0">2025 – 2026</p>
           </div>
@@ -180,6 +181,7 @@ export function ResumeDocument({ variant }: { variant: Variant }) {
             {spec.bitotsav.map((point) => (
               <li key={point}>{point}</li>
             ))}
+            <li>{BITOTSAV.y2025}</li>
           </ul>
         </div>
         <div className="mb-1.5 break-inside-avoid">
@@ -236,6 +238,10 @@ export function ResumeDocument({ variant }: { variant: Variant }) {
       <Section title="Honors">
         <ul className="list-disc pl-4">
           <li>AICTE Productization Fellowship 2025 — shortlisted in the national Top 500 (Kishan AI).</li>
+          <li>
+            Adobe University Hackathon 2026 — reached Round 3 with OmniAudit-GEO, an AI-search visibility auditor (team of two;{" "}
+            <A href="https://omniaudit.streamlit.app/">live demo</A>).
+          </li>
           <li>Apify hackathon — prize ($100) for a production web-scraping actor.</li>
           <li>Technical writing on Dev.to, 45K+ followers.</li>
         </ul>

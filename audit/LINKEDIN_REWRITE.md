@@ -8,13 +8,35 @@ One thing to check first: your post URLs use two different slugs, `linkedin.com/
 `linkedin.com/posts/shaswatraj_…` (the Bitotsav post in the old README). If you changed your custom URL, make sure
 `linkedin.com/in/sh20raj` still resolves, because the resume, site and README all point there.
 
+## Audit of the live profile (2026-11-12)
+
+Read via the LinkedIn API through Composio (connection removed afterwards). The API returns only name, headline, photo and URL; Experience, About and Skills need the "Save to PDF" export or a public-profile read (Composio's scraper was out of credits).
+
+**Current headline (145 chars):**
+`CSE @ BIT Mesra - ACM JS | Building CampusLoop 🚀 & Shipping Web Products | Full-Stack Developer | AI + SaaS | Open Source | Community Builder`
+
+| Check | Finding | Fix |
+|---|---|---|
+| Positioning | Says Full-Stack / AI + SaaS; resume, site and README now say SDE / DevOps | Use headline A below |
+| Proof | No proof a stranger can check (no gemini-cli, Kmesh, Bitotsav numbers) | Put one checkable item in the headline |
+| "ACM JS" | Recruiters won't decode "JS" (reads as JavaScript) | Spell out "Joint Secretary, ACM BIT Mesra" |
+| Vague words | "Shipping Web Products", "Community Builder", "AI + SaaS" are not searchable proof | Replace with role keywords + evidence |
+| Emoji | 🚀 adds nothing and breaks some ATS/LinkedIn search snippets | Drop |
+| Former name | Profile has a "former name" field set to "Sh" | Settings → Name → clear "Former name" |
+| URL | Custom URL `sh20raj` resolves; post slugs also show `shaswatraj_` | Keep `sh20raj` |
+
+**Items to add to the Experience section** (all now on the resume and in /proof):
+- Joint Secretary, ACM BIT Mesra — 2026–27
+- Bitotsav — Web team (2025), Tech Lead (2026)
+- Adobe University Hackathon 2026 — reached Round 3 with OmniAudit-GEO (Honors & awards)
+
 ---
 
 ## Headline (≤220 characters)
 
 **A, recommended (186 chars):**
 ```
-Software Engineer | SDE · DevOps · Open Source | Merged PRs in Google's gemini-cli, Preact, Editor.js & MoFA | Tech lead, Bitotsav '26 (~5,000 participants) | B.Tech CSE, BIT Mesra '28
+Software Engineer | SDE · DevOps · Open Source | Merged in Google's gemini-cli & MoFA | Tech Lead, Bitotsav '26 (~5,000) | Joint Secretary, ACM BIT Mesra | CSE '28
 ```
 
 **B, DevOps-leaning (163 chars):**
