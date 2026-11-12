@@ -64,6 +64,14 @@ Skills: Next.js · PostgreSQL · Redis · Cloudflare
 ```
 
 ```
+Joint Secretary
+ACM BIT Mesra (student chapter)
+2026 – 2027 · Ranchi, India
+
+• Built the chapter's student developer platform with verified identities and rankings (acm-bitmesra.github.io #3, merged).
+```
+
+```
 Open Source Contributor
 Self-employed / Open source
 2022 – Present

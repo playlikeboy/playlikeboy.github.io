@@ -165,7 +165,7 @@ export default function Home() {
 
         <div className="mt-4 max-w-measure space-y-3 text-[length:var(--step-0)] sm:text-[length:var(--step-1)] leading-relaxed">
           <p>
-            I&apos;m Shaswat, a B.Tech CSE student at BIT Mesra, graduating in May 2028. This series is my evidence: bugs I
+            I&apos;m Shaswat, a B.Tech CSE student at BIT Mesra (graduating May 2028) and Joint Secretary of its ACM chapter. This series is my evidence: bugs I
             found in other people&apos;s code, reproduced, and fixed until their maintainers merged the patch.
           </p>
           <p>
@@ -260,7 +260,7 @@ export default function Home() {
       </ul>
 
       <ThreadHeading id="community">
-        <span className="font-normal text-muted-foreground">Re: </span>also merged, in my own org and college club
+        <span className="font-normal text-muted-foreground">Re: </span>also merged, in my own org and ACM BIT Mesra
       </ThreadHeading>
       <ul className="thread">
         {communityPatches.map((p) => (
@@ -269,7 +269,7 @@ export default function Home() {
           </li>
         ))}
       </ul>
-      <p className="mt-2 text-sm text-muted-foreground">Not counted in the series above.</p>
+      <p className="mt-2 text-sm text-muted-foreground">Not counted in the series above. I&apos;m Joint Secretary of ACM BIT Mesra for 2026–27.</p>
     </Page>
   );
 }

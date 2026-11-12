@@ -185,6 +185,20 @@ export function ResumeDocument({ variant }: { variant: Variant }) {
         <div className="mb-1.5 break-inside-avoid">
           <div className="flex justify-between gap-4">
             <p>
+              <strong>ACM BIT Mesra (student chapter)</strong> — Joint Secretary
+            </p>
+            <p className="shrink-0">2026 – 2027</p>
+          </div>
+          <ul className="list-disc pl-4">
+            <li>
+              Built the chapter&apos;s student developer platform with verified identities and rankings (
+              <A href="https://github.com/acm-bitmesra/acm-bitmesra.github.io/pull/3">acm-bitmesra.github.io #3</A>, merged).
+            </li>
+          </ul>
+        </div>
+        <div className="mb-1.5 break-inside-avoid">
+          <div className="flex justify-between gap-4">
+            <p>
               <strong>Open source</strong> — Contributor
             </p>
             <p className="shrink-0">2022 – Present</p>

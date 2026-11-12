@@ -17,6 +17,7 @@ export default function Footer() {
         <p aria-hidden="true">--&nbsp;</p>
         <p className="text-foreground">Shaswat Raj</p>
         <p>B.Tech CSE, BIT Mesra, graduating May 2028 · Ranchi, India</p>
+        <p>Joint Secretary, ACM BIT Mesra (2026–27)</p>
         <p>Open to SDE, forward-deployed and DevOps internships and new-grad roles.</p>
         <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1">
           {LINKS.map(([label, href]) => (

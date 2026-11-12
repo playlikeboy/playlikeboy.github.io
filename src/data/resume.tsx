@@ -147,6 +147,18 @@ export const DATA = {
 
   work: [
     {
+      company: "ACM BIT Mesra (student chapter)",
+      title: "Joint Secretary",
+      start: "2026",
+      end: "2027",
+      location: "Ranchi, India",
+      description:
+        "Joint Secretary of the college's ACM student chapter for 2026–27. Built the chapter's student developer platform with verified identities and rankings.",
+      href: "https://acm-bitmesra.github.io",
+      badges: [],
+      logoUrl: "",
+    },
+    {
       company: "Bitotsav '26 — BIT Mesra's annual fest",
       title: "Tech Lead",
       start: "2025",
