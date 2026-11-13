@@ -27,6 +27,7 @@ TypeScript, JavaScript, C++, Python, Go, SQL, React, Next.js, Node.js, PostgreSQ
 - GitHub: https://github.com/playlikeboy
 - LinkedIn: https://linkedin.com/in/sh20raj
 - Peerlist: https://peerlist.io/sh20raj
+- Coding profiles (Codolio): https://codolio.com/profile/sh20raj
 - Email: sh20raj@gmail.com
 
 ## Attribution

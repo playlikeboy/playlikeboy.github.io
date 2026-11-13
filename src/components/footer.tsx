@@ -8,6 +8,7 @@ const LINKS = [
   ["peerlist", "https://peerlist.io/sh20raj"],
   ["gitlab", "https://gitlab.com/SH20RAJ"],
   ["dev.to", "https://dev.to/sh20raj"],
+  ["codolio", "https://codolio.com/profile/sh20raj"],
 ] as const;
 
 export default function Footer() {

@@ -112,6 +112,12 @@ export const DATA = {
         icon: "peerlist",
         navbar: false,
       },
+      Codolio: {
+        name: "Codolio",
+        url: "https://codolio.com/profile/sh20raj",
+        icon: "globe",
+        navbar: false,
+      },
       Codeforces: {
         name: "Codeforces",
         url: "https://codeforces.com/profile/playlikeboy",

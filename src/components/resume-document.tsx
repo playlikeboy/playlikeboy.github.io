@@ -88,7 +88,7 @@ const SPECS: Record<Variant, Spec> = {
     headline: "Software Development Engineer · TypeScript, Go, C++ · Merged upstream in gemini-cli, MoFA, Preact and Editor.js",
     skills: [
       ["Languages", "TypeScript, JavaScript, C++, Go, Rust, Python, SQL"],
-      ["CS fundamentals", "Data structures & algorithms, operating systems, DBMS, computer networks, OOP"],
+      ["CS fundamentals", "Data structures & algorithms (codolio.com/profile/sh20raj), operating systems, DBMS, computer networks, OOP"],
       ["Backend", "Node.js, Express, Hono, FastAPI, PostgreSQL, Redis, REST, WebSockets"],
       ["Frontend", "React, Next.js, Tailwind CSS, WebAssembly"],
       ["Tools", "Git, Docker, GitHub Actions, Jest, Linux"],

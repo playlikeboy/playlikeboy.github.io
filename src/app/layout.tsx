@@ -142,6 +142,7 @@ export default function RootLayout({
         "https://codepen.io/sh20raj",
         "https://peerlist.io/sh20raj",
         "https://codeforces.com/profile/playlikeboy",
+        "https://codolio.com/profile/sh20raj",
         "https://github.com/sh20raj-backup",
       ],
     },
