@@ -1,0 +1,77 @@
+{
+ "updated": "2026-11-14T19:14:37.480Z",
+ "sites": [
+  {
+   "name": "Portfolio",
+   "url": "https://playlikeboy.github.io/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 370
+   },
+   "uptime30d": 100,
+   "checks": 11,
+   "avgMs": 330
+  },
+  {
+   "name": "SopKit",
+   "url": "https://sopkit.github.io/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 539
+   },
+   "uptime30d": 100,
+   "checks": 11,
+   "avgMs": 404
+  },
+  {
+   "name": "CampusLoop",
+   "url": "https://campusloop.space/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 187
+   },
+   "uptime30d": 100,
+   "checks": 11,
+   "avgMs": 177
+  },
+  {
+   "name": "IndexFast",
+   "url": "https://indexfast.co/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 984
+   },
+   "uptime30d": 100,
+   "checks": 11,
+   "avgMs": 1243
+  },
+  {
+   "name": "Debo",
+   "url": "https://debo.life/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 1746
+   },
+   "uptime30d": 100,
+   "checks": 11,
+   "avgMs": 2169
+  },
+  {
+   "name": "MCP Pure",
+   "url": "https://mcppure.shraj.workers.dev/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 288
+   },
+   "uptime30d": 100,
+   "checks": 11,
+   "avgMs": 344
+  }
+ ]
+}
