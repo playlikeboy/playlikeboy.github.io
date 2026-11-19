@@ -14,7 +14,7 @@ Software engineer and B.Tech Computer Science student at BIT Mesra, India (gradu
 - IndexFast, agent-native search indexing (MCP server, API, CLI): https://playlikeboy.github.io/projects/indexfast
 - RUXs, subscriptions for neighbourhood tiffin and water-can vendors: https://playlikeboy.github.io/projects/ruxs
 - ScriptlyStore, a code marketplace: https://playlikeboy.github.io/projects/scriptly
-- Debo, personal AI memory: https://playlikeboy.github.io/projects/debo
+- Daksha, a friendly assistant that remembers your life (early version): https://playlikeboy.github.io/projects/daksha
 
 ## Leadership
 

@@ -10,7 +10,7 @@ export const SITES = [
   { name: "SopKit", url: "https://sopkit.github.io/" },
   { name: "CampusLoop", url: "https://campusloop.space/" },
   { name: "IndexFast", url: "https://indexfast.co/" },
-  { name: "Debo", url: "https://debo.life/" },
+  { name: "Daksha", url: "https://www.daksha.life/" },
   { name: "RUXs", url: "https://ruxs.in/" },
   { name: "ScriptlyStore", url: "https://scriptly.store/" },
   { name: "MCP Pure", url: "https://mcppure.shraj.workers.dev/" },

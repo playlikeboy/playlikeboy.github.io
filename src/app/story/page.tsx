@@ -50,7 +50,7 @@ export default function StoryPage() {
           <Link href="/projects/indexfast" className="a-link">IndexFast</Link> (indexing that an AI agent can run),{" "}
           <Link href="/projects/ruxs" className="a-link">RUXs</Link> (daily subscriptions for neighbourhood vendors),{" "}
           <Link href="/projects/scriptly" className="a-link">ScriptlyStore</Link> (a code marketplace) and{" "}
-          <Link href="/projects/debo" className="a-link">Debo</Link> (personal AI memory). Being the only engineer means I
+          <Link href="/projects/daksha" className="a-link">Daksha</Link> (an assistant that remembers your life). Being the only engineer means I
           also own the billing, the outages and the support inbox, not just the code.
         </p>
 

@@ -4,7 +4,7 @@ import { Ext, Page, PageHead } from "@/components/mail";
 import { StatusClient } from "./status-client";
 
 const description =
-  "Live uptime of the products Shaswat Raj runs: SopKit, CampusLoop, IndexFast, Debo and MCP Pure, checked every hour by GitHub Actions.";
+  "Live uptime of the products Shaswat Raj runs: SopKit, CampusLoop, IndexFast, Daksha and MCP Pure, checked every hour by GitHub Actions.";
 
 export const metadata: Metadata = {
   title: { absolute: `Status — ${DATA.name}` },

@@ -112,8 +112,8 @@ export const roles: Role[] = [
       {
         title: "AI systems wired into real workflows",
         detail:
-          "Debo is a retrieval pipeline over personal notes, links and audio. IndexFast lets an AI agent run search indexing end to end through an MCP server, REST API or CLI.",
-        href: "/projects/debo",
+          "Daksha is an assistant that answers questions about your own journal, voice notes and videos, with links to its sources. IndexFast lets an AI agent run search indexing end to end through an MCP server, REST API or CLI.",
+        href: "/projects/daksha",
         status: "live",
       },
       {
@@ -229,10 +229,10 @@ export const roles: Role[] = [
         status: "live",
       },
       {
-        title: "Debo — retrieval over a person's own notes, links and audio",
+        title: "Daksha — an assistant that remembers a person's own life",
         detail:
-          "Ingestion, chunking, embeddings and a chat interface that answers from what you saved. Built solo end to end.",
-        href: "/projects/debo",
+          "Journals by writing, voice or video, answers with links to the entries used, voice calls with characters, connected apps with approval and an Android app. Early version, built solo end to end.",
+        href: "/projects/daksha",
         status: "live",
       },
       {
@@ -340,9 +340,9 @@ export const roles: Role[] = [
         status: "live",
       },
       {
-        title: "CampusLoop, ScriptlyStore and Debo",
+        title: "CampusLoop, ScriptlyStore and Daksha",
         detail:
-          "Three more products I started and run: a verified campus network, a code marketplace, and personal AI memory launched on Product Hunt.",
+          "Three more products I started and run: a verified campus network, a code marketplace, and an assistant that remembers your life, launched on Product Hunt.",
         href: "/projects",
         status: "live",
       },

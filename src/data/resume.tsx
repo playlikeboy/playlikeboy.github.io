@@ -338,27 +338,32 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Debo",
-      href: "https://debo.life",
+      title: "Daksha",
+      href: "https://www.daksha.life/",
       dates: "2025",
       active: true,
       description:
-        "An AI memory system that ingests notes, links, audio, and conversations, embeds them for retrieval, and surfaces relevant context through a chat interface — a personal RAG pipeline over everything you capture day to day. Built solo end-to-end: ingestion, vector search, and the agent layer on top.",
+        "A friendly assistant that remembers your life (early version). Keep a journal by writing, voice or video, then ask questions about your own life and get answers with links to the entries used. Also voice calls with characters, custom people built from your own chats with an optional voice copy, connected apps that act only after you approve, reminders, your own model keys, and an Android app. Built solo end to end.",
       technologies: ["Next.js", "TypeScript", "AI Agents", "AI SDK", "Voice Agent", "Vector Search", "Cloudflare", "Agentic Memory", "OpenAI"],
       links: [
         {
           type: "Case Study",
-          href: "/projects/debo",
+          href: "/projects/daksha",
           icon: "globe",
         },
         {
           type: "Website",
-          href: "https://debo.life",
+          href: "https://www.daksha.life/",
           icon: "globe",
         },
         {
           type: "Source",
-          href: "https://github.com/playlikeboy/debo.life",
+          href: "https://github.com/playlikeboy/daksha",
+          icon: "github",
+        },
+        {
+          type: "Android app",
+          href: "https://github.com/playlikeboy/daksha/releases/latest/download/daksha.apk",
           icon: "github",
         },
       ],

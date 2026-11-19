@@ -4,7 +4,7 @@ import { DATA } from "@/data/resume";
 import { Ext, Page, PageHead, State, ThreadHeading } from "@/components/mail";
 
 const description =
-  "Systems Shaswat Raj built and runs: Bitotsav '26, SopKit, CampusLoop, Debo, IndexFast, RUXs, ScriptlyStore and more, each with links to the code and the live product.";
+  "Systems Shaswat Raj built and runs: Bitotsav '26, SopKit, CampusLoop, Daksha, IndexFast, RUXs, ScriptlyStore and more, each with links to the code and the live product.";
 
 export const metadata: Metadata = {
   title: { absolute: `Projects — ${DATA.name}` },
@@ -31,14 +31,14 @@ const ONE_LINE: Record<string, string> = {
   "SopKit (formerly 30tools)": "605+ browser tools that run on the visitor's device; 4.3M requests and 213K visits in 30 days.",
   "Bitotsav '26 Tech Platform": "Festival platform for ~5,000 participants, with QR entry that works without network.",
   CampusLoop: "Student network gated by college email; sign-up accepts the domains of 1,350+ Indian colleges.",
-  Debo: "Personal AI memory: ingests notes, links and audio, and retrieves them through chat.",
+  Daksha: "A friendly assistant that remembers your life: journal by writing, voice or video, and get answers with sources. Early version.",
   IndexFast: "Agent-native indexing: an MCP server, API and CLI that submit URLs through official engine channels.",
   RUXs: "Daily tiffin and water-can subscriptions: replaces a vendor's WhatsApp chats and paper ledger.",
   ScriptlyStore: "Code marketplace where downloads unlock only after a verified Razorpay purchase.",
   SopPlayer: "Zero-dependency HTML5 video player served from jsDelivr.",
 };
 
-const CASE_STUDIES = ["gemini-cli", "bitotsav-2026", "sopkit", "campusloop", "debo", "indexfast", "ruxs", "scriptly", "sopplayer"];
+const CASE_STUDIES = ["gemini-cli", "bitotsav-2026", "sopkit", "campusloop", "daksha", "indexfast", "ruxs", "scriptly", "sopplayer"];
 
 function firstSentence(text: string) {
   const m = text.match(/^.*?[.!?](\s|$)/);
