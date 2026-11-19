@@ -80,7 +80,7 @@ Skip: unpaid internships (except recognised OSS mentorships), commission-only ro
 
 Apply at 6 or more, put 4–5 in "maybe" for me, skip at 3 or less.
 - **Role fit (0–4):** title and duties match SDE, FDE or DevOps.
-- **Evidence match (0–3):** the posting's stack or domain overlaps something in section 1 that I can link (Go/infra → kmesh and Jaeger; TypeScript/React → gemini-cli, Preact, Editor.js; Rust → MoFA; AI/MCP → IndexFast, Debo; operating a live system → Bitotsav, SopKit).
+- **Evidence match (0–3):** the posting's stack or domain overlaps something in section 1 that I can link (Go/infra → kmesh and Jaeger; TypeScript/React → gemini-cli, Preact, Editor.js; Rust → MoFA; AI/MCP → IndexFast, Daksha; operating a live system → Bitotsav, SopKit).
 - **Eligibility (0–2):** batch, location and remote fit.
 - **Quality (0–1):** paid, a real company, a reachable hiring path.
 
