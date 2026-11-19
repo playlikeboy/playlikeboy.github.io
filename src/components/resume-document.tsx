@@ -67,7 +67,7 @@ const P = {
   sopkit: { name: "SopKit", stack: "Next.js, TypeScript, WebAssembly", link: "sopkit.github.io", points: ["605+ privacy-first browser tools that process files client-side, with no uploads and no server compute.", "4.3M+ requests and 213K+ visits in 30 days, built and operated solo."] },
   sopkitInfra: { name: "SopKit", stack: "Static export, GitHub Pages, WebAssembly", link: "sopkit.github.io", points: ["605+ tools served as static files with zero server compute; 4.3M+ requests and 213K+ visits in 30 days, operated solo."] },
   campusloop: { name: "CampusLoop", stack: "Next.js, PostgreSQL, Cloudflare Workers, WebSockets", link: "campusloop.space", points: ["Student network gated by college email; sign-up accepts the domains of 1,350+ Indian colleges. Feeds, marketplace, polls and time capsules."] },
-  debo: { name: "Debo", stack: "Next.js, TypeScript, vector search, OpenAI", link: "debo.life", points: ["Personal AI memory: ingests notes, links and audio, embeds them, and retrieves context through a chat interface. Built solo."] },
+  daksha: { name: "Daksha", stack: "TypeScript, React Native, Hono, Cloudflare, LiveKit", link: "www.daksha.life", points: ["Assistant that remembers your life (early version): journal by text, voice or video; answers with sources; voice calls; custom people; connected apps with approval; Android app. Built solo."] },
   edgeInfra: { name: "MCP Pure and Solus", stack: "Cloudflare Workers, Hono, Neon Postgres, Drizzle, R2", link: "mcppure.shraj.workers.dev", points: ["Edge services I deploy and operate: an MCP server registry and a single-user private social network."] },
   portfolio: { name: "playlikeboy.github.io", stack: "GitHub Actions, GitHub Pages, GitLab CI", link: "playlikeboy.github.io/status", points: ["CI/CD that builds and deploys on push with scoped permissions, mirrors to GitLab, and runs hourly uptime checks on my products with 30 days of history."] },
   kishanFde: { name: "Kishan AI", stack: "Python, computer vision, Telegram Bot API", link: "", points: ["Built for farmers where they already are (Telegram, not a new app): crop-disease diagnosis from photos, weather and mandi prices. AICTE Productization Fellowship 2025, national Top 500."] },
@@ -96,7 +96,7 @@ const SPECS: Record<Variant, Spec> = {
     ],
     bitotsav: [BITOTSAV.build, BITOTSAV.qr, BITOTSAV.ops],
     oss: [OSS.gemini, OSS.mofa, OSS.review],
-    projects: [P.debo, P.omniaudit, P.kishanFde],
+    projects: [P.daksha, P.omniaudit, P.kishanFde],
   },
   fullstack: {
     headline: "Full-Stack / Product Engineer · ships and runs products end to end · Tech Lead, Bitotsav '26",
@@ -119,7 +119,7 @@ const SPECS: Record<Variant, Spec> = {
     ],
     bitotsav: [BITOTSAV.users, BITOTSAV.build, BITOTSAV.ops],
     oss: [OSS.gemini, OSS.mofa],
-    projects: [P.campusloop, P.sopkit, P.debo],
+    projects: [P.campusloop, P.sopkit, P.daksha],
   },
   general: {
     headline: "Software Engineer & Founder · Tech Lead, Bitotsav '26 · Merged upstream in gemini-cli, MoFA, Preact and Editor.js",
@@ -132,7 +132,7 @@ const SPECS: Record<Variant, Spec> = {
     ],
     bitotsav: [BITOTSAV.build, BITOTSAV.qr, BITOTSAV.ops],
     oss: [OSS.gemini, OSS.mofa, OSS.review],
-    projects: [P.sopkit, P.campusloop, P.debo],
+    projects: [P.sopkit, P.campusloop, P.daksha],
   },
   sde: {
     headline: "Software Development Engineer · TypeScript, Go, C++ · Merged upstream in gemini-cli, MoFA, Preact and Editor.js",
@@ -145,7 +145,7 @@ const SPECS: Record<Variant, Spec> = {
     ],
     bitotsav: [BITOTSAV.build, BITOTSAV.qr, BITOTSAV.ops],
     oss: [OSS.gemini, OSS.mofa, OSS.review],
-    projects: [P.sopkit, P.campusloop, P.debo],
+    projects: [P.sopkit, P.campusloop, P.daksha],
   },
   fde: {
     headline: "Forward Deployed Engineer · builds in the user's environment · Tech lead, Bitotsav '26 (~5,000 participants)",
