@@ -6,7 +6,7 @@ import { DATA } from "@/data/resume";
 // in one variant that is not true in all of them. Each is printed to a PDF in
 // public/ by scripts/resume-pdf.mjs.
 
-export type Variant = "general" | "sde" | "fde" | "devops";
+export type Variant = "general" | "sde" | "fde" | "devops" | "ai" | "fullstack" | "founding";
 
 function A({ href, children }: { href: string; children: ReactNode }) {
   return (
@@ -26,17 +26,18 @@ const PRS = {
   ),
   preact: <A href="https://github.com/preactjs/preact/pull/5331">preactjs/preact #5331</A>,
   editorjs: <A href="https://github.com/codex-team/editor.js/pull/3040">codex-team/editor.js #3040</A>,
+  t3code: <A href="https://github.com/pingdotgg/t3code/pull/23775">pingdotgg/t3code #23775</A>,
   kmesh: <A href="https://github.com/kmesh-net/kmesh/pulls?q=author%3Aplaylikeboy">kmesh-net/kmesh</A>,
   jaeger: <A href="https://github.com/jaegertracing/jaeger/pull/10024">jaegertracing/jaeger #10024</A>,
 };
 
 const OSS = {
   gemini: <>Merged: {PRS.gemini}, turn cancellation now reaches in-flight chat-compression requests (AbortSignal threaded through the execution layers).</>,
-  mofa: <>Merged: {PRS.mofa} (Rust): replaced a panicking unwrap() in cron parsing; #[non_exhaustive] public enums. Also {PRS.preact} and {PRS.editorjs}.</>,
+  mofa: <>Merged: {PRS.mofa} (Rust, cron-parsing panic fix), {PRS.t3code}, {PRS.preact} and {PRS.editorjs}.</>,
   review: <>In review: Go fixes in {PRS.kmesh} (CNI nil-pointer panic, duplicate DNS refresh loops) and {PRS.jaeger} (reject out-of-range sampling config); 14 open upstream PRs in all, each from a reproduced, filed issue.</>,
   infra: <>In review: four Go fixes in the {PRS.kmesh} service-mesh dataplane: a nil-pointer panic in the CNI plugin, DNS refresh loops duplicated per xDS update, success judged by stderr instead of exit status, and a label check that disagreed with the daemon.</>,
   jaeger: <>In review: {PRS.jaeger} rejects out-of-range sampling parameters at startup and on hot reload instead of serving them to SDKs; filed three more Jaeger SPM metrics bugs.</>,
-  merged: <>Merged: {PRS.gemini} (TypeScript), {PRS.mofa} (Rust), {PRS.preact}, {PRS.editorjs}.</>,
+  merged: <>Merged: {PRS.gemini} (TypeScript), {PRS.mofa} (Rust), {PRS.t3code}, {PRS.preact}, {PRS.editorjs}.</>,
 };
 
 const BITOTSAV = {
@@ -70,6 +71,7 @@ const P = {
   edgeInfra: { name: "MCP Pure and Solus", stack: "Cloudflare Workers, Hono, Neon Postgres, Drizzle, R2", link: "mcppure.shraj.workers.dev", points: ["Edge services I deploy and operate: an MCP server registry and a single-user private social network."] },
   portfolio: { name: "playlikeboy.github.io", stack: "GitHub Actions, GitHub Pages, GitLab CI", link: "playlikeboy.github.io/status", points: ["CI/CD that builds and deploys on push with scoped permissions, mirrors to GitLab, and runs hourly uptime checks on my products with 30 days of history."] },
   kishanFde: { name: "Kishan AI", stack: "Python, computer vision, Telegram Bot API", link: "", points: ["Built for farmers where they already are (Telegram, not a new app): crop-disease diagnosis from photos, weather and mandi prices. AICTE Productization Fellowship 2025, national Top 500."] },
+  omniaudit: { name: "OmniAudit-GEO", stack: "Python, FastAPI, Streamlit", link: "github.com/playlikeboy/omniaudit", points: ["Adobe University Hackathon 2026, Round 3 (team of two): audits a brand's visibility to AI search engines and agents and scores its readiness."] },
   dhwani: { name: "Dhwani, BIT Mesra music society", stack: "Next.js, TypeScript", link: "dhwanibitmesra.in", points: ["Delivered the society's site for a non-technical team against a fixed event date: requirements, design and build end to end."] },
 };
 
@@ -84,6 +86,41 @@ interface Spec {
 }
 
 const SPECS: Record<Variant, Spec> = {
+  ai: {
+    headline: "AI Engineer · LLM apps, RAG and MCP servers in production · Merged upstream in gemini-cli and T3 Code",
+    skills: [
+      ["AI", "OpenAI / Claude / Gemini APIs, RAG, embeddings and vector search, Model Context Protocol, AI SDK, agents"],
+      ["Languages", "TypeScript, Python, Rust, Go, SQL"],
+      ["Backend", "Node.js, FastAPI, Hono, PostgreSQL, Redis, REST, WebSockets"],
+      ["Deploy", "Cloudflare Workers, Docker, GitHub Actions, Linux"],
+    ],
+    bitotsav: [BITOTSAV.build, BITOTSAV.qr, BITOTSAV.ops],
+    oss: [OSS.gemini, OSS.mofa, OSS.review],
+    projects: [P.debo, P.omniaudit, P.kishanFde],
+  },
+  fullstack: {
+    headline: "Full-Stack / Product Engineer · ships and runs products end to end · Tech Lead, Bitotsav '26",
+    skills: [
+      ["Frontend", "React, Next.js, TypeScript, Tailwind CSS, WebAssembly, accessibility"],
+      ["Backend", "Node.js, Hono, Express, FastAPI, PostgreSQL, Drizzle, Redis, REST, WebSockets"],
+      ["Product", "Payments (Razorpay), auth, SEO, analytics, Playwright end-to-end tests"],
+      ["Deploy", "Cloudflare Workers, Docker, GitHub Actions, Linux"],
+    ],
+    bitotsav: [BITOTSAV.build, BITOTSAV.qr, BITOTSAV.ops],
+    oss: [OSS.gemini, OSS.mofa, OSS.review],
+    projects: [P.campusloop, P.sopkit, P.dhwani],
+  },
+  founding: {
+    headline: "Founding Engineer · founder and sole engineer of live products · Tech Lead, Bitotsav '26 (~5,000 participants)",
+    skills: [
+      ["Build", "TypeScript, Next.js, React, Node.js, Python, Go, SQL"],
+      ["Data & infra", "PostgreSQL, Drizzle, Redis, Cloudflare Workers, Docker, GitHub Actions"],
+      ["Product", "Payments (Razorpay), AI APIs and MCP, SEO, analytics, user interviews"],
+    ],
+    bitotsav: [BITOTSAV.users, BITOTSAV.build, BITOTSAV.ops],
+    oss: [OSS.gemini, OSS.mofa],
+    projects: [P.campusloop, P.sopkit, P.debo],
+  },
   general: {
     headline: "Software Engineer & Founder · Tech Lead, Bitotsav '26 · Merged upstream in gemini-cli, MoFA, Preact and Editor.js",
     skills: [
@@ -278,4 +315,7 @@ export const VARIANTS: { slug: Exclude<Variant, "general">; title: string; pdf: 
   { slug: "sde", title: "Software Development Engineer", pdf: "/resume-sde.pdf" },
   { slug: "fde", title: "Forward Deployed Engineer", pdf: "/resume-fde.pdf" },
   { slug: "devops", title: "DevOps / Platform Engineer", pdf: "/resume-devops.pdf" },
+  { slug: "ai", title: "AI Engineer", pdf: "/resume-ai.pdf" },
+  { slug: "fullstack", title: "Full-Stack / Product Engineer", pdf: "/resume-fullstack.pdf" },
+  { slug: "founding", title: "Founding Engineer", pdf: "/resume-founding.pdf" },
 ];

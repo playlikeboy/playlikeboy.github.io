@@ -14,7 +14,7 @@
 // Refresh with:
 //   gh search prs --author playlikeboy --merged
 //   gh search prs --author playlikeboy --state open
-// Last refreshed: 2026-11-11.
+// Last refreshed: 2026-11-19.
 
 export interface Contribution {
   repo: string;
@@ -28,6 +28,13 @@ export interface Contribution {
 }
 
 export const mergedContributions: Contribution[] = [
+  {
+    repo: "pingdotgg/t3code",
+    number: 23775,
+    title: "fix(server): suppress redundant keybindings change emission on unchanged revalidation",
+    url: "https://github.com/pingdotgg/t3code/pull/23775",
+    date: "2026-11-14",
+  },
   {
     repo: "codex-team/editor.js",
     number: 3040,
@@ -101,6 +108,49 @@ export const communityContributions: Contribution[] = [
 ];
 
 export const openContributions: Contribution[] = [
+  {
+    repo: "OneBusAway/wayfinder",
+    number: 730,
+    title: "fix(search): tell the user when a search fails",
+    url: "https://github.com/OneBusAway/wayfinder/pull/730",
+    date: "2026-11-19",
+  },
+  {
+    repo: "OneBusAway/wayfinder",
+    number: 728,
+    title: "fix(trip-planner): show an icon for subway and cable car legs",
+    url: "https://github.com/OneBusAway/wayfinder/pull/728",
+    date: "2026-11-19",
+  },
+  {
+    repo: "codex-team/editor.js",
+    number: 3049,
+    title: "fix(conversion): keep inline formatting when converting to a Tool with per-field sanitize rules",
+    url: "https://github.com/codex-team/editor.js/pull/3049",
+    date: "2026-11-13",
+  },
+  {
+    repo: "codex-team/editor.js",
+    number: 3048,
+    title: "fix(inline-toolbar): make tool shortcuts work with several Editors on a page",
+    url: "https://github.com/codex-team/editor.js/pull/3048",
+    date: "2026-11-13",
+  },
+  {
+    repo: "traceroot-ai/traceroot",
+    number: 3013,
+    title: "fix(worker): keep OTLP bytesValue attributes instead of dropping them",
+    url: "https://github.com/traceroot-ai/traceroot/pull/3013",
+    date: "2026-11-12",
+  },
+  {
+    repo: "ParadevAI/Paradev",
+    number: 9668,
+    title: "fix(desktop): hide favorite models the current session does not offer",
+    url: "https://github.com/ParadevAI/Paradev/pull/9668",
+    date: "2026-11-12",
+    draft: true,
+  },
   {
     repo: "kmesh-net/kmesh",
     number: 1989,

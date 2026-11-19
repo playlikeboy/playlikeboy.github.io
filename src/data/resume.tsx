@@ -30,7 +30,7 @@ export const DATA = {
   description:
     "Software engineer and open-source builder.",
   summary:
-    "I'm Shaswat Raj, a software engineer and open-source contributor. I build full products end-to-end: AI agents, dev tools, MCP servers, and large-scale web systems. My strength is taking a rough idea to a working system quickly — backend, frontend, deployment, and iteration.\n\nMerged pull requests in Google's gemini-cli, Preact and Editor.js, with more in review at Jaeger, Kmesh, Lexical and Radix UI. I've shipped systems that handled real load at scale, from 5,000-participant cultural fests to million-request browser tool platforms.",
+    "I'm Shaswat Raj, a software engineer and open-source contributor. I build full products end-to-end: AI agents, dev tools, MCP servers, and large-scale web systems. My strength is taking a rough idea to a working system quickly — backend, frontend, deployment, and iteration.\n\nMerged pull requests in Google's gemini-cli, T3 Code, Preact and Editor.js, with more in review at Jaeger, Kmesh, Lexical and Radix UI. I've shipped systems that handled real load at scale, from 5,000-participant cultural fests to million-request browser tool platforms.",
   avatarUrl: "https://gitlab.com/uploads/-/system/user/avatar/7770239/avatar.png",
   skills: [
     "UI/UX Design",
@@ -183,7 +183,7 @@ export const DATA = {
       end: "Present",
       location: "Remote",
       description:
-        "Merged pull requests in Google's gemini-cli, Preact and Editor.js. Changes in review at Jaeger, Kmesh, Lexical and Radix UI. Maintainer of SopKit and SopPlayer.",
+        "Merged pull requests in Google's gemini-cli, T3 Code, Preact and Editor.js. Changes in review at Jaeger, Kmesh, Lexical and Radix UI. Maintainer of SopKit and SopPlayer.",
       href: "/#open-source",
       badges: ["TypeScript", "Go", "Code review"],
       logoUrl: "",

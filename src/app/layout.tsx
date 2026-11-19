@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: `%s | ${DATA.name}`,
   },
   description:
-    "Software engineer and CS undergrad at BIT Mesra. Merged pull requests in Google's gemini-cli, Preact and Editor.js. Builds and runs full products: web systems, developer tooling, and AI.",
+    "Software engineer and CS undergrad at BIT Mesra. Merged pull requests in Google's gemini-cli, T3 Code, Preact and Editor.js. Builds and runs full products: web systems, developer tooling, and AI.",
   authors: [{ name: DATA.name, url: DATA.url }],
   creator: DATA.name,
   icons: {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Shaswat Raj — Software Engineer & Open-Source Builder",
     description:
-      "Software engineer and CS undergrad at BIT Mesra. Merged pull requests in Google's gemini-cli, Preact and Editor.js. Builds and runs full products: web systems, developer tooling, and AI.",
+      "Software engineer and CS undergrad at BIT Mesra. Merged pull requests in Google's gemini-cli, T3 Code, Preact and Editor.js. Builds and runs full products: web systems, developer tooling, and AI.",
     url: DATA.url,
     siteName: "Shaswat Raj Portfolio",
     locale: "en_US",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shaswat Raj — Software Engineer & Open-Source Builder",
     description:
-      "Software engineer and CS undergrad at BIT Mesra. Merged pull requests in Google's gemini-cli, Preact and Editor.js. Builds and runs full products: web systems, developer tooling, and AI.",
+      "Software engineer and CS undergrad at BIT Mesra. Merged pull requests in Google's gemini-cli, T3 Code, Preact and Editor.js. Builds and runs full products: web systems, developer tooling, and AI.",
     creator: "@SH20RAJ",
     images: ["/og.png"],
   },
@@ -100,7 +100,7 @@ export default function RootLayout({
       image: DATA.avatarUrl,
       jobTitle: "Software Engineer",
       description:
-        "Software engineer and CS undergrad at BIT Mesra. Merged pull requests in Google's gemini-cli, Preact and Editor.js. Builds and runs full products: web systems, developer tooling, and AI.",
+        "Software engineer and CS undergrad at BIT Mesra. Merged pull requests in Google's gemini-cli, T3 Code, Preact and Editor.js. Builds and runs full products: web systems, developer tooling, and AI.",
       email: "sh20raj@gmail.com",
       nationality: "Indian",
       affiliation: {

@@ -67,7 +67,7 @@ export default async function RolePage({
         <p className="mt-2">{role.summary}</p>
         <div className="mt-4">
           <Trailer k="Attachment">
-            <a href="/resume.pdf" className="a-link">resume.pdf</a> · <Ext href="mailto:sh20raj@gmail.com">sh20raj@gmail.com</Ext> ·{" "}
+            <a href={`/resume-${role.slug}.pdf`} className="a-link">{`resume-${role.slug}.pdf`}</a> · <Ext href="mailto:sh20raj@gmail.com">sh20raj@gmail.com</Ext> ·{" "}
             <Ext href="https://github.com/playlikeboy">github</Ext>
           </Trailer>
         </div>

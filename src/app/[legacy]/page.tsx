@@ -15,7 +15,7 @@ const MOVED: Record<string, string> = {
   marketplace: "/projects",
   mentorship: "/",
   startups: "/projects",
-  "founding-engineer": "/roles/fde",
+  "founding-engineer": "/roles/founding",
   book: "/",
   "youtube-thumbnail": "/",
   editor: "/resume",

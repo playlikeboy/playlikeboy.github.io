@@ -29,7 +29,7 @@ function toPatch(c: Contribution, state: PatchState): Patch {
 }
 
 // Strongest first: the fix a reviewer will recognise, then the bug fixes, then the rest.
-const MERGED_ORDER = [20778, 1577, 5331, 3040, 1587, 1594];
+const MERGED_ORDER = [20778, 23775, 1577, 5331, 3040, 1587, 1594];
 export const mergedPatches = [...mergedContributions]
   .sort((a, b) => {
     const ia = MERGED_ORDER.indexOf(a.number);

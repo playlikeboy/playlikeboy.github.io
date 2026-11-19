@@ -1,9 +1,10 @@
-// Role-specific landing pages (/roles/sde, /roles/fde, /roles/devops).
+// Role-specific landing pages (/roles/sde, /roles/fde, /roles/devops, /roles/ai,
+// /roles/fullstack, /roles/founding).
 // Send the matching link with an application so the reviewer sees the
 // evidence for that role first.
 //
 // Keep this factual: every evidence item must link to something a reviewer
-// can open. PR statuses were last checked on 2026-11-11 — refresh them
+// can open. PR statuses were last checked on 2026-11-19 — refresh them
 // together with src/data/contributions.ts.
 
 export interface RoleEvidence {
@@ -61,7 +62,7 @@ export const roles: Role[] = [
         title: "Parser and UI edge cases in Lexical, micromark and Radix UI",
         detail:
           "Markdown import/ordered-list handling in Lexical, a CommonMark list-interruption case in micromark, and pointer/focus fixes in Radix Select and DismissableLayer.",
-        href: "/#open-source",
+        href: "/#series",
         status: "in review",
       },
       {
@@ -111,7 +112,7 @@ export const roles: Role[] = [
       {
         title: "AI systems wired into real workflows",
         detail:
-          "Debo is a retrieval pipeline over personal notes, links and audio. IndexFast is an MCP server that submits URLs to Google, Bing and IndexNow from inside an IDE.",
+          "Debo is a retrieval pipeline over personal notes, links and audio. IndexFast lets an AI agent run search indexing end to end through an MCP server, REST API or CLI.",
         href: "/projects/debo",
         status: "live",
       },
@@ -194,6 +195,169 @@ export const roles: Role[] = [
       "Fail loudly on bad config instead of running with it.",
       "Automate the deploy before the second deploy.",
       "Assume the network will fail and decide what the system does then.",
+    ],
+  },
+  {
+    slug: "ai",
+    short: "AI",
+    title: "AI Engineer",
+    headline: "I build LLM systems that run in production, and I fix bugs inside the agent tools other engineers use.",
+    summary:
+      "Two kinds of evidence. Upstream, my fixes are merged in Google's gemini-cli, T3 Code and the MoFA agent framework. In my own products, I run retrieval, MCP servers and agent-facing APIs that real users and real agents call.",
+    lookingFor:
+      "AI engineer, applied AI and LLM product internships or new-grad roles, at AI startups or AI teams in larger companies.",
+    evidence: [
+      {
+        title: "google-gemini/gemini-cli #20778 — cancellation inside an agent CLI",
+        detail:
+          "Pressing Ctrl+C ended the turn but left the chat-compression model calls running. I threaded the turn's AbortSignal into compression in the client and in subagents.",
+        href: "/blog/cancelling-a-turn-in-gemini-cli",
+        status: "merged",
+      },
+      {
+        title: "pingdotgg/t3code #23775 — no more phantom “keybindings updated” toasts",
+        detail:
+          "Windows file-access events made the server announce a keybindings change on every revalidation. It now compares the resolved state structurally and only emits when something actually changed.",
+        href: "https://github.com/pingdotgg/t3code/pull/23775",
+        status: "merged",
+      },
+      {
+        title: "IndexFast — an MCP server built for agents first",
+        detail:
+          "Protocol version negotiation, tool failures returned as readable results, every argument accepting what an agent already knows, and one core shared with the REST API and CLI. Runs on Cloudflare Workers.",
+        href: "/blog/an-mcp-server-agents-can-use",
+        status: "live",
+      },
+      {
+        title: "Debo — retrieval over a person's own notes, links and audio",
+        detail:
+          "Ingestion, chunking, embeddings and a chat interface that answers from what you saved. Built solo end to end.",
+        href: "/projects/debo",
+        status: "live",
+      },
+      {
+        title: "mofa-org/mofa #1577, #1587, #1594 — Rust agent framework",
+        detail:
+          "Replaced a panicking unwrap() in cron parsing with real errors, and made public enums #[non_exhaustive] so new variants stop being breaking changes.",
+        href: "https://github.com/mofa-org/mofa/pull/1577",
+        status: "merged",
+      },
+      {
+        title: "OmniAudit-GEO — Adobe University Hackathon 2026, Round 3",
+        detail:
+          "Audits how visible a brand is to AI search engines and agents and turns the findings into a readiness score. CLI, FastAPI service and Streamlit app; team of two.",
+        href: "https://github.com/playlikeboy/omniaudit",
+      },
+    ],
+    stack: ["TypeScript", "Python", "Rust", "OpenAI / Claude / Gemini APIs", "RAG", "Vector search", "Model Context Protocol", "AI SDK", "FastAPI", "Cloudflare Workers"],
+    howIWork: [
+      "Treat the model's output as untrusted input, and design for the call that fails.",
+      "Write tool responses a model can act on: what happened, and what to do next.",
+      "Evaluate on real data before tuning prompts.",
+    ],
+  },
+  {
+    slug: "fullstack",
+    short: "Full-stack",
+    title: "Full-Stack / Product Engineer",
+    headline: "I take a product from an empty repo to people using it, and own every layer in between.",
+    summary:
+      "I've shipped and run student, commerce and developer products alone: schema, API, UI, payments, deploys and support. Upstream, my frontend fixes are merged in Preact and Editor.js, with more in review at Lexical and Radix UI.",
+    lookingFor:
+      "Full-stack, product and frontend engineering internships or new-grad roles, from early-stage startups to large product teams.",
+    evidence: [
+      {
+        title: "CampusLoop — a student network gated by college email",
+        detail:
+          "Sign-up accepts the email domains of 1,350+ Indian colleges. Feeds, marketplace, polls and time capsules on Next.js, PostgreSQL, Cloudflare Workers and WebSockets.",
+        href: "/projects/campusloop",
+        status: "live",
+      },
+      {
+        title: "RUXs — daily subscriptions for neighbourhood vendors",
+        detail:
+          "A household app, a merchant panel and an admin console in one Next.js app: skip-or-confirm with a cutoff, driver run sheets, a shared ledger and one monthly UPI bill.",
+        href: "/projects/ruxs",
+        status: "live",
+      },
+      {
+        title: "ScriptlyStore — payments done on the server",
+        detail:
+          "Razorpay checkout where the server recomputes every price in integer cents, downloads that stream only after a verified purchase, and AES-256-GCM payment links.",
+        href: "/projects/scriptly",
+        status: "live",
+      },
+      {
+        title: "SopKit — 605+ browser tools, 4.3M+ requests in 30 days",
+        detail: "File tools that run on the visitor's device, so there are no uploads and no server to pay for. Built and run solo.",
+        href: "/projects/sopkit",
+        status: "live",
+      },
+      {
+        title: "Frontend fixes in Preact, Editor.js, Lexical and Radix UI",
+        detail:
+          "Merged: Preact's input list-attribute types and Editor.js's inline toolbar. In review: Lexical markdown import, Radix Select and DismissableLayer focus handling.",
+        href: "/#series",
+        status: "merged",
+      },
+    ],
+    stack: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Node.js", "Hono", "PostgreSQL", "Drizzle", "Redis", "Razorpay", "Cloudflare Workers", "Playwright"],
+    howIWork: [
+      "Money and data correctness before visual polish.",
+      "Server-first: the database does the filtering, the client only handles what's interactive.",
+      "Ship a thin slice to real users, then widen it.",
+    ],
+  },
+  {
+    slug: "founding",
+    short: "Founding",
+    title: "Founding Engineer",
+    headline: "I've built products from zero and run them alone, and I've led a team through a live event.",
+    summary:
+      "I found and run my own products as the only engineer, so I also own billing, deploys, outages and support. In college I went from one member of the Bitotsav web team to leading its whole platform a year later, and I'm Joint Secretary of the ACM chapter.",
+    lookingFor:
+      "Founding and early engineer roles at YC-stage startups, or zero-to-one teams inside larger companies.",
+    evidence: [
+      {
+        title: "Bitotsav '26 — tech lead, ~5,000 participants",
+        detail:
+          "Took requirements from organisers, volunteers and administration, built the platform, and ran it live through the festival, including entry scanning that worked without network.",
+        href: "/projects/bitotsav-2026",
+        status: "live",
+      },
+      {
+        title: "IndexFast — founder and sole engineer",
+        detail:
+          "Product, pricing and billing (Razorpay prepaid plans), an agent-first MCP server, REST API and npm CLI, and a Workers cron that runs the submission queue.",
+        href: "/projects/indexfast",
+        status: "live",
+      },
+      {
+        title: "RUXs — a business model, not just an app",
+        detail:
+          "Vendors pay and households use it free, with no account needed. Launch scoped to tiffin and water-can vendors in one neighbourhood cluster before widening.",
+        href: "/projects/ruxs",
+        status: "live",
+      },
+      {
+        title: "CampusLoop, ScriptlyStore and Debo",
+        detail:
+          "Three more products I started and run: a verified campus network, a code marketplace, and personal AI memory launched on Product Hunt.",
+        href: "/projects",
+        status: "live",
+      },
+      {
+        title: "ACM BIT Mesra — Joint Secretary, 2026–27",
+        detail: "Built the chapter's student developer platform with verified identities and rankings.",
+        href: "https://github.com/acm-bitmesra/acm-bitmesra.github.io/pull/3",
+        status: "merged",
+      },
+    ],
+    stack: ["TypeScript", "Next.js", "PostgreSQL", "Drizzle", "Cloudflare Workers", "Razorpay", "MCP", "Python", "Go"],
+    howIWork: [
+      "Talk to the user before writing the schema.",
+      "Scope the launch to one group I can actually serve, then widen.",
+      "Own the outcome: if it breaks at 2 a.m., it's mine to fix.",
     ],
   },
 ];

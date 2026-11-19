@@ -34,6 +34,9 @@ const targets = [
   ["/resume/sde", "public/resume-sde.pdf"],
   ["/resume/fde", "public/resume-fde.pdf"],
   ["/resume/devops", "public/resume-devops.pdf"],
+  ["/resume/ai", "public/resume-ai.pdf"],
+  ["/resume/fullstack", "public/resume-fullstack.pdf"],
+  ["/resume/founding", "public/resume-founding.pdf"],
 ];
 for (const [route, path] of targets) {
   await page.goto(`http://localhost:${port}${route}`, { waitUntil: "networkidle" });

@@ -6,7 +6,7 @@ import { Ext, MailHead, Page, State, ThreadHeading, Trailer } from "@/components
 import { communityPatches, mergedPatches, reviewPatches, seriesStats, type Patch } from "@/lib/series";
 
 const description =
-  "Shaswat Raj, software engineer (BIT Mesra '28). Merged fixes in Google's gemini-cli, MoFA, Preact and Editor.js; more in review at Kmesh and Jaeger. Open to SDE, FDE and DevOps roles.";
+  "Shaswat Raj, software engineer (BIT Mesra '28). Merged fixes in Google's gemini-cli, T3 Code, MoFA, Preact and Editor.js; more in review at Kmesh and Jaeger. Open to SDE, FDE and DevOps roles.";
 
 export const metadata: Metadata = {
   title: { absolute: "Shaswat Raj — fixes in code I don't maintain" },
@@ -181,7 +181,7 @@ export default function Home() {
             found in other people&apos;s code, reproduced, and fixed until their maintainers merged the patch.
           </p>
           <p>
-            Google&apos;s gemini-cli, MoFA, Preact and Editor.js have merged mine. Kmesh and Jaeger are reviewing Go fixes for a
+            Google&apos;s gemini-cli, T3 Code, MoFA, Preact and Editor.js have merged mine. Kmesh and Jaeger are reviewing Go fixes for a
             CNI crash and bad sampling config. Below the series are the systems I led or founded, and still run for real users.
           </p>
         </div>
