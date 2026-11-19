@@ -5,7 +5,7 @@ import { roles } from "@/data/roles";
 export const dynamic = "force-static";
 
 const BASE = "https://playlikeboy.github.io";
-const PROJECTS = ["sopkit", "campusloop", "bitotsav-2026", "gemini-cli", "debo", "sopplayer", "30tools"];
+const PROJECTS = ["sopkit", "campusloop", "bitotsav-2026", "gemini-cli", "debo", "indexfast", "ruxs", "scriptly", "sopplayer", "30tools"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();

@@ -371,9 +371,14 @@ export const DATA = {
       dates: "2025",
       active: true,
       description:
-        "An MCP server that pushes URLs directly to Google, Bing, and IndexNow from inside your IDE instead of waiting on crawl schedules — built to explore what MCP-native tooling looks like for a real developer workflow.",
-      technologies: ["Next.js", "TypeScript", "IndexNow API", "Bing API", "MCP"],
+        "Finds pages search engines haven't picked up and submits them through official channels (IndexNow, Bing Webmaster, Search Console). Agent-native: an authenticated MCP server, REST API and an npm CLI over one core, with an hourly Cloudflare Worker cron draining the submission queue.",
+      technologies: ["Next.js", "TypeScript", "Cloudflare Workers", "Neon Postgres", "Drizzle ORM", "IndexNow API", "Bing API", "MCP"],
       links: [
+        {
+          type: "Case Study",
+          href: "/projects/indexfast",
+          icon: "globe",
+        },
         {
           type: "Website",
           href: "https://indexfast.co",
@@ -487,16 +492,54 @@ export const DATA = {
     },
     {
       title: "RUXs",
-      href: "https://github.com/playlikeboy/ruxs",
+      href: "https://ruxs.in",
       dates: "2026 – Present",
       active: true,
       description:
-        "Everyday essentials, from your neighbourhood — a local-commerce app for daily-needs shopping from nearby stores, built on Next.js with Drizzle/PostgreSQL and deployed on Cloudflare.",
-      technologies: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Cloudflare"],
+        "Replaces a tiffin or water-can vendor's WhatsApp chats and paper khata: daily skip-or-confirm with a locked cutoff count, driver run sheets, a shared ledger and one monthly UPI bill. Household app, merchant panel and admin console on Cloudflare Workers.",
+      technologies: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Cloudflare Workers", "Playwright"],
       links: [
+        {
+          type: "Case Study",
+          href: "/projects/ruxs",
+          icon: "globe",
+        },
+        {
+          type: "Website",
+          href: "https://ruxs.in",
+          icon: "globe",
+        },
         {
           type: "Source",
           href: "https://github.com/playlikeboy/ruxs",
+          icon: "github",
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "ScriptlyStore",
+      href: "https://scriptly.store",
+      dates: "2026 – Present",
+      active: true,
+      description:
+        "Edge-rendered marketplace for production-ready code. Downloads stream only after a verified purchase; Razorpay checkout recomputes prices server-side (USD cents to INR paise); AES-256-GCM payment links and an agent/MCP API.",
+      technologies: ["Next.js", "TypeScript", "Cloudflare Workers", "Neon Postgres", "Drizzle ORM", "Razorpay"],
+      links: [
+        {
+          type: "Case Study",
+          href: "/projects/scriptly",
+          icon: "globe",
+        },
+        {
+          type: "Website",
+          href: "https://scriptly.store",
+          icon: "globe",
+        },
+        {
+          type: "Source",
+          href: "https://github.com/playlikeboy/scriptly.store",
           icon: "github",
         },
       ],

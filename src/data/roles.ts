@@ -170,7 +170,7 @@ export const roles: Role[] = [
       {
         title: "Services in production on Cloudflare Workers",
         detail:
-          "IndexFast, MCP Pure and Solus run on Workers with Hono, Neon Postgres, Drizzle and R2 — deployed and operated by me.",
+          "IndexFast, RUXs and ScriptlyStore (Next.js via OpenNext), plus MCP Pure and Solus (Hono), run on Workers with Neon Postgres, Drizzle, R2 and cron triggers — deployed and operated by me.",
         href: "https://mcppure.shraj.workers.dev/",
         status: "live",
       },

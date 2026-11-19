@@ -131,15 +131,27 @@ const systems = [
     subject: "student network gated by college email",
     body: "Sign-up accepts the email domains of 1,350+ Indian colleges. Feeds, marketplace, polls and time capsules on Next.js, PostgreSQL and Cloudflare Workers.",
     links: [
+      ["Case-study", "/projects/campusloop"],
       ["Live", "https://campusloop.space"],
       ["Code", "https://github.com/playlikeboy/campusloop"],
     ],
   },
   {
-    name: "IndexFast",
-    subject: "MCP server that submits URLs to Google, Bing and IndexNow",
-    body: "Runs on Cloudflare Workers with Hono; called from inside an IDE.",
+    name: "RUXs",
+    subject: "daily tiffin and water-can subscriptions for neighbourhood vendors",
+    body: "Replaces a vendor's WhatsApp chats and paper ledger: skip-or-confirm with a locked cutoff count, driver run sheets, a shared ledger and one monthly UPI bill.",
     links: [
+      ["Case-study", "/projects/ruxs"],
+      ["Live", "https://ruxs.in"],
+      ["Code", "https://github.com/playlikeboy/ruxs"],
+    ],
+  },
+  {
+    name: "IndexFast",
+    subject: "agent-native indexing: MCP server, API and CLI",
+    body: "Finds pages search engines haven't picked up and submits them through IndexNow, Bing and Search Console. Next.js on Cloudflare Workers, with a cron draining the queue; an agent in an IDE can run it end to end.",
+    links: [
+      ["Case-study", "/projects/indexfast"],
       ["Live", "https://indexfast.co"],
       ["Code", "https://github.com/playlikeboy/indexfast"],
     ],
