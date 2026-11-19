@@ -4,13 +4,13 @@ import { Page, PageHead } from "@/components/mail";
 
 export const metadata = {
   title: "Blog — Shaswat Raj",
-  description: "Thoughts on software engineering, open source, AI, and building products.",
+  description: "Engineering write-ups: bugs I fixed in other people's code and systems I built, with every claim linked to its source.",
   alternates: {
     canonical: "https://playlikeboy.github.io/blog",
   },
   openGraph: {
     title: "Blog — Shaswat Raj",
-    description: "Thoughts on software engineering, open source, AI, and building products.",
+    description: "Engineering write-ups: bugs I fixed in other people's code and systems I built, with every claim linked to its source.",
     url: "https://playlikeboy.github.io/blog",
     siteName: "Shaswat Raj",
     locale: "en_US",
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Blog — Shaswat Raj",
-    description: "Thoughts on software engineering, open source, AI, and building products.",
+    description: "Engineering write-ups: bugs I fixed in other people's code and systems I built, with every claim linked to its source.",
     creator: "@SH20RAJ",
     images: ["/og.png"],
   },

@@ -11,6 +11,8 @@ export const SITES = [
   { name: "CampusLoop", url: "https://campusloop.space/" },
   { name: "IndexFast", url: "https://indexfast.co/" },
   { name: "Debo", url: "https://debo.life/" },
+  { name: "RUXs", url: "https://ruxs.in/" },
+  { name: "ScriptlyStore", url: "https://scriptly.store/" },
   { name: "MCP Pure", url: "https://mcppure.shraj.workers.dev/" },
 ];
 

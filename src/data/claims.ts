@@ -20,7 +20,7 @@ export const claims: Claim[] = [
     where: "Resume, portfolio, GitHub README",
     kind: "public record",
     sources: [
-      { label: "Pull request", url: "https://github.com/google-gemini/gemini-cli/pull/20778" },
+      { label: "Pull request", url: "https://github.com/google-gemini/gemini-cli/commit/f11bd3d0797f1626929b9d095efcb5816c18900c" },
       { label: "Merged commit", url: "https://github.com/google-gemini/gemini-cli/commit/f11bd3d0797f1626929b9d095efcb5816c18900c" },
     ],
     note: "Authored as @SH20RAJ, my previous account; GitHub shows the PR author as \"ghost\". The commit carries my name.",

@@ -1,0 +1,45 @@
+---
+title: "Ctrl+C in gemini-cli didn't cancel chat compression"
+publishedAt: "2026-11-19"
+summary: "A six-line fix merged into google-gemini/gemini-cli: when you cancel a turn, the compression request that runs before it now stops too."
+---
+
+This is the story of my smallest merged pull request, and the one I learned the most from. It is google-gemini/gemini-cli #20778, merged on 25 March 2026 as commit [`f11bd3d`](https://github.com/google-gemini/gemini-cli/commit/f11bd3d0797f1626929b9d095efcb5816c18900c). It fixes issue [#20405](https://github.com/google-gemini/gemini-cli/issues/20405).
+
+I opened it from my old GitHub account, @SH20RAJ, which no longer exists, and the pull request page no longer loads. The merge commit is the record: its title ends in `(#20778)` and it carries my name.
+
+## The bug
+
+When a conversation in gemini-cli gets long, the CLI compresses it before the next turn. It sends the history to the model, asks for a summary, and checks that summary. Those are real API calls, and on a long history they take a while.
+
+If you pressed Ctrl+C during that step, the turn ended on screen, but the compression requests kept running until they finished. You had cancelled, yet you were still waiting on the network and spending tokens.
+
+## Finding it
+
+Cancellation in gemini-cli uses the standard `AbortSignal`. Every turn has a signal, and pressing Ctrl+C aborts it. Anything that should stop when the user cancels has to be given that signal.
+
+So I traced where the turn's signal goes. In `packages/core/src/core/client.ts`, the turn has `signal` in scope. It passes it to the model call, but not to the compression step that runs just before:
+
+```ts
+const compressed = await this.tryCompressChat(prompt_id, false);
+```
+
+`tryCompressChat` took no signal, so the compression service below it had nothing to listen to. The same pattern was in `packages/core/src/agents/local-executor.ts`, where subagents run their turns: `combinedSignal` went to `callModel` but not to `tryCompressChat`.
+
+## The fix
+
+Thread the signal through. `tryCompressChat` gets an optional `abortSignal` parameter and passes it on to the compression service, and both callers hand over the signal they already had:
+
+```ts
+const compressed = await this.tryCompressChat(prompt_id, false, signal);
+```
+
+That is the whole change: 6 lines added and 2 removed across two files. The parameter is optional, so other callers of `tryCompressChat` keep working unchanged. A maintainer, Tommaso Sciortino, is co-author on the merge commit.
+
+## What I took from it
+
+- **Cancellation is a contract every layer must keep.** One function that starts work without taking the caller's signal breaks Ctrl+C for everything under it. When I review async code now, I check that each network call can be reached by an abort.
+- **Look for the variable that is already in scope.** The signal was one line away from the call that needed it. The bug wasn't a missing feature. It was a value that wasn't passed down.
+- **Small and boring merges.** I kept the change to the bare minimum and the new parameter optional. That made it easy for a maintainer to say yes.
+
+More fixes like this one are on the [home page](/#series), with each one's status and source.

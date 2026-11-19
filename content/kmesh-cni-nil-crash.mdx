@@ -1,0 +1,67 @@
+---
+title: "A nil pointer in Kmesh's CNI plugin, and the fallback that never ran"
+publishedAt: "2026-11-19"
+summary: "kmesh-cni crashed on CNI_ARGS it couldn't parse, instead of falling back the way its own comment said it would. The fix and its tests are in review."
+---
+
+[Kmesh](https://github.com/kmesh-net/kmesh) is a CNCF service mesh that moves traffic handling into the kernel with eBPF. On every Kubernetes node it installs `kmesh-cni`, a CNI plugin that the container runtime calls whenever a pod's network is set up.
+
+I reported a crash in that plugin as [issue #1988](https://github.com/kmesh-net/kmesh/issues/1988) and opened [PR #1989](https://github.com/kmesh-net/kmesh/pull/1989) to fix it. **It is still in review**, so read this as a write-up of an open patch, not a merged one.
+
+## The bug
+
+A CNI plugin gets its input in two places: a JSON config on stdin, and a `CNI_ARGS` environment variable of `KEY=VALUE` pairs. `kmesh-cni` is a chained plugin. It runs after the main network plugin and receives that plugin's result as `prevResult`.
+
+`parseSkelArgs` in `pkg/cni/plugin/plugin.go` parses both. When `types.LoadArgs` rejected `CNI_ARGS` (a pair without `=`, or an unknown key without `IgnoreUnknown=1`), it returned:
+
+```go
+return nil, nil, result, err
+```
+
+That is a nil config, but a valid previous result. Then `CmdAdd` did this:
+
+```go
+if preResult == nil {
+    return err
+}
+return types.PrintResult(preResult, cniConf.CNIVersion) // cniConf is nil
+```
+
+The comment above it says the plugin should "do nothing and print pre result". The code tried to do exactly that, then read `CNIVersion` from a nil pointer:
+
+```
+runtime error: invalid memory address or nil pointer dereference
+```
+
+So the one path built to keep pod networking working on bad input crashed instead.
+
+## The fix
+
+The config had already been parsed when `LoadArgs` failed, so there was no reason to throw it away. The patch returns it with the previous result:
+
+```go
+// The config and the previous result were parsed fine; return them so
+// the caller can still print the previous result with the right version.
+return &cniConf, nil, result, err
+```
+
+It also adds a guard in `CmdAdd`, so any later code path that returns a result without a config gets an error instead of a panic:
+
+```go
+if preResult == nil || cniConf == nil {
+    return err
+}
+```
+
+## Tests
+
+The package had no tests before. The PR adds `pkg/cni/plugin/plugin_test.go`, which feeds `CmdAdd` a chained config and a malformed `CNI_ARGS`. On `main`, `TestCmdAddMalformedArgsPrintsPrevResult` panics. With the fix, it prints the previous result. The tests need no network or root, and `go test -race`, `gofmt -s` and `go vet` all pass. The PR is 70 lines added and 2 removed, most of them tests.
+
+I said in the PR that I used an AI coding assistant while investigating and drafting the change, and that I reviewed and tested every line. I think maintainers should know that.
+
+## What I took from it
+
+- **Error paths get the least testing and run when things are already going wrong.** A fallback that has never been run is a guess. Now, when I see a "this should never happen" branch, the first thing I do is write a test that runs it.
+- **Return everything you have parsed.** Returning `nil` for the config dropped data the caller needed. When an error comes back, the caller still needs every value it can use.
+
+Kmesh is also reviewing a second fix of mine, [#1987](https://github.com/kmesh-net/kmesh/pull/1987). It stops the DNS refresh queue from starting duplicate loops for the same hostname. All open patches are listed with their status on the [home page](/#series).

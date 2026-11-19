@@ -5,9 +5,26 @@ import { formatDate } from "@/lib/utils";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+// Posts retired on 2026-11-19: generic pieces whose claims had no sources.
+// Old links land here and are sent on to the closest current page.
+const RETIRED: Record<string, string> = {
+  "ai-in-2026": "/blog",
+  "aws-cloud": "/roles/devops",
+  "building-resumeflow": "/projects",
+  "devops-mastery": "/roles/devops",
+  "hello-world": "/blog",
+  "my-journey": "/story",
+  "open-source-tips": "/#series",
+  "seo-skills": "/blog",
+  "sh20raj-profile": "/story",
+  "why-nextjs-15": "/blog",
+};
+
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
-  return posts.map((post) => ({ slug: post.slug }));
+  return [...posts.map((post) => ({ slug: post.slug })), ...Object.keys(RETIRED).map((slug) => ({ slug }))];
 }
 
 export async function generateMetadata({
@@ -18,6 +35,7 @@ export async function generateMetadata({
   }>;
 }): Promise<Metadata | undefined> {
   const { slug } = await params;
+  if (RETIRED[slug]) return { title: "Moved", robots: { index: false, follow: true } };
   let post = await getPost(slug);
 
   let {
@@ -26,7 +44,7 @@ export async function generateMetadata({
     summary: description,
     image,
   } = post.metadata;
-  let ogImage = image ? `${DATA.url}${image}` : `${DATA.url}/og?title=${title}`;
+  let ogImage = image ? `${DATA.url}${image}` : `${DATA.url}/og.png`;
 
   return {
     title,
@@ -69,6 +87,20 @@ export default async function Blog({
   }>;
 }) {
   const { slug } = await params;
+  const to = RETIRED[slug];
+  if (to) {
+    return (
+      <Page>
+        <meta httpEquiv="refresh" content={`0; url=${to}`} />
+        <link rel="canonical" href={`${DATA.url}${to === "/" ? "" : to}`} />
+        <PageHead subject="This post was retired">
+          <p>
+            It has moved on. Continue to <a href={to} className="a-link">{to}</a>.
+          </p>
+        </PageHead>
+      </Page>
+    );
+  }
   let post = await getPost(slug);
 
   if (!post) {

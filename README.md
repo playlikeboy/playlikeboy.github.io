@@ -10,7 +10,7 @@ Software engineer and B.Tech CSE student at BIT Mesra (2028). Open to SDE, forwa
 
 ## Highlights
 
-- Merged pull requests in [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli/pull/20778), [Preact](https://github.com/preactjs/preact/pull/5331) and [Editor.js](https://github.com/codex-team/editor.js/pull/3040); more in review at Jaeger, Kmesh, Lexical and Radix UI.
+- Merged pull requests in [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli/commit/f11bd3d0797f1626929b9d095efcb5816c18900c), [Preact](https://github.com/preactjs/preact/pull/5331) and [Editor.js](https://github.com/codex-team/editor.js/pull/3040); more in review at Jaeger, Kmesh, Lexical and Radix UI.
 - Tech lead for Bitotsav '26 — the platform behind a ~5,000-participant festival.
 - [SopKit](https://sopkit.github.io) — 605+ client-side browser tools, 4.3M+ requests in 30 days.
 

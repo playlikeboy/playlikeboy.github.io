@@ -37,6 +37,23 @@ export default function StoryPage() {
           that run on the visitor&apos;s device, which served 4.3M requests in one 30-day window.
         </p>
 
+        <h2>From building to leading</h2>
+        <p>
+          In 2025 I was one person on the Bitotsav web team, building the frontend and the first QR entry system. A year later
+          I led the whole platform. In 2026 I also became Joint Secretary of BIT Mesra&apos;s ACM chapter. Leading taught me
+          something different from coding: most of the job is getting requirements out of people who aren&apos;t engineers, and
+          keeping a date that won&apos;t move.
+        </p>
+        <p>
+          Outside college I found and build my own products, and I run each one alone in production:{" "}
+          <Link href="/projects/campusloop" className="a-link">CampusLoop</Link> (a verified student network),{" "}
+          <Link href="/projects/indexfast" className="a-link">IndexFast</Link> (indexing that an AI agent can run),{" "}
+          <Link href="/projects/ruxs" className="a-link">RUXs</Link> (daily subscriptions for neighbourhood vendors),{" "}
+          <Link href="/projects/scriptly" className="a-link">ScriptlyStore</Link> (a code marketplace) and{" "}
+          <Link href="/projects/debo" className="a-link">Debo</Link> (personal AI memory). Being the only engineer means I
+          also own the billing, the outages and the support inbox, not just the code.
+        </p>
+
         <h2>Proof matters more than labels</h2>
         <p>
           Then I started contributing to code I don&apos;t own. My pull requests have been merged into Google&apos;s gemini-cli, MoFA,
@@ -56,7 +73,8 @@ export default function StoryPage() {
         <h2>What comes next</h2>
         <p>
           I&apos;m looking for a team that will trust me with real engineering problems, where I can learn from people better than
-          me. SDE, forward-deployed or DevOps/platform, as an intern or a new grad.
+          me. SDE, forward-deployed or DevOps/platform, as an intern or a new grad, at an early-stage startup or a large engineering
+          company.
         </p>
         <blockquote>I still have a lot to learn. That&apos;s part of the point.</blockquote>
       </div>

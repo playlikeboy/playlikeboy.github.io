@@ -8,6 +8,19 @@ Software engineer and B.Tech Computer Science student at BIT Mesra, India (gradu
 - Tech lead for Bitotsav '26, a festival platform for about 5,000 participants.
 - Built and runs SopKit, 605+ client-side browser tools (4.3M+ requests in 30 days).
 
+## Products I founded and run
+
+- CampusLoop, a verified student network: https://playlikeboy.github.io/projects/campusloop
+- IndexFast, agent-native search indexing (MCP server, API, CLI): https://playlikeboy.github.io/projects/indexfast
+- RUXs, subscriptions for neighbourhood tiffin and water-can vendors: https://playlikeboy.github.io/projects/ruxs
+- ScriptlyStore, a code marketplace: https://playlikeboy.github.io/projects/scriptly
+- Debo, personal AI memory: https://playlikeboy.github.io/projects/debo
+
+## Leadership
+
+- Tech Lead, Bitotsav '26 (BIT Mesra's annual festival, about 5,000 participants)
+- Joint Secretary, ACM BIT Mesra student chapter (2026-27)
+
 ## Key Pages
 
 - Portfolio: https://playlikeboy.github.io

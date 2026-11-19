@@ -1,0 +1,43 @@
+---
+title: "Designing IndexFast's MCP server for agents, not people"
+publishedAt: "2026-11-19"
+summary: "IndexFast is meant to be run by an AI agent. Four decisions in its MCP server that came from treating a model as the main user."
+---
+
+[IndexFast](https://indexfast.co) finds pages search engines haven't picked up and submits them through the channels the engines officially accept: IndexNow, Bing Webmaster and Google Search Console. I build and run it alone. The [code is public](https://github.com/playlikeboy/indexfast), and there's a [longer case study](/projects/indexfast).
+
+From the start I wanted the main user to be an agent: Claude Code or Cursor, working for a developer who just shipped a site. A person sets it up once. After that, the agent should be able to add a site, verify it, sync sitemaps and check what each engine answered, all without a dashboard. The way in is an MCP server at `POST /api/mcp`, authenticated with an `idxf_` API key. Here are four decisions that came out of designing for a model rather than a person.
+
+## 1. Failures are results, not errors
+
+MCP runs on JSON-RPC, which has an error channel. When something goes wrong, the obvious move is to return a JSON-RPC error. But many clients treat a protocol error as "the tool is broken", and the model may never see the message.
+
+So when a tool fails because of the user's situation (the key file isn't hosted yet, the plan quota is used up), IndexFast returns a normal result with `isError: true` and a plain-language message. For example: the key file wasn't found at this URL, so host it and call `verify_site` again. The agent reads that like any other output and can take the next step on its own. Protocol errors are kept for real protocol problems.
+
+## 2. Negotiate the protocol version
+
+MCP has gone through several protocol versions, and different clients send different ones. IndexFast's `initialize` echoes the client's version when it supports it (`2024-11-05` through `2025-11-25`) and otherwise falls back to the latest. A client stuck on an older spec still connects instead of failing on the handshake.
+
+`initialize` also returns `instructions`: a short description of the setup flow. An agent connecting for the first time gets the order of operations without reading any docs.
+
+## 3. Every argument accepts what the agent already has
+
+Every tool with a `site` argument accepts either a domain or an internal site ID. An agent working on `example.com` knows the domain. It shouldn't need a lookup call to get an ID first. `verify_site` also takes an optional `existingKey`, so a site that already hosts an IndexNow key from another tool can reuse it instead of hosting a second one.
+
+## 4. MCP is a thin layer over the same core
+
+The dashboard, the REST API, the npm CLI and the MCP server all call the same operations module (`src/lib/platform/operations.ts`). The MCP layer only maps JSON-RPC calls to those functions and formats the results. That means:
+
+- a behaviour change ships to all four interfaces at once
+- quota and ownership checks can't be skipped through one door and enforced at another
+- MCP tool calls count against the same monthly quota as everything else
+
+## Limits that shaped it
+
+IndexFast runs on Cloudflare Workers: 128 MB of memory and short CPU budgets per request. The MCP endpoint is stateless and returns plain JSON instead of holding an SSE stream open. A `GET` that asks for an event stream gets a 405. Slow work, like syncing large sitemaps and draining the submission queue, runs in a scheduled Worker, not inside a tool call.
+
+One rule shapes the whole product: **it never promises Google indexing.** Google's Indexing API is used only for the page types Google allows it for (job postings and livestreams). Every other URL goes through IndexNow and Bing, and Search Console is used to diagnose problems. Agents repeat what tools tell them, so a tool that overpromises leads to an agent that overpromises.
+
+## What I took from it
+
+Writing for an agent is like writing an API for a careful reader who has no context. Every response has to explain what happened and what to do next, in words.

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: "Shaswat Raj — fixes in code I don't maintain", description, creator: "@SH20RAJ" },
 };
 
-const UPDATED = "11 Nov 2026";
+const UPDATED = "19 Nov 2026";
 
 function PatchRow({ patch, n, of }: { patch: Patch; n: number; of: number }) {
   const bug = patch.bug;
@@ -182,7 +182,7 @@ export default function Home() {
           </p>
           <p>
             Google&apos;s gemini-cli, MoFA, Preact and Editor.js have merged mine. Kmesh and Jaeger are reviewing Go fixes for a
-            CNI crash and bad sampling config. Below the series are the systems I built and ran for real users.
+            CNI crash and bad sampling config. Below the series are the systems I led or founded, and still run for real users.
           </p>
         </div>
 

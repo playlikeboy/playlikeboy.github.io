@@ -17,7 +17,7 @@ function A({ href, children }: { href: string; children: ReactNode }) {
 }
 
 const PRS = {
-  gemini: <A href="https://github.com/google-gemini/gemini-cli/pull/20778">google-gemini/gemini-cli #20778</A>,
+  gemini: <A href="https://github.com/google-gemini/gemini-cli/commit/f11bd3d0797f1626929b9d095efcb5816c18900c">google-gemini/gemini-cli #20778</A>,
   mofa: (
     <>
       <A href="https://github.com/mofa-org/mofa/pull/1577">mofa-org/mofa #1577</A>,{" "}
@@ -47,15 +47,28 @@ const BITOTSAV = {
   users: "Gathered requirements from organisers, volunteers and college administration, and shipped changes against a date that did not move.",
 };
 
+const FOUNDER = {
+  indexfast: (
+    <>
+      <A href="https://indexfast.co">IndexFast</A>: agent-native search indexing. MCP server, REST API and npm CLI over one core; a
+      Workers cron drains a throttle-aware queue to IndexNow and Bing.
+    </>
+  ),
+  ruxs: (
+    <>
+      <A href="https://ruxs.in">RUXs</A>: tiffin and water-can subscriptions that replace vendors&apos; WhatsApp and paper ledgers.
+      Also <A href="https://scriptly.store">ScriptlyStore</A>, a code marketplace.
+    </>
+  ),
+};
+
 const P = {
   sopkit: { name: "SopKit", stack: "Next.js, TypeScript, WebAssembly", link: "sopkit.github.io", points: ["605+ privacy-first browser tools that process files client-side, with no uploads and no server compute.", "4.3M+ requests and 213K+ visits in 30 days, built and operated solo."] },
   sopkitInfra: { name: "SopKit", stack: "Static export, GitHub Pages, WebAssembly", link: "sopkit.github.io", points: ["605+ tools served as static files with zero server compute; 4.3M+ requests and 213K+ visits in 30 days, operated solo."] },
   campusloop: { name: "CampusLoop", stack: "Next.js, PostgreSQL, Cloudflare Workers, WebSockets", link: "campusloop.space", points: ["Student network gated by college email; sign-up accepts the domains of 1,350+ Indian colleges. Feeds, marketplace, polls and time capsules."] },
   debo: { name: "Debo", stack: "Next.js, TypeScript, vector search, OpenAI", link: "debo.life", points: ["Personal AI memory: ingests notes, links and audio, embeds them, and retrieves context through a chat interface. Built solo."] },
-  indexfast: { name: "IndexFast and MCP Pure", stack: "TypeScript, Hono, Cloudflare Workers, MCP", link: "indexfast.co", points: ["MCP servers on the edge; IndexFast submits URLs to Google, Bing and IndexNow from inside an IDE."] },
-  indexfastInfra: { name: "IndexFast, MCP Pure, Solus", stack: "Cloudflare Workers, Hono, Neon Postgres, Drizzle, R2", link: "indexfast.co", points: ["Services I deploy and operate on Cloudflare Workers; IndexFast submits URLs to Google, Bing and IndexNow from an IDE over MCP."] },
+  edgeInfra: { name: "MCP Pure and Solus", stack: "Cloudflare Workers, Hono, Neon Postgres, Drizzle, R2", link: "mcppure.shraj.workers.dev", points: ["Edge services I deploy and operate: an MCP server registry and a single-user private social network."] },
   portfolio: { name: "playlikeboy.github.io", stack: "GitHub Actions, GitHub Pages, GitLab CI", link: "playlikeboy.github.io/status", points: ["CI/CD that builds and deploys on push with scoped permissions, mirrors to GitLab, and runs hourly uptime checks on my products with 30 days of history."] },
-  kishan: { name: "Kishan AI", stack: "Python, computer vision, Telegram Bot API", link: "", points: ["Assistant for farmers: crop-disease diagnosis from photos, weather and mandi prices. Top 500 nationally, AICTE Productization Fellowship 2025."] },
   kishanFde: { name: "Kishan AI", stack: "Python, computer vision, Telegram Bot API", link: "", points: ["Built for farmers where they already are (Telegram, not a new app): crop-disease diagnosis from photos, weather and mandi prices. AICTE Productization Fellowship 2025, national Top 500."] },
   dhwani: { name: "Dhwani, BIT Mesra music society", stack: "Next.js, TypeScript", link: "dhwanibitmesra.in", points: ["Delivered the society's site for a non-technical team against a fixed event date: requirements, design and build end to end."] },
 };
@@ -72,7 +85,7 @@ interface Spec {
 
 const SPECS: Record<Variant, Spec> = {
   general: {
-    headline: "Software Engineer · SDE / DevOps · Merged upstream in gemini-cli, MoFA, Preact and Editor.js",
+    headline: "Software Engineer & Founder · Tech Lead, Bitotsav '26 · Merged upstream in gemini-cli, MoFA, Preact and Editor.js",
     skills: [
       ["Languages", "TypeScript, JavaScript, Go, Rust, C++, Python, SQL, Bash"],
       ["Backend", "Node.js, Express, Hono, FastAPI, PostgreSQL, Redis, REST, WebSockets"],
@@ -82,7 +95,7 @@ const SPECS: Record<Variant, Spec> = {
     ],
     bitotsav: [BITOTSAV.build, BITOTSAV.qr, BITOTSAV.ops],
     oss: [OSS.gemini, OSS.mofa, OSS.review],
-    projects: [P.sopkit, P.campusloop, P.debo, P.indexfast, P.kishan],
+    projects: [P.sopkit, P.campusloop, P.debo],
   },
   sde: {
     headline: "Software Development Engineer · TypeScript, Go, C++ · Merged upstream in gemini-cli, MoFA, Preact and Editor.js",
@@ -95,7 +108,7 @@ const SPECS: Record<Variant, Spec> = {
     ],
     bitotsav: [BITOTSAV.build, BITOTSAV.qr, BITOTSAV.ops],
     oss: [OSS.gemini, OSS.mofa, OSS.review],
-    projects: [P.sopkit, P.campusloop, P.debo, P.indexfast, P.kishan],
+    projects: [P.sopkit, P.campusloop, P.debo],
   },
   fde: {
     headline: "Forward Deployed Engineer · builds in the user's environment · Tech lead, Bitotsav '26 (~5,000 participants)",
@@ -107,7 +120,7 @@ const SPECS: Record<Variant, Spec> = {
     ],
     bitotsav: [BITOTSAV.users, BITOTSAV.build, BITOTSAV.qr, BITOTSAV.ops],
     oss: [OSS.gemini, OSS.mofa],
-    projects: [P.kishanFde, P.dhwani, P.indexfast, P.debo, P.sopkit],
+    projects: [P.kishanFde, P.dhwani, P.sopkit],
   },
   devops: {
     headline: "DevOps / Platform Engineer · Go, Linux, Docker, CI/CD · Fixes in Kmesh (service mesh) and Jaeger (tracing)",
@@ -119,7 +132,7 @@ const SPECS: Record<Variant, Spec> = {
     ],
     bitotsav: [BITOTSAV.ops, BITOTSAV.qr, BITOTSAV.build],
     oss: [OSS.infra, OSS.jaeger, OSS.merged],
-    projects: [P.portfolio, P.indexfastInfra, P.sopkitInfra, P.campusloop],
+    projects: [P.portfolio, P.edgeInfra, P.sopkitInfra],
   },
 };
 
@@ -153,7 +166,7 @@ export function ResumeDocument({ variant }: { variant: Variant }) {
           </p>
           <p className="shrink-0">Expected May 2028</p>
         </div>
-        {variant !== "sde" && (
+        {(variant === "fde" || variant === "devops") && (
           <p>
             Coursework: Data Structures &amp; Algorithms, Operating Systems, Database Management Systems, Computer Networks,
             Object-Oriented Programming, Software Engineering.
@@ -182,6 +195,18 @@ export function ResumeDocument({ variant }: { variant: Variant }) {
               <li key={point}>{point}</li>
             ))}
             <li>{BITOTSAV.y2025}</li>
+          </ul>
+        </div>
+        <div className="mb-1.5 break-inside-avoid">
+          <div className="flex justify-between gap-4">
+            <p>
+              <strong>Independent products</strong> — Founder &amp; sole engineer
+            </p>
+            <p className="shrink-0">2025 – Present</p>
+          </div>
+          <ul className="list-disc pl-4">
+            <li>{FOUNDER.indexfast}</li>
+            <li>{FOUNDER.ruxs}</li>
           </ul>
         </div>
         <div className="mb-1.5 break-inside-avoid">
@@ -242,8 +267,7 @@ export function ResumeDocument({ variant }: { variant: Variant }) {
             Adobe University Hackathon 2026 — reached Round 3 with OmniAudit-GEO, an AI-search visibility auditor (team of two;{" "}
             <A href="https://omniaudit.streamlit.app/">live demo</A>).
           </li>
-          <li>Apify hackathon — prize ($100) for a production web-scraping actor.</li>
-          <li>Technical writing on Dev.to, 45K+ followers.</li>
+          <li>Apify hackathon prize ($100) for a production web-scraping actor · technical writing on Dev.to, 45K+ followers.</li>
         </ul>
       </Section>
     </article>

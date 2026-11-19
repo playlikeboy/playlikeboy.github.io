@@ -228,7 +228,7 @@ export const DATA = {
         },
         {
           type: "Pull Request",
-          href: "https://github.com/google-gemini/gemini-cli/pull/20778",
+          href: "https://github.com/google-gemini/gemini-cli/commit/f11bd3d0797f1626929b9d095efcb5816c18900c",
           icon: "github",
         },
       ],

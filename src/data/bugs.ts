@@ -170,7 +170,7 @@ export const bugs: Bug[] = [
     symptom: "The AbortSignal stopped propagating before the compression call, so a cancelled turn kept a model request running.",
     fix: "Thread the AbortSignal through the execution and compression layers.",
     issueUrl: "https://github.com/google-gemini/gemini-cli/issues/20405",
-    fixUrl: "https://github.com/google-gemini/gemini-cli/pull/20778",
+    fixUrl: "https://github.com/google-gemini/gemini-cli/commit/f11bd3d0797f1626929b9d095efcb5816c18900c",
     fixLabel: "PR #20778 (as @SH20RAJ)",
     status: "fixed (merged)",
     date: "2026-03-25",

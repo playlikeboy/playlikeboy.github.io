@@ -70,7 +70,7 @@ export const mergedContributions: Contribution[] = [
     repo: "google-gemini/gemini-cli",
     number: 20778,
     title: "fix(core): thread AbortSignal to chat compression requests",
-    url: "https://github.com/google-gemini/gemini-cli/pull/20778",
+    url: "https://github.com/google-gemini/gemini-cli/commit/f11bd3d0797f1626929b9d095efcb5816c18900c",
     date: "2026-03-25",
     formerAccount: true,
     commitUrl:

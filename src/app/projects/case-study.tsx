@@ -55,8 +55,14 @@ export function caseStudyMetadata(slug: string, title: string, description: stri
       siteName: "Shaswat Raj",
       locale: "en_US",
       type: "article" as const,
-      images: [{ url: "/og.png", width: 1200, height: 630 }],
+      images: [{ url: `/projects/${slug}/og.png`, width: 1200, height: 630, alt: title }],
     },
-    twitter: { card: "summary_large_image" as const, title: `${title} — Shaswat Raj`, description, creator: "@SH20RAJ" },
+    twitter: {
+      card: "summary_large_image" as const,
+      title: `${title} — Shaswat Raj`,
+      description,
+      creator: "@SH20RAJ",
+      images: [`/projects/${slug}/og.png`],
+    },
   };
 }

@@ -25,7 +25,7 @@ export default function GeminiCliCaseStudy() {
         </p>
       }
       trailers={[
-        ["Link", "https://github.com/google-gemini/gemini-cli/pull/20778", "google-gemini/gemini-cli#20778"],
+        ["Link", "https://github.com/google-gemini/gemini-cli/commit/f11bd3d0797f1626929b9d095efcb5816c18900c", "google-gemini/gemini-cli#20778"],
         ["Merged-commit", "https://github.com/google-gemini/gemini-cli/commit/f11bd3d0797f1626929b9d095efcb5816c18900c", "f11bd3d"],
         ["Reported-in", "https://github.com/google-gemini/gemini-cli/issues/20405", "google-gemini/gemini-cli#20405"],
       ]}
