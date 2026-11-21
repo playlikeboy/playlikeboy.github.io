@@ -112,7 +112,7 @@ const founded = [
   ["IndexFast", "/projects/indexfast"],
   ["RUXs", "/projects/ruxs"],
   ["ScriptlyStore", "/projects/scriptly"],
-  ["Debo", "/projects/debo"],
+  ["Daksha", "/projects/daksha"],
 ] as const;
 
 const systems = [
