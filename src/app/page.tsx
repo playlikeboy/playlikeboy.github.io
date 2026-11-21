@@ -6,7 +6,7 @@ import { Ext, MailHead, Page, State, ThreadHeading, Trailer } from "@/components
 import { communityPatches, mergedPatches, reviewPatches, seriesStats, type Patch } from "@/lib/series";
 
 const description =
-  "Shaswat Raj, software engineer (BIT Mesra '28). Merged fixes in Google's gemini-cli, T3 Code, MoFA, Preact and Editor.js; more in review at Kmesh and Jaeger. Open to SDE, FDE and DevOps roles.";
+  "Shaswat Raj, software engineer (BIT Mesra '28). Tech Lead of Bitotsav '26, Joint Secretary of ACM BIT Mesra, founder of CampusLoop, IndexFast, RUXs and ScriptlyStore. Merged fixes in Google's gemini-cli, T3 Code, MoFA, Preact and Editor.js. Open to SDE, FDE and DevOps roles.";
 
 export const metadata: Metadata = {
   title: { absolute: "Shaswat Raj — fixes in code I don't maintain" },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: "Shaswat Raj — fixes in code I don't maintain", description, creator: "@SH20RAJ" },
 };
 
-const UPDATED = "19 Nov 2026";
+const UPDATED = "21 Nov 2026";
 
 function PatchRow({ patch, n, of }: { patch: Patch; n: number; of: number }) {
   const bug = patch.bug;
@@ -106,6 +106,15 @@ function Diffstat() {
   );
 }
 
+const founded = [
+  ["SopKit", "/projects/sopkit"],
+  ["CampusLoop", "/projects/campusloop"],
+  ["IndexFast", "/projects/indexfast"],
+  ["RUXs", "/projects/ruxs"],
+  ["ScriptlyStore", "/projects/scriptly"],
+  ["Debo", "/projects/debo"],
+] as const;
+
 const systems = [
   {
     name: "Bitotsav '26",
@@ -156,6 +165,16 @@ const systems = [
       ["Code", "https://github.com/playlikeboy/indexfast"],
     ],
   },
+  {
+    name: "ScriptlyStore",
+    subject: "edge-rendered marketplace for production-ready code",
+    body: "Downloads stream only after a verified purchase. Razorpay checkout recomputes prices on the server (USD cents to INR paise), payment links are AES-256-GCM encrypted, and it has an agent/MCP API. Next.js on Cloudflare Workers with Neon Postgres.",
+    links: [
+      ["Case-study", "/projects/scriptly"],
+      ["Live", "https://scriptly.store"],
+      ["Code", "https://github.com/playlikeboy/scriptly.store"],
+    ],
+  },
 ] as const;
 
 export default function Home() {
@@ -177,16 +196,30 @@ export default function Home() {
 
         <div className="mt-4 max-w-measure space-y-3 text-[length:var(--step-0)] sm:text-[length:var(--step-1)] leading-relaxed">
           <p>
-            I&apos;m Shaswat, a B.Tech CSE student at BIT Mesra (graduating May 2028) and Joint Secretary of its ACM chapter. This series is my evidence: bugs I
-            found in other people&apos;s code, reproduced, and fixed until their maintainers merged the patch.
+            I&apos;m Shaswat, a B.Tech CSE student at BIT Mesra (graduating May 2028). I led the tech team that built and ran Bitotsav &apos;26 for
+            ~5,000 participants, I&apos;m Joint Secretary of the college&apos;s ACM chapter, and I&apos;ve founded and shipped products of my own,
+            from a 605-tool site that served 4.3M requests in 30 days to subscription billing for neighbourhood vendors.
           </p>
           <p>
-            Google&apos;s gemini-cli, T3 Code, MoFA, Preact and Editor.js have merged mine. Kmesh and Jaeger are reviewing Go fixes for a
-            CNI crash and bad sampling config. Below the series are the systems I led or founded, and still run for real users.
+            This series is the part strangers checked: bugs I found in other people&apos;s code, reproduced, and fixed until their maintainers
+            merged the patch. Google&apos;s gemini-cli, T3 Code, MoFA, Preact (twice) and Editor.js have merged mine; Kmesh and Jaeger are
+            reviewing Go fixes for a CNI crash and bad sampling config.
           </p>
         </div>
 
         <div className="mt-4 font-mono text-[0.8125rem]">
+          <Trailer k="Led">
+            <Link href="/projects/bitotsav-2026" className="a-link">Bitotsav &apos;26</Link> (Tech Lead, 2025–26) ·{" "}
+            <Ext href="https://acm-bitmesra.github.io">ACM BIT Mesra</Ext> (Joint Secretary, 2026–27)
+          </Trailer>
+          <Trailer k="Founded">
+            {founded.map(([name, href], i) => (
+              <span key={href}>
+                {i > 0 && " · "}
+                <Link href={href} className="a-link">{name}</Link>
+              </span>
+            ))}
+          </Trailer>
           <Trailer k="Attachment">
             <a href="/resume.pdf" className="a-link">resume.pdf</a> (1 page) · <Link href="/resume" className="a-link">read online</Link>
           </Trailer>
@@ -231,7 +264,7 @@ export default function Home() {
       </ul>
 
       <ThreadHeading id="systems">
-        <span className="font-normal text-muted-foreground">[PATCH 0/4] </span>systems I built and run
+        <span className="font-normal text-muted-foreground">[PATCH 0/{systems.length}] </span>systems I led, founded and run
       </ThreadHeading>
       <div className="divide-y divide-border border-y border-border">
         {systems.map((s) => (

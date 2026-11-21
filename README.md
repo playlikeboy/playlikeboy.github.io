@@ -10,7 +10,7 @@ Software engineer and founder, B.Tech CSE student at BIT Mesra (2028), Tech Lead
 
 ## Highlights
 
-- Merged pull requests in [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli/commit/f11bd3d0797f1626929b9d095efcb5816c18900c), [T3 Code](https://github.com/pingdotgg/t3code/pull/23775), [MoFA](https://github.com/mofa-org/mofa/pull/1577), [Preact](https://github.com/preactjs/preact/pull/5331) and [Editor.js](https://github.com/codex-team/editor.js/pull/3040); more in review at Jaeger, Kmesh, Lexical and Radix UI.
+- Merged pull requests in [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli/commit/f11bd3d0797f1626929b9d095efcb5816c18900c), [T3 Code](https://github.com/pingdotgg/t3code/pull/23775), [MoFA](https://github.com/mofa-org/mofa/pull/1577), [Preact](https://github.com/preactjs/preact/pull/5331) ([twice](https://github.com/preactjs/preact/pull/5387)) and [Editor.js](https://github.com/codex-team/editor.js/pull/3040) — 8 upstream code PRs merged; more in review at Jaeger, Kmesh, Lexical and Radix UI.
 - Tech lead for Bitotsav '26 — the platform behind a ~5,000-participant festival.
 - [SopKit](https://sopkit.github.io) — 605+ client-side browser tools, 4.3M+ requests in 30 days.
 - Founder and sole engineer of [IndexFast](https://playlikeboy.github.io/projects/indexfast), [RUXs](https://playlikeboy.github.io/projects/ruxs), [ScriptlyStore](https://playlikeboy.github.io/projects/scriptly), [CampusLoop](https://playlikeboy.github.io/projects/campusloop) and [Daksha](https://playlikeboy.github.io/projects/daksha).

@@ -45,9 +45,9 @@ export const roles: Role[] = [
         status: "merged",
       },
       {
-        title: "preactjs/preact #5331 and codex-team/editor.js #3040",
+        title: "preactjs/preact #5331, #5387 and codex-team/editor.js #3040",
         detail:
-          "A type-definition fix in Preact (the list attribute on valid input types) and an inline-toolbar fix in Editor.js. Small, scoped changes in widely used libraries.",
+          "Two type-definition fixes in Preact (the list attribute on valid input types; capture variants of toggle, dialog and command events) and an inline-toolbar fix in Editor.js. Small, scoped changes in widely used libraries.",
         href: "https://github.com/preactjs/preact/pull/5331",
         status: "merged",
       },

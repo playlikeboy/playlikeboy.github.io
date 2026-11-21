@@ -37,11 +37,12 @@ export const claims: Claim[] = [
     note: "Authored as @SH20RAJ. Docs PRs: #1095, #1097, #1098, #1099, #1100.",
   },
   {
-    claim: "Merged fixes in preactjs/preact (#5331) and codex-team/editor.js (#3040)",
+    claim: "Merged fixes in preactjs/preact (#5331, #5387) and codex-team/editor.js (#3040)",
     where: "Resume, portfolio, GitHub README",
     kind: "public record",
     sources: [
       { label: "preact #5331", url: "https://github.com/preactjs/preact/pull/5331" },
+      { label: "preact #5387", url: "https://github.com/preactjs/preact/pull/5387" },
       { label: "editor.js #3040", url: "https://github.com/codex-team/editor.js/pull/3040" },
     ],
   },

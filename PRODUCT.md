@@ -43,7 +43,7 @@ Leads with work in code he does not own: bugs reproduced, filed and fixed upstre
 
 ## Evidence on Hand
 
-- Upstream PRs and issues: `src/data/contributions.ts`, `src/data/bugs.ts` (6 merged code PRs, 15 in review, 14 filed issues).
+- Upstream PRs and issues: `src/data/contributions.ts`, `src/data/bugs.ts` (8 merged code PRs, 18 in review, 14 filed issues).
 - Claims with sources: `src/data/claims.ts`.
 - Projects and case studies: `src/data/resume.tsx`, `src/app/projects/*`.
 - Photo: GitLab avatar URL in `DATA.avatarUrl`; `public/profile.jpg`.

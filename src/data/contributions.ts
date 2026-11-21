@@ -14,7 +14,7 @@
 // Refresh with:
 //   gh search prs --author playlikeboy --merged
 //   gh search prs --author playlikeboy --state open
-// Last refreshed: 2026-11-19.
+// Last refreshed: 2026-11-21.
 
 export interface Contribution {
   repo: string;
@@ -28,6 +28,13 @@ export interface Contribution {
 }
 
 export const mergedContributions: Contribution[] = [
+  {
+    repo: "preactjs/preact",
+    number: 5387,
+    title: "fix(types): add capture variants of toggle, dialog and command events",
+    url: "https://github.com/preactjs/preact/pull/5387",
+    date: "2026-11-19",
+  },
   {
     repo: "pingdotgg/t3code",
     number: 23775,
@@ -248,13 +255,6 @@ export const openContributions: Contribution[] = [
     number: 255,
     title: "fix(core-commonmark): allow ordered list with leading zeros to interrupt paragraph",
     url: "https://github.com/micromark/micromark/pull/255",
-    date: "2026-10-22",
-  },
-  {
-    repo: "pingdotgg/t3code",
-    number: 23775,
-    title: "fix(server): suppress redundant keybindings change emission on unchanged revalidation",
-    url: "https://github.com/pingdotgg/t3code/pull/23775",
     date: "2026-10-22",
   },
 ];
