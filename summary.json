@@ -1,0 +1,101 @@
+{
+ "updated": "2026-11-21T11:23:28.426Z",
+ "sites": [
+  {
+   "name": "Portfolio",
+   "url": "https://playlikeboy.github.io/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 121
+   },
+   "uptime30d": 100,
+   "checks": 33,
+   "avgMs": 257
+  },
+  {
+   "name": "SopKit",
+   "url": "https://sopkit.github.io/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 346
+   },
+   "uptime30d": 100,
+   "checks": 33,
+   "avgMs": 376
+  },
+  {
+   "name": "CampusLoop",
+   "url": "https://campusloop.space/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 99
+   },
+   "uptime30d": 100,
+   "checks": 33,
+   "avgMs": 164
+  },
+  {
+   "name": "IndexFast",
+   "url": "https://indexfast.co/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 760
+   },
+   "uptime30d": 100,
+   "checks": 33,
+   "avgMs": 1356
+  },
+  {
+   "name": "Daksha",
+   "url": "https://www.daksha.life/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 979
+   },
+   "uptime30d": 100,
+   "checks": 6,
+   "avgMs": 844
+  },
+  {
+   "name": "RUXs",
+   "url": "https://ruxs.in/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 1222
+   },
+   "uptime30d": 100,
+   "checks": 7,
+   "avgMs": 1199
+  },
+  {
+   "name": "ScriptlyStore",
+   "url": "https://scriptly.store/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 3997
+   },
+   "uptime30d": 100,
+   "checks": 7,
+   "avgMs": 2757
+  },
+  {
+   "name": "MCP Pure",
+   "url": "https://mcppure.shraj.workers.dev/",
+   "current": {
+    "status": 200,
+    "ok": true,
+    "ms": 311
+   },
+   "uptime30d": 100,
+   "checks": 33,
+   "avgMs": 315
+  }
+ ]
+}
